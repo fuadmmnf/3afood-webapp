@@ -1,6 +1,5 @@
 <template>
   <div class="shop-page-wrapper">
-    <HeaderWithTopbar containerClass="container" />
     <Breadcrumb pageTitle="Login" />
 
     <div class="login-register-area pt-100 pb-100">
@@ -39,17 +38,14 @@
 
 <script setup lang="ts">
 
-import HeaderWithTopbar from "../components/HeaderWithTopbar.vue";
 import Breadcrumb from "../components/Breadcrumb.vue";
 import TheFooter from "../components/TheFooter.vue";
 import {ref} from  'vue'
 
+
 const isActive=ref("Retail");
+
 const comA=(item)=>{
    isActive.value = item;
 }
-
-
-
-
 </script>

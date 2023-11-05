@@ -1,6 +1,5 @@
 <template>
   <div class="shop-page-wrapper">
-    <HeaderWithTopbar containerClass="container" />
     <Breadcrumb pageTitle="Register" />
 
     <div class="login-register-area pt-100 pb-100">

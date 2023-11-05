@@ -1,7 +1,7 @@
 <template>
     <div>
+      <HeaderWithTopbar containerClass="container" />
         <Nuxt />
-
         <client-only>
             <notifications position="bottom left" classes='vue-notification success' />
         </client-only>
@@ -13,8 +13,11 @@
 </template>
 
 <script>
+    import HeaderWithTopbar from "../components/HeaderWithTopbar.vue";
+
     export default {
-        name: "default",
+      name: "default",
+      components: {HeaderWithTopbar},
         data() {
             return {
                 isVisible: false,

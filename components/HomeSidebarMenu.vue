@@ -14,7 +14,7 @@
                             <input type="text" placeholder="Search" />
                             <button class="button-search"><i class="pe-7s-search"></i></button>
                         </form>
-                    </div> 
+                    </div>
                 </div>
                 <div class="same-style account-setting d-none d-lg-block">
                     <button class="account-setting-active" @click="isOpenAccountSettings = !isOpenAccountSettings"><i class="pe-7s-user-female"></i></button>
