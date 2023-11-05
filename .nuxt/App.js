@@ -2,16 +2,16 @@ import Vue from 'vue'
 import { decode, parsePath, withoutBase, withoutTrailingSlash, normalizeURL } from 'ufo'
 
 import { getMatchedComponentsInstances, getChildrenComponentInstancesUsingFetch, promisify, globalHandleError, urlJoin, sanitizeComponent } from './utils'
-import NuxtError from '../layouts/error.vue'
+import NuxtError from '..\\layouts\\error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
-import '../assets/scss/style.scss'
+import '..\\assets\\scss\\style.scss'
 
-import '../assets/css/animation.css'
+import '..\\assets\\css\\animation.css'
 
-import _6f6c098b from '../layouts/default.vue'
-import _602e6cb4 from '../layouts/HomeSidebarMenu.vue'
+import _6f6c098b from '..\\layouts\\default.vue'
+import _602e6cb4 from '..\\layouts\\HomeSidebarMenu.vue'
 
 const layouts = { "_default": sanitizeComponent(_6f6c098b),"_HomeSidebarMenu": sanitizeComponent(_602e6cb4) }
 

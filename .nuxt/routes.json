@@ -2,218 +2,232 @@
   {
     "name": "about",
     "path": "/about",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/about.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\about.vue",
     "chunkName": "pages/about",
-    "_name": "_4ef6072c"
+    "_name": "_53212fa0"
   },
   {
     "name": "blog",
     "path": "/blog",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/blog/index.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\blog\\\\index.vue",
     "chunkName": "pages/blog/index",
-    "_name": "_3aecf298"
+    "_name": "_498c447a"
   },
   {
     "name": "cart",
     "path": "/cart",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/cart.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\cart.vue",
     "chunkName": "pages/cart",
-    "_name": "_1a66bc53"
+    "_name": "_bb076b46"
   },
   {
     "name": "checkout",
     "path": "/checkout",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/checkout.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\checkout.vue",
     "chunkName": "pages/checkout",
-    "_name": "_1309740e"
+    "_name": "_3da6bf03"
   },
   {
     "name": "compare",
     "path": "/compare",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/compare.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\compare.vue",
     "chunkName": "pages/compare",
-    "_name": "_9a9ee6fc"
+    "_name": "_11e66b90"
   },
   {
     "name": "contact",
     "path": "/contact",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/contact.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\contact.vue",
     "chunkName": "pages/contact",
-    "_name": "_64974386"
+    "_name": "_12109bf3"
   },
   {
     "name": "home-cosmetics",
     "path": "/home-cosmetics",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/home-cosmetics.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\home-cosmetics.vue",
     "chunkName": "pages/home-cosmetics",
-    "_name": "_10d01eee"
+    "_name": "_54fa0bda"
   },
   {
     "name": "home-fashion-five",
     "path": "/home-fashion-five",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/home-fashion-five.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\home-fashion-five.vue",
     "chunkName": "pages/home-fashion-five",
-    "_name": "_6b7d9532"
+    "_name": "_4608a768"
   },
   {
     "name": "home-fashion-four",
     "path": "/home-fashion-four",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/home-fashion-four.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\home-fashion-four.vue",
     "chunkName": "pages/home-fashion-four",
-    "_name": "_b0355cb4"
+    "_name": "_fb1f3848"
   },
   {
     "name": "home-fashion-seven",
     "path": "/home-fashion-seven",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/home-fashion-seven.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\home-fashion-seven.vue",
     "chunkName": "pages/home-fashion-seven",
-    "_name": "_20e1a786"
+    "_name": "_666660c7"
   },
   {
     "name": "home-fashion-six",
     "path": "/home-fashion-six",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/home-fashion-six.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\home-fashion-six.vue",
     "chunkName": "pages/home-fashion-six",
-    "_name": "_260946dc"
+    "_name": "_076ba8c8"
   },
   {
     "name": "home-fashion-three",
     "path": "/home-fashion-three",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/home-fashion-three.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\home-fashion-three.vue",
     "chunkName": "pages/home-fashion-three",
-    "_name": "_31413d64"
+    "_name": "_5e3695d8"
   },
   {
     "name": "home-fashion-two",
     "path": "/home-fashion-two",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/home-fashion-two.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\home-fashion-two.vue",
     "chunkName": "pages/home-fashion-two",
-    "_name": "_39469cfc"
+    "_name": "_48956c06"
+  },
+  {
+    "name": "Login",
+    "path": "/Login",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\Login.vue",
+    "chunkName": "pages/Login",
+    "_name": "_981a6548"
   },
   {
     "name": "login-register",
     "path": "/login-register",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/login-register.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\login-register.vue",
     "chunkName": "pages/login-register",
-    "_name": "_c64c0f0c"
+    "_name": "_7ac50204"
   },
   {
     "name": "my-account",
     "path": "/my-account",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/my-account.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\my-account.vue",
     "chunkName": "pages/my-account",
-    "_name": "_9adc4c02"
+    "_name": "_46798eee"
   },
   {
     "name": "privacy-policy",
     "path": "/privacy-policy",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/privacy-policy.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\privacy-policy.vue",
     "chunkName": "pages/privacy-policy",
-    "_name": "_5fb78b0a"
+    "_name": "_3da29494"
+  },
+  {
+    "name": "Register",
+    "path": "/Register",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\Register.vue",
+    "chunkName": "pages/Register",
+    "_name": "_eb0e0400"
   },
   {
     "name": "shop",
     "path": "/shop",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/shop.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\shop.vue",
     "chunkName": "pages/shop",
-    "_name": "_056e4129"
+    "_name": "_e4f8619a"
   },
   {
     "name": "shop-grid-full-width",
     "path": "/shop-grid-full-width",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/shop-grid-full-width.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\shop-grid-full-width.vue",
     "chunkName": "pages/shop-grid-full-width",
-    "_name": "_5c54544b"
+    "_name": "_7a308e55"
   },
   {
     "name": "shop-grid-no-sidebar",
     "path": "/shop-grid-no-sidebar",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/shop-grid-no-sidebar.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\shop-grid-no-sidebar.vue",
     "chunkName": "pages/shop-grid-no-sidebar",
-    "_name": "_18ab9e93"
+    "_name": "_3687d89d"
   },
   {
     "name": "shop-grid-right-sidebar",
     "path": "/shop-grid-right-sidebar",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/shop-grid-right-sidebar.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\shop-grid-right-sidebar.vue",
     "chunkName": "pages/shop-grid-right-sidebar",
-    "_name": "_07fa8d38"
+    "_name": "_31fec224"
   },
   {
     "name": "shop-grid-two-column",
     "path": "/shop-grid-two-column",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/shop-grid-two-column.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\shop-grid-two-column.vue",
     "chunkName": "pages/shop-grid-two-column",
-    "_name": "_ca1a548c"
+    "_name": "_8e61e078"
   },
   {
     "name": "shop-list-full-width",
     "path": "/shop-list-full-width",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/shop-list-full-width.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\shop-list-full-width.vue",
     "chunkName": "pages/shop-list-full-width",
-    "_name": "_9170581a"
+    "_name": "_55b7e406"
   },
   {
     "name": "shop-list-standard",
     "path": "/shop-list-standard",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/shop-list-standard.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\shop-list-standard.vue",
     "chunkName": "pages/shop-list-standard",
-    "_name": "_51850be8"
+    "_name": "_6f477f1c"
   },
   {
     "name": "terms-conditions",
     "path": "/terms-conditions",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/terms-conditions.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\terms-conditions.vue",
     "chunkName": "pages/terms-conditions",
-    "_name": "_64cd2071"
+    "_name": "_741bef7b"
   },
   {
     "name": "wishlist",
     "path": "/wishlist",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/wishlist.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\wishlist.vue",
     "chunkName": "pages/wishlist",
-    "_name": "_e4a55210"
+    "_name": "_564e5ffc"
   },
   {
     "name": "blog-blog-right-sidebar",
     "path": "/blog/blog-right-sidebar",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/blog/blog-right-sidebar.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\blog\\\\blog-right-sidebar.vue",
     "chunkName": "pages/blog/blog-right-sidebar",
-    "_name": "_382aa22c"
+    "_name": "_b116fcc2"
   },
   {
     "name": "blog-blog-without-sidebar",
     "path": "/blog/blog-without-sidebar",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/blog/blog-without-sidebar.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\blog\\\\blog-without-sidebar.vue",
     "chunkName": "pages/blog/blog-without-sidebar",
-    "_name": "_1c68c454"
+    "_name": "_0ba8d16a"
   },
   {
     "name": "product-product-affiliate",
     "path": "/product/product-affiliate",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/product/product-affiliate.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\product\\\\product-affiliate.vue",
     "chunkName": "pages/product/product-affiliate",
-    "_name": "_0412fc2c"
+    "_name": "_d93832c6"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/index.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_0f8651a2"
+    "_name": "_72d90a65"
   },
   {
     "name": "blog-slug",
     "path": "/blog/:slug",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/blog/_slug.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\blog\\\\_slug.vue",
     "chunkName": "pages/blog/_slug",
-    "_name": "_39365150"
+    "_name": "_4cf9870a"
   },
   {
     "name": "product-slug",
     "path": "/product/:slug?",
-    "component": "/Users/fuad/Downloads/flonevuejs-101/flonevuejs-101/flone/pages/product/_slug.vue",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\product\\\\_slug.vue",
     "chunkName": "pages/product/_slug",
-    "_name": "_ee0dd872"
+    "_name": "_44095fb8"
   }
 ]
