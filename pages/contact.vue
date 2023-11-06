@@ -1,9 +1,7 @@
 <template>
     <div class="shop-page-wrapper">
-        <HeaderWithTopbar containerClass="container" />
         <Breadcrumb pageTitle="contact us" />
         <ContactInfo />
-        <TheFooter />
     </div>
 </template>
 

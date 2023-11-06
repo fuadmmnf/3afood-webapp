@@ -1,10 +1,7 @@
 <template>
-    <div class="contact-area pt-100 pb-100">
+    <div class="contact-area pt-50 pb-100">
         <div class="container">
-            <div class="contact-map mb-10">
-                <iframe class="map-size" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8402891185374!2d144.95373631590425!3d-37.81720974201477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2ssg!4v1607294780661!5m2!1sen!2ssg"></iframe>
-            </div>
-            <div class="custom-row-2">
+          <div class="custom-row-2">
                 <div class="col-lg-4 col-md-5 col-12">
                     <div class="contact-info-wrap">
                         <div class="single-contact-info">
@@ -12,8 +9,8 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="contact-info-dec">
-                                <p>+012 345 678 102</p>
-                                <p>+012 345 678 102</p>
+                                <p>+08 9456 2685</p>
+
                             </div>
                         </div>
                         <div class="single-contact-info">
@@ -21,8 +18,7 @@
                                 <i class="fa fa-globe"></i>
                             </div>
                             <div class="contact-info-dec">
-                                <p><a href="#">urname@email.com</a></p>
-                                <p><a href="#">urwebsitenaem.com</a></p>
+                                <p><a href="#">info@3afoods.com.au</a></p>
                             </div>
                         </div>
                         <div class="single-contact-info">
@@ -30,8 +26,9 @@
                                 <i class="fa fa-map-marker"></i>
                             </div>
                             <div class="contact-info-dec">
-                                <p>Address goes here, </p>
-                                <p>street, Crossroad 123.</p>
+                                <p> 3/39 Tulloch Way </p>
+                              <p>Canning Vale WA 6155</p>
+
                             </div>
                         </div>
                         <div class="contact-social text-center">
@@ -71,6 +68,11 @@
                     </div>
                 </div>
             </div>
+          <div class="contact-map mt-20">
+            <iframe class="map-size" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8402891185374!2d144.95373631590425!3d-37.81720974201477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2ssg!4v1607294780661!5m2!1sen!2ssg"></iframe>
+          </div>
         </div>
     </div>
 </template>
+<script setup>
+</script>

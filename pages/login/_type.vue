@@ -17,7 +17,7 @@
                 <input type="password" name="user-password" placeholder="Password">
                 <div class="button-box">
                   <div class=" text-center">
-                    <a href="#">Forgot Password? </a> <a href="#">Create Account</a>
+                    <a href="#">Forgot Password? </a><router-link :to="'/register/' + type">Create Account</router-link>
                   </div>
                   <div class="text-center pt-5">
                     <button type="submit">Login</button>

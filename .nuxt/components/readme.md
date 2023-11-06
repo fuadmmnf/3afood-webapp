@@ -14,6 +14,7 @@ You can directly use them in pages and other components without the need to impo
 - `<BrandLogoCarousel>` | `<brand-logo-carousel>` (components/BrandLogoCarousel.vue)
 - `<Breadcrumb>` | `<breadcrumb>` (components/Breadcrumb.vue)
 - `<Categories>` | `<categories>` (components/Categories.vue)
+- `<CategoriesItem>` | `<categories-item>` (components/CategoriesItem.vue)
 - `<ContactInfo>` | `<contact-info>` (components/ContactInfo.vue)
 - `<DealWithCountdown>` | `<deal-with-countdown>` (components/DealWithCountdown.vue)
 - `<FooterStyleTwo>` | `<footer-style-two>` (components/FooterStyleTwo.vue)

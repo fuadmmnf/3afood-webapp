@@ -20,7 +20,7 @@
 
                 <div class="button-box ">
                   <div class=" text-center ">
-                    Already Have a Account?  <a href="">Sign In</a>
+                    Already Have a Account?  <router-link :to="'/login/' + type">Sign In</router-link>
                   </div>
                   <div class="text-center pt-5">
                     <button type="submit">Register</button>

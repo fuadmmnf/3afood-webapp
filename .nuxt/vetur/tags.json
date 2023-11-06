@@ -23,6 +23,9 @@
   "Categories": {
     "description": "Auto imported from components/Categories.vue"
   },
+  "CategoriesItem": {
+    "description": "Auto imported from components/CategoriesItem.vue"
+  },
   "ContactInfo": {
     "description": "Auto imported from components/ContactInfo.vue"
   },
