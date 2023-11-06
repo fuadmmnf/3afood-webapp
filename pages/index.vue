@@ -1,11 +1,11 @@
 <template>
     <div class="home-page-wrapper">
-        <TheHeader />
         <HeroSlider />
         <ServicePolicy />
+        <WelcomeMessage class="pt-50- pb-95" />
         <ProductWrapper :isSectionTitle=true />
-        <BlogWrapper />
-        <TheFooter />
+
+           <!--<BlogWrapper />-->
     </div>
 </template>
 

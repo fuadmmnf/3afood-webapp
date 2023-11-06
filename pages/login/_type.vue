@@ -5,12 +5,9 @@
     <div class="login-register-area pt-100 pb-100">
       <div class="container">
         <div class="login-register-tab-list nav">
-          <button @click="comA('Retail')" :class="{ active: isActive === 'Retail' }" >
-            Retail
-          </button>
-          <button @click="comA('Wholesale')" :class="{ active: isActive === 'Wholesale' }" >
-            Wholesale
-          </button>
+          <span class="active">
+             {{type}}
+          </span>
         </div>
         <div class="row">
           <div class="col-lg-7 col-12 ms-auto me-auto">
@@ -20,7 +17,7 @@
                 <input type="password" name="user-password" placeholder="Password">
                 <div class="button-box">
                   <div class=" text-center">
-                    <a href="#">Forgot Password? </a> <a href="">Already Have a Account?</a>
+                    <a href="#">Forgot Password? </a> <a href="#">Create Account</a>
                   </div>
                   <div class="text-center pt-5">
                     <button type="submit">Login</button>
@@ -32,20 +29,16 @@
         </div>
       </div>
     </div>
-    <TheFooter />
   </div>
 </template>
 
-<script setup lang="ts">
+<script >
 
-import Breadcrumb from "../components/Breadcrumb.vue";
-import TheFooter from "../components/TheFooter.vue";
-import {ref} from  'vue'
-
-
-const isActive=ref("Retail");
-
-const comA=(item)=>{
-   isActive.value = item;
+export default {
+  data() {
+    return {
+      type: this.$route.params.type
+    }
+  }
 }
 </script>

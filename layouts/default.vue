@@ -9,6 +9,7 @@
         <button class="scroll-top" @click="scrollToTop" :class="{ 'show': isVisible }">
             <i class="fa fa-angle-double-up"></i>
         </button>
+      <TheFooter />
     </div>
 </template>
 

@@ -15,13 +15,14 @@
                 <div class="col-lg-2 col-sm-4">
                     <div class="footer-widget mb-30 ml-30">
                         <div class="footer-title">
-                            <h3>ABOUT US</h3>
+                            <h3>MENU</h3>
                         </div>
                         <div class="footer-list">
                             <ul>
-                                <li><n-link to="/about">About us</n-link></li>
-                                <li><n-link to="/shop">Conatct Us</n-link></li>
-
+                              <li><n-link to="/shop">Services</n-link></li>
+                              <li><n-link to="/shop">Products</n-link></li>
+                              <li><n-link to="/about">About us</n-link></li>
+                              <li><n-link to="/shop">Conatct Us</n-link></li>
                             </ul>
                         </div>
                     </div>

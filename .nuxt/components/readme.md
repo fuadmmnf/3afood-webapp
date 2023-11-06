@@ -13,6 +13,7 @@ You can directly use them in pages and other components without the need to impo
 - `<BlogWrapper>` | `<blog-wrapper>` (components/BlogWrapper.vue)
 - `<BrandLogoCarousel>` | `<brand-logo-carousel>` (components/BrandLogoCarousel.vue)
 - `<Breadcrumb>` | `<breadcrumb>` (components/Breadcrumb.vue)
+- `<Categories>` | `<categories>` (components/Categories.vue)
 - `<ContactInfo>` | `<contact-info>` (components/ContactInfo.vue)
 - `<DealWithCountdown>` | `<deal-with-countdown>` (components/DealWithCountdown.vue)
 - `<FooterStyleTwo>` | `<footer-style-two>` (components/FooterStyleTwo.vue)

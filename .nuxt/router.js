@@ -17,11 +17,9 @@ const _666660c7 = () => interopDefault(import('..\\pages\\home-fashion-seven.vue
 const _076ba8c8 = () => interopDefault(import('..\\pages\\home-fashion-six.vue' /* webpackChunkName: "pages/home-fashion-six" */))
 const _5e3695d8 = () => interopDefault(import('..\\pages\\home-fashion-three.vue' /* webpackChunkName: "pages/home-fashion-three" */))
 const _48956c06 = () => interopDefault(import('..\\pages\\home-fashion-two.vue' /* webpackChunkName: "pages/home-fashion-two" */))
-const _981a6548 = () => interopDefault(import('..\\pages\\Login.vue' /* webpackChunkName: "pages/Login" */))
 const _7ac50204 = () => interopDefault(import('..\\pages\\login-register.vue' /* webpackChunkName: "pages/login-register" */))
 const _46798eee = () => interopDefault(import('..\\pages\\my-account.vue' /* webpackChunkName: "pages/my-account" */))
 const _3da29494 = () => interopDefault(import('..\\pages\\privacy-policy.vue' /* webpackChunkName: "pages/privacy-policy" */))
-const _eb0e0400 = () => interopDefault(import('..\\pages\\Register.vue' /* webpackChunkName: "pages/Register" */))
 const _e4f8619a = () => interopDefault(import('..\\pages\\shop.vue' /* webpackChunkName: "pages/shop" */))
 const _7a308e55 = () => interopDefault(import('..\\pages\\shop-grid-full-width.vue' /* webpackChunkName: "pages/shop-grid-full-width" */))
 const _3687d89d = () => interopDefault(import('..\\pages\\shop-grid-no-sidebar.vue' /* webpackChunkName: "pages/shop-grid-no-sidebar" */))
@@ -36,7 +34,9 @@ const _0ba8d16a = () => interopDefault(import('..\\pages\\blog\\blog-without-sid
 const _d93832c6 = () => interopDefault(import('..\\pages\\product\\product-affiliate.vue' /* webpackChunkName: "pages/product/product-affiliate" */))
 const _72d90a65 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 const _4cf9870a = () => interopDefault(import('..\\pages\\blog\\_slug.vue' /* webpackChunkName: "pages/blog/_slug" */))
+const _3f6de74d = () => interopDefault(import('..\\pages\\login\\_type.vue' /* webpackChunkName: "pages/login/_type" */))
 const _44095fb8 = () => interopDefault(import('..\\pages\\product\\_slug.vue' /* webpackChunkName: "pages/product/_slug" */))
+const _6de2f269 = () => interopDefault(import('..\\pages\\register\\_type.vue' /* webpackChunkName: "pages/register/_type" */))
 
 const emptyFn = () => {}
 
@@ -102,10 +102,6 @@ export const routerOptions = {
     component: _48956c06,
     name: "home-fashion-two"
   }, {
-    path: "/Login",
-    component: _981a6548,
-    name: "Login"
-  }, {
     path: "/login-register",
     component: _7ac50204,
     name: "login-register"
@@ -117,10 +113,6 @@ export const routerOptions = {
     path: "/privacy-policy",
     component: _3da29494,
     name: "privacy-policy"
-  }, {
-    path: "/Register",
-    component: _eb0e0400,
-    name: "Register"
   }, {
     path: "/shop",
     component: _e4f8619a,
@@ -178,9 +170,17 @@ export const routerOptions = {
     component: _4cf9870a,
     name: "blog-slug"
   }, {
+    path: "/login/:type?",
+    component: _3f6de74d,
+    name: "login-type"
+  }, {
     path: "/product/:slug?",
     component: _44095fb8,
     name: "product-slug"
+  }, {
+    path: "/register/:type?",
+    component: _6de2f269,
+    name: "register-type"
   }],
 
   fallback: false

@@ -6,25 +6,18 @@
                     <div class="header-top-inner">
                         <div class="language-currency-wrap">
                             <div class="same-language-currency language-style">
-                                <select name="language">
-                                    <option value="english">English</option>
-                                    <option value="hindi">Hindi</option>
-                                    <option value="spanish">Spanish</option>
-                                </select>
+                              <i class="pe-7s-phone"></i> <span >08 9456 2685</span>
                             </div>
-                            <div class="same-language-currency use-style">
-                                <select name="currency">
-                                    <option value="usd">USD</option>
-                                    <option value="eur">EUR</option>
-                                    <option value="rup">Rup</option>
-                                </select>
-                            </div>
-                            <div class="same-language-currency">
-                                <p>Call: <a href="callto:3965410">3965410</a></p>
-                            </div>
+                          <div class="same-language-currency language-style">
+                            <i class="pe-7s-mail"></i> <span>info@3afoods.com.au</span>
+                          </div>
+                          <div class="same-language-currency language-style">
+
+                          </div>
+
                         </div>
                         <div class="header-offer">
-                            <p>Free delivery on order over <span>$200</span></p>
+                          <i class="pe-7s-map-marker"></i> <span>3/39 Tulloch Way Canning Vale WA 6155 </span>
                         </div>
                     </div>
                 </div>
@@ -54,8 +47,8 @@
                                     </button>
                                     <div class="account-dropdown" :class="{ active:isOpenAccountSettings==='Login' }">
                                         <ul>
-                                            <li><n-link to="/login">Retail</n-link></li>
-                                            <li><n-link to="/register">Wholesale</n-link></li>
+                                            <li><n-link to="/login/retail">Retail</n-link></li>
+                                            <li><n-link to="/login/wholesale">Wholesale</n-link></li>
 
                                         </ul>
                                     </div>
@@ -66,8 +59,8 @@
                                 </button>
                                 <div class="account-dropdown" :class="{ active:isOpenAccountSettings==='Register' }">
                                   <ul>
-                                    <li><n-link to="/login">Retail</n-link></li>
-                                    <li><n-link to="/register">Wholesale</n-link></li>
+                                    <li><n-link to="/register/retail">Retail</n-link></li>
+                                    <li><n-link to="/register/wholesale">Wholesale</n-link></li>
                                     <!--                                            <li><n-link to="/my-account">my account</n-link></li>-->
                                   </ul>
                                 </div>
