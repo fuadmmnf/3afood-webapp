@@ -96,6 +96,12 @@
     "chunkName": "pages/privacy-policy"
   },
   {
+    "name": "Services",
+    "path": "/Services",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\Services.vue",
+    "chunkName": "pages/Services"
+  },
+  {
     "name": "shop",
     "path": "/shop",
     "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\shop.vue",

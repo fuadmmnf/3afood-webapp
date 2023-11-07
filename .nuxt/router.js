@@ -20,6 +20,7 @@ const _48956c06 = () => interopDefault(import('..\\pages\\home-fashion-two.vue' 
 const _7ac50204 = () => interopDefault(import('..\\pages\\login-register.vue' /* webpackChunkName: "pages/login-register" */))
 const _46798eee = () => interopDefault(import('..\\pages\\my-account.vue' /* webpackChunkName: "pages/my-account" */))
 const _3da29494 = () => interopDefault(import('..\\pages\\privacy-policy.vue' /* webpackChunkName: "pages/privacy-policy" */))
+const _06c48a3b = () => interopDefault(import('..\\pages\\Services.vue' /* webpackChunkName: "pages/Services" */))
 const _e4f8619a = () => interopDefault(import('..\\pages\\shop.vue' /* webpackChunkName: "pages/shop" */))
 const _7a308e55 = () => interopDefault(import('..\\pages\\shop-grid-full-width.vue' /* webpackChunkName: "pages/shop-grid-full-width" */))
 const _3687d89d = () => interopDefault(import('..\\pages\\shop-grid-no-sidebar.vue' /* webpackChunkName: "pages/shop-grid-no-sidebar" */))
@@ -113,6 +114,10 @@ export const routerOptions = {
     path: "/privacy-policy",
     component: _3da29494,
     name: "privacy-policy"
+  }, {
+    path: "/Services",
+    component: _06c48a3b,
+    name: "Services"
   }, {
     path: "/shop",
     component: _e4f8619a,
