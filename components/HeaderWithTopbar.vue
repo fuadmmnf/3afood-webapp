@@ -28,7 +28,7 @@
                         <div class="col-lg-2 col-md-6 col-4">
                             <div class="logo">
                                 <n-link to="/">
-                                    <img src="/img/logo/logo.png" alt="flone logo">
+                                    <img src="/img/logo/3A-foods-logo@0-5x.png" alt="flone logo">
                                 </n-link>
                             </div>
                         </div>
@@ -112,7 +112,7 @@ onMounted(() => {
 
 
 
-<style >
+<style scoped>
 
 
 </style>

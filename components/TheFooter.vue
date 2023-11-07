@@ -35,7 +35,7 @@
                         <div class="footer-list">
                             <ul>
                                 <li><n-link to="/about">Terms & Conditions</n-link></li>
-                                <li><n-link to="/about">Privacy & Support Policy</n-link></li>
+                                <li><n-link to="/privacy-policy">Privacy & Support Policy</n-link></li>
                                 <li><n-link to="/about">FAQs</n-link></li>
                             </ul>
                         </div>

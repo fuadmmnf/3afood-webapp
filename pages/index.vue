@@ -1,6 +1,6 @@
 <template>
     <div class="home-page-wrapper">
-        <HeroSlider />
+        <HeroSliderFour></HeroSliderFour>
         <WelcomeMessage class="pt-50" />
         <ServicePolicyTwo />
         <ProductWrapper :isSectionTitle=true />

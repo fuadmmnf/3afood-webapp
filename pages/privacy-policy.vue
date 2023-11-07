@@ -1,6 +1,5 @@
 <template>
     <div class="privacy-policy-wrapper">
-        <HeaderWithTopbar containerClass="container" />
         <Breadcrumb pageTitle="privacy policy" />
 
         <!-- privacy policy content start -->
@@ -9,56 +8,49 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="policy-list">
-                            <h3 class="policy-title">Who we are ?</h3>
-                            <p>Our website address is: <a href="http://hasthemes.com">http://hasthemes.com</a></p>
+                          <p> This Privacy Policy sets out our commitment to protecting the privacy of your
+                            personal information that we collect through this website <router-link to="/" class="text-warning"> http://www.3afoods.com.au</router-link>
+                            or directly from you. Please read this Privacy Policy carefully.  Please contact us if you have any questions. You are providing us with personal information indicate that you have had sufficient opportunity to access this Privacy Policy and that you have read and accepted it. If you do not wish to provide personal information to us, then you do not have to do so, however,
+                            it may affect your use of this Site or any products and services offered on it.</p>
                         </div>
                         <div class="policy-list">
-                            <h3 class="policy-title">What personal data we collect and why we collect it Comments</h3>
-                            <p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitors IP address and browser user agent string to help spam detection.</p>
-                            <p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p>
+                            <h3 class="policy-title">Type of personal information collected</h3>
+                            <p>The type of personal information we collect may include your name, address, ABN, mobile number, e-mail address etc. If we receive your personal information from third parties, we will protect it as set out in this Privacy Policy.</p>
                         </div>
-                        <!-- policy list end -->
-                        <div class="policy-list">
-                            <h3 class="policy-title">Media</h3>
-                            <p>f you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p>
-                        </div>
-                        <!-- policy list end -->
-                        <div class="policy-list">
-                            <h3 class="policy-title">Cookies</h3>
-                            <p>If you leave a comment on our site you may opt-in to saving your name, email  address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p>
-                            <p>If you have an account and you log in to this site, we will set a temporary  cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p>
-                            <p>When you log in, we will also set up several cookies to save your login  information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select “Remember Me”, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p>
-                            <p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p>
-                        </div>
-                        <!-- policy list end -->
-                        <div class="policy-list">
-                            <h3 class="policy-title">Embedded content from other websites</h3>
-                            <p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p>
-                            <p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p>
-                        </div>
-                        <!-- policy list end -->
-                        <div class="policy-list">
-                            <h3 class="policy-title">How long we retain your data</h3>
-                            <p >If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p>
-                            <p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p>
-                        </div>
-                        <!-- policy list end -->
-                        <div class="policy-list">
-                            <h3 class="policy-title">What rights you have over your data</h3>
-                            <p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p>
-                        </div>
-                        <!-- policy list end -->
-                        <div class="policy-list">
-                            <h3 class="policy-title">Where we send your data</h3>
-                            <p>Visitor comments may be checked through an automated spam detection service.</p>
-                        </div>
-                        <!-- policy list end -->
+
+                      <div class="policy-list">
+                        <h3 class="policy-title">Collection and use of personal information</h3>
+                       <p>We collect and use the personal information for purposes including contacting and communicating with you, for internal record keeping and for marketing.</p>
+                      </div>
+                      <div class="policy-list">
+                        <h3 class="policy-title">Disclosure of personal information</h3>
+                        <p>We may disclose personal information for purposes including providing our products and services to you, and as required by law. Where we disclose your personal information to third parties for these purposes, we will request that the third party follow this Privacy Policy regarding handling of your personal information.</p>
+                      </div>
+                      <div class="policy-list">
+                        <h3 class="policy-title">Access to and correction of personal information</h3>
+                       <p>Access: You may request details of personal information that we hold about you, in certain circumstances set out in the Privacy Act 1988.  An administrative fee may be payable for the provision of information.  We may refuse to provide you with information that we hold about you, in certain circumstances set out in the Privacy Act.</p>
+                       <p>Correction: If you believe that any information, we hold on you are inaccurate, out of date, incomplete, and irrelevant or misleading, please contact us by email. We rely in part upon customers advising us when their personal information changes.  We will respond to any request within a reasonable time.  We will endeavour to promptly correct any information found to be inaccurate, incomplete or out of date.</p>
+                      </div>
+                      <div class="policy-list">
+                        <h3 class="policy-title">Complaints about breach</h3>
+                        <p>If you believe that we have breached the Australian Privacy Principles and wish to make a complaint about that breach, please contact us on the email address below.</p>
+                      </div>
+
+                      <div class="policy-list">
+                        <h3 class="policy-title">Unsubscribe</h3>
+                       <p>To unsubscribe from our e-mail database, or opt out of communications, please contact us at the details below.</p>
+                      </div>
+                      <div class="policy-list">
+                        <h3 class="policy-title">Storage and Security</h3>
+                     <p>We are committed to ensuring that the information you provide is secure.
+                       For any questions or notice, please contact us at:
+                       3A Foods</p>
+                        <p>Email: <a href="" class="text-warning">info@3afoods.com.au</a></p>
+                      </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- privacy policy content end -->
-        <TheFooter />
     </div>
 </template>
 
