@@ -7,8 +7,8 @@ export default {
     
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
-        title: 'Flone - VueJS eCommerce Template',
-        titleTemplate: 'Flone | %s',
+        title: '3A Food - VueJS eCommerce Template',
+        titleTemplate: '3A Food | %s',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -31,6 +31,7 @@ export default {
         '~/plugins/vue-awesome-swiper.js',
         '~/plugins/vuejs-pagiante.js',
         '~/plugins/observe-visibility.js',
+        '~/plugins/axios.js',
         { 
             src: '~/plugins/bootstrap.js', 
             mode: 'client'
@@ -57,6 +58,15 @@ export default {
         '@nuxtjs/style-resources',
         '@nuxtjs/axios',
     ],
+
+    axios: {
+        baseURL: 'http://localhost:8000/',
+        headers: {
+            common: {
+                'Content-Type': 'application/json',
+            },
+        },
+    },
 
     styleResources: {
         scss: [
