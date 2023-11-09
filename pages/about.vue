@@ -24,6 +24,7 @@
             BrandLogoCarousel: () => import('@/components/BrandLogoCarousel'), 
             TheFooter: () => import('@/components/TheFooter'), 
         },
+        middleware:['auth'],
         head() {
             return {
                 title: "About Us"

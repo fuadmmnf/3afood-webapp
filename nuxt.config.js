@@ -73,7 +73,6 @@ export default {
             '~/assets/scss/_variables.scss',
         ]
     },
-
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {
         extractCSS: true,
