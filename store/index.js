@@ -9,7 +9,8 @@ export const state = () => ({
     products: products,
     cart: [],
     wishlist: [],
-    compare: []
+    compare: [],
+    user:null,
 })
 
 
@@ -19,6 +20,9 @@ export const getters = {
         return state.products
     },
 
+    isAuthenticated(state){
+        return !!state.user?.email;
+    },
     getCart: state => {
         return state.cart
     },
@@ -148,11 +152,17 @@ export const mutations = {
             return product.id !== item.id
         });
     },
+    SAVE_USER(state, user){
+        state.user=user
+    }
 }
 
 
 // contains your actions
 export const actions = {
+    saveUserInfo({commit}, payload){
+        commit('SAVE_USER', payload)
+    },
     addToCartItem({commit}, payload) {
         commit('UPDATE_CART', payload)
     },

@@ -40,44 +40,63 @@
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-6 col-8">
-                            <div class="header-right-wrap">
-                              <div class="same-style account-setting d-none d-lg-block">
-                                    <button class="account-setting-active" @click="isOpenAccountSettings=isOpenAccountSettings === ''?'Login':''">
-                                       <span >Login</span>
-                                    </button>
-                                    <div class="account-dropdown" :class="{ active:isOpenAccountSettings==='Login' }">
-                                        <ul>
-                                            <li><n-link to="/login/retail">Retail</n-link></li>
-                                            <li><n-link to="/login/wholesale">Wholesale</n-link></li>
+                          <div class="header-right-wrap" v-if="!$store.getters.isAuthenticated" >
+                            <div class="same-style account-setting d-none d-lg-block">
+                              <button class="account-setting-active" @click="isOpenAccountSettings=isOpenAccountSettings === ''?'Login':''">
+                                <span >Login</span>
+                              </button>
+                              <div class="account-dropdown" :class="{ active:isOpenAccountSettings==='Login' }">
+                                <ul>
+                                  <li><n-link to="/login/retail">Retail</n-link></li>
+                                  <li><n-link to="/login/wholesale">Wholesale</n-link></li>
 
-                                        </ul>
-                                    </div>
-                                </div>
-                              <div class="same-style account-setting d-none d-lg-block">
-                                <button class="account-setting-active" @click="isOpenAccountSettings=isOpenAccountSettings === 'Register'?'':'Register'">
-                                  <span >Register</span>
-                                </button>
-                                <div class="account-dropdown" :class="{ active:isOpenAccountSettings==='Register' }">
-                                  <ul>
-                                    <li><n-link to="/register/retail">Retail</n-link></li>
-                                    <li><n-link to="/register/wholesale">Wholesale</n-link></li>
-                                    <!--                                            <li><n-link to="/my-account">my account</n-link></li>-->
-                                  </ul>
-                                </div>
+                                </ul>
                               </div>
-<!--                                <div class="same-style cart-wrap">-->
-<!--                                    <button class="icon-cart" @click="openCart = !openCart">-->
-<!--                                        <i class="pe-7s-shopbag"></i>-->
-<!--                                        <span class="count-style">{{ cartItemCount }}</span>-->
-<!--                                    </button>-->
-<!--                                    <MiniCart :miniCart="{ visible:openCart }" @minicartClose="openCart = !openCart" />-->
-<!--                                </div>-->
-<!--                                <div class="same-style mobile-menu-toggler d-block d-lg-none">-->
-<!--                                    <button class="mobile-aside-button" @click="navOpen = !navOpen">-->
-<!--                                        <i class="pe-7s-menu"></i>-->
-<!--                                    </button>-->
-<!--                                </div>-->
                             </div>
+                            <div class="same-style account-setting d-none d-lg-block">
+                              <button class="account-setting-active" @click="isOpenAccountSettings=isOpenAccountSettings === 'Register'?'':'Register'">
+                                <span >Register</span>
+                              </button>
+                              <div class="account-dropdown" :class="{ active:isOpenAccountSettings==='Register' }">
+                                <ul>
+                                  <li><n-link to="/register/retail">Retail</n-link></li>
+                                  <li><n-link to="/register/wholesale">Wholesale</n-link></li>
+                                  <!--                                            <li><n-link to="/my-account">my account</n-link></li>-->
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div v-else class="header-right-wrap">
+                            <div  class="same-style account-setting d-none d-lg-block">
+                              <button class="account-setting-active" @click="isOpenAccountSettings=isOpenAccountSettings === 'Profile'?'':'Profile'">
+                                <span><i class="pe-7s-user mr-10"></i></span>
+                                <span >Rahat</span>
+                              </button>
+                              <div class="account-dropdown" :class="{ active:isOpenAccountSettings==='Profile' }">
+                                <ul>
+                                  <li><n-link to="/profile">My Profile</n-link></li>
+                                  <li><n-link to="/logout">Logout</n-link></li>
+                                  <!--                                            <li><n-link to="/my-account">my account</n-link></li>-->
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+<!--                          <div class="header-right-wrap">-->
+<!--                          -->
+<!--&lt;!&ndash;                                <div class="same-style cart-wrap">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <button class="icon-cart" @click="openCart = !openCart">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <i class="pe-7s-shopbag"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <span class="count-style">{{ cartItemCount }}</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </button>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <MiniCart :miniCart="{ visible:openCart }" @minicartClose="openCart = !openCart" />&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="same-style mobile-menu-toggler d-block d-lg-none">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <button class="mobile-aside-button" @click="navOpen = !navOpen">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <i class="pe-7s-menu"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </button>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -87,27 +106,46 @@
     </div>
 </template>
 
-<script setup>
-import { ref, onMounted, watch, computed } from 'vue';
-
-const {containerClass} =defineProps(['containerClass']);
-
-const cartItemCount = computed(() => $store.getters.cartItemCount);
-const wishlistItemCount = computed(() => $store.getters.wishlistItemCount);
-const compareItemCount = computed(() => $store.getters.compareItemCount);
-
-const isSticky = ref(false);
-const isOpenSearch = ref(false);
-const isOpenAccountSettings = ref("");
-const openCart = ref(false);
-const navOpen = ref(false);
-
-onMounted(() => {
-  window.addEventListener('scroll', () => {
-    let scroll = window.scrollY;
-    isSticky.value = scroll >= 200;
-  });
-});
+<script>
+export default {
+  props:['containerClass'],
+  data() {
+    return {
+      cartItemCount: 0,
+      wishlistItemCount: 0,
+      compareItemCount: 0,
+      user: null,
+      isSticky: false,
+      isOpenSearch: false,
+      isOpenAccountSettings: false,
+      openCart: false,
+      navOpen: false,
+    };
+  },
+  computed: {
+    cartItemCountComputed() {
+      return this.$store.getters.cartItemCount;
+    },
+    wishlistItemCountComputed() {
+      return this.$store.getters.wishlistItemCount;
+    },
+    compareItemCountComputed() {
+      return this.$store.getters.compareItemCount;
+    },
+    userComputed() {
+      return this.$store.getters.user;
+    },
+  },
+  methods: {
+    onScroll() {
+      let scroll = window.scrollY;
+      this.isSticky = scroll >= 200;
+    },
+  },
+  mounted() {
+    window.addEventListener('scroll', this.onScroll);
+  },
+};
 </script>
 
 

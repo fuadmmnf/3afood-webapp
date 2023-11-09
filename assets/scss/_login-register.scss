@@ -47,13 +47,16 @@
         padding: 40px 15px;
     }
     form {
+        .input-div{
+            margin-bottom: 30px;
+        }
         input {
             background-color: transparent;
             border: 1px solid #ebebeb;
             color: $dark;
             font-size: 14px;
             height: 45px;
-            margin-bottom: 30px;
+            margin-bottom: 5px;
             padding: 0 15px;
         }
         input[type="checkbox"] {

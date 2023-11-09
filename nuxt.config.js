@@ -32,6 +32,7 @@ export default {
         '~/plugins/vuejs-pagiante.js',
         '~/plugins/observe-visibility.js',
         '~/plugins/axios.js',
+        { src: '~plugins/localStorage.js' , ssr: false },
         { 
             src: '~/plugins/bootstrap.js', 
             mode: 'client'
@@ -57,6 +58,7 @@ export default {
     modules: [
         '@nuxtjs/style-resources',
         '@nuxtjs/axios',
+
     ],
 
     axios: {
