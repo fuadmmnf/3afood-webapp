@@ -18,7 +18,7 @@
                             </swiper>
                             <swiper class="mt-2" :options="swiperOptionThumbs" ref="swiperThumbs">
                                 <div class="thumb-img swiper-slide" v-for="(image, index) in product.images" :key="index">
-                                    <img class="img-fluid" :src="image" :alt="product.name">
+                                    <img class="img-fluid" :src="image" :alt="product.title">
                                 </div>
                             </swiper>
                         </div>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product-details-content ml-70">
-                        <h2>{{ product.name }}</h2>
+                        <h2>{{ product.title }}</h2>
                         <div class="product-details-price">
                             <span>${{ product.price}}</span>
 
@@ -43,7 +43,7 @@
 
                             <span><a href="#">5 Reviews</a></span>
                         </div>
-                        <p>{{ product.description }}</p>
+                        <p>{{ product.desc }}</p>
 
                         <div class="pro-details-quality">
                             <div class="cart-plus-minus">
@@ -54,15 +54,9 @@
                             <div class="pro-details-cart btn-hover">
                                 <button @click="addToCart(product)">Add To Cart</button>
                             </div>
-                            <div class="pro-details-wishlist">
-                                <button @click="addToWishlist(product)" title="wishlist"><i class="fa fa-heart-o"></i></button>
-                            </div>
-                            <div class="pro-details-compare">
-                                <button @click="addToCompare(product)" title="compare"><i class="pe-7s-shuffle"></i></button>
-                            </div>
                         </div>
                         <div class="pro-details-meta">
-                            <span class="label">Categories:</span>
+                            <span class="label">Categories:{{product.category}}</span>
                             <ul>
 
                             </ul>

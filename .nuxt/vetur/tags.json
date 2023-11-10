@@ -71,6 +71,9 @@
   "OffCanvasMobileMenu": {
     "description": "Auto imported from components/OffCanvasMobileMenu.vue"
   },
+  "OthersAppsLink": {
+    "description": "Auto imported from components/OthersAppsLink.vue"
+  },
   "ProductDetailsDescriptionReview": {
     "description": "Auto imported from components/ProductDetailsDescriptionReview.vue"
   },
@@ -85,6 +88,9 @@
   },
   "SectionTitleWithSubTitle": {
     "description": "Auto imported from components/SectionTitleWithSubTitle.vue"
+  },
+  "Services": {
+    "description": "Auto imported from components/Services.vue"
   },
   "ShopSidebar": {
     "description": "Auto imported from components/ShopSidebar.vue"

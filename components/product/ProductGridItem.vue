@@ -1,8 +1,8 @@
 <template>
   <div class="product-wrap mb-30">
     <div class="product-img">
-      <n-link :to="`/product/${slugify(product.name)}`">
-        <img class="default-img" src="https://flone.vuejstemplate.com/img/product/fashion/3.jpg" :alt="product.name" />
+      <n-link :to="`/product/${product.id}`">
+        <img class="default-img" src="https://flone.vuejstemplate.com/img/product/fashion/3.jpg" :alt="product.title" />
       </n-link>
 
       <div
@@ -19,8 +19,8 @@
     </div>
     <div class="product-content text-center">
       <h3>
-        <n-link :to="`/product/${slugify(product.slug)}`">{{
-          product.name
+        <n-link :to="`/product/${product.id}`">{{
+          product.title
         }}</n-link>
       </h3>
       <div class="product-rating">
@@ -33,22 +33,12 @@
         <span>${{ product.price }}</span>
       </div>
       <div class="product-content__list-view" v-if="layout === 'list'">
-        <p>{{ product.description }}</p>
+        <p>{{ product.desc }}</p>
         <div class="pro-action d-flex align-items-center">
           <div class="pro-cart btn-hover">
             <button class="btn" title="Add To Cart" @click="addToCart(product)">
               <i class="pe-7s-cart"></i>
               Add to cart
-            </button>
-          </div>
-          <div class="pro-wishlist">
-            <button @click="addToWishlist(product)">
-              <i class="fa fa-heart-o"></i>
-            </button>
-          </div>
-          <div class="pro-compare">
-            <button @click="addToCompare(product)">
-              <i class="pe-7s-shuffle"></i>
             </button>
           </div>
         </div>
@@ -104,15 +94,6 @@ export default {
       this.$modal.show("quickview", product);
     },
 
-    slugify(text) {
-      return text
-        .toString()
-        .replace(/\s+/g, "-") // Replace spaces with -
-        .replace(/[^\w-]+/g, "") // Remove all non-word chars
-        .replace(/--+/g, "-") // Replace multiple - with single -
-        .replace(/^-+/, "") // Trim - from start of text
-        .replace(/-+$/, ""); // Trim - from end of text
-    },
   },
   mounted() {
     console.log("product:"+ this.product)

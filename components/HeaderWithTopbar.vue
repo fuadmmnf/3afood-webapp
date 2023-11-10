@@ -66,7 +66,7 @@
                               </div>
                             </div>
                           </div>
-                          <div v-else class="header-right-wrap">
+                          <div v-else class="header-right-wrap align-items-center">
                             <div  class="same-style account-setting d-none d-lg-block">
                               <button class="account-setting-active" @click="isOpenAccountSettings=isOpenAccountSettings === 'Profile'?'':'Profile'">
                                 <span><i class="pe-7s-user mr-10"></i></span>
@@ -75,28 +75,24 @@
                               <div class="account-dropdown" :class="{ active:isOpenAccountSettings==='Profile' }">
                                 <ul>
                                   <li><n-link to="/profile">My Profile</n-link></li>
-                                  <li><n-link to="/logout">Logout</n-link></li>
-                                  <!--                                            <li><n-link to="/my-account">my account</n-link></li>-->
+                                  <li><a href="" @click.prevent="logout">Logout</a></li>
+
                                 </ul>
                               </div>
                             </div>
+                            <div class="same-style cart-wrap">
+                              <button class="icon-cart" @click="openCart = !openCart">
+                                <i class="pe-7s-shopbag"></i>
+                                <span class="count-style">{{ cartItemCount }}</span>
+                              </button>
+                              <MiniCart :miniCart="{ visible:openCart }" @minicartClose="openCart = !openCart" />
+                            </div>
+                            <div class="same-style mobile-menu-toggler d-block d-lg-none">
+                              <button class="mobile-aside-button" @click="navOpen = !navOpen">
+                                <i class="pe-7s-menu"></i>
+                              </button>
+                            </div>
                           </div>
-
-<!--                          <div class="header-right-wrap">-->
-<!--                          -->
-<!--&lt;!&ndash;                                <div class="same-style cart-wrap">&ndash;&gt;-->
-<!--&lt;!&ndash;                                    <button class="icon-cart" @click="openCart = !openCart">&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <i class="pe-7s-shopbag"></i>&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <span class="count-style">{{ cartItemCount }}</span>&ndash;&gt;-->
-<!--&lt;!&ndash;                                    </button>&ndash;&gt;-->
-<!--&lt;!&ndash;                                    <MiniCart :miniCart="{ visible:openCart }" @minicartClose="openCart = !openCart" />&ndash;&gt;-->
-<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <div class="same-style mobile-menu-toggler d-block d-lg-none">&ndash;&gt;-->
-<!--&lt;!&ndash;                                    <button class="mobile-aside-button" @click="navOpen = !navOpen">&ndash;&gt;-->
-<!--&lt;!&ndash;                                        <i class="pe-7s-menu"></i>&ndash;&gt;-->
-<!--&lt;!&ndash;                                    </button>&ndash;&gt;-->
-<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
-<!--                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -111,7 +107,7 @@ export default {
   props:['containerClass'],
   data() {
     return {
-      cartItemCount: 0,
+      // cartItemCount: 0,
       wishlistItemCount: 0,
       compareItemCount: 0,
       user: null,
@@ -123,7 +119,7 @@ export default {
     };
   },
   computed: {
-    cartItemCountComputed() {
+    cartItemCount() {
       return this.$store.getters.cartItemCount;
     },
     wishlistItemCountComputed() {
@@ -141,6 +137,9 @@ export default {
       let scroll = window.scrollY;
       this.isSticky = scroll >= 200;
     },
+    logout(){
+      this.$store.dispatch('logout')
+    }
   },
   mounted() {
     window.addEventListener('scroll', this.onScroll);

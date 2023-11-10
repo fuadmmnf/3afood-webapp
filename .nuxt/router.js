@@ -36,7 +36,7 @@ const _d93832c6 = () => interopDefault(import('..\\pages\\product\\product-affil
 const _72d90a65 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 const _4cf9870a = () => interopDefault(import('..\\pages\\blog\\_slug.vue' /* webpackChunkName: "pages/blog/_slug" */))
 const _3f6de74d = () => interopDefault(import('..\\pages\\login\\_type.vue' /* webpackChunkName: "pages/login/_type" */))
-const _44095fb8 = () => interopDefault(import('..\\pages\\product\\_slug.vue' /* webpackChunkName: "pages/product/_slug" */))
+const _f94b7930 = () => interopDefault(import('..\\pages\\product\\_id.vue' /* webpackChunkName: "pages/product/_id" */))
 const _6de2f269 = () => interopDefault(import('..\\pages\\register\\_type.vue' /* webpackChunkName: "pages/register/_type" */))
 
 const emptyFn = () => {}
@@ -179,9 +179,9 @@ export const routerOptions = {
     component: _3f6de74d,
     name: "login-type"
   }, {
-    path: "/product/:slug?",
-    component: _44095fb8,
-    name: "product-slug"
+    path: "/product/:id?",
+    component: _f94b7930,
+    name: "product-id"
   }, {
     path: "/register/:type?",
     component: _6de2f269,

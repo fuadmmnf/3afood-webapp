@@ -97,12 +97,10 @@ export const mutations = {
     UPDATE_CART(state, payload) {
         const item = state.cart.find(el => payload.id === el.id)
         if (item) {
-            const price = item.discount ? item.price - (item.price *(item.discount)/100) : item.price;
             item.cartQuantity = item.cartQuantity + payload.cartQuantity
-            item.total = item.cartQuantity * price
+            item.total = item.cartQuantity * item.price
         } else {
-            const price = payload.discount ? payload.price - (payload.price *(payload.discount)/100) : payload.price;
-            state.cart.push({...payload, cartQuantity: payload.cartQuantity, total: price })
+            state.cart.push({...payload, cartQuantity: payload.cartQuantity, total: payload.price })
         }
     },
 
@@ -114,9 +112,8 @@ export const mutations = {
 
     DECREASE_PRODUCT(state, payload) {
         const found = state.cart.find(el => payload.id === el.id)
-        const price = found.discount ? found.price - (found.price *(found.discount)/100) : found.price;
         found.cartQuantity = found.cartQuantity - payload.cartQuantity
-        found.total = found.cartQuantity * price
+        found.total = found.cartQuantity * payload.price
     },
 
     CLEAR_CART(state) {
@@ -154,6 +151,9 @@ export const mutations = {
     },
     SAVE_USER(state, user){
         state.user=user
+    },
+    REMOVE_USER(state,user){
+        state.user=null
     }
 }
 
@@ -162,6 +162,9 @@ export const mutations = {
 export const actions = {
     saveUserInfo({commit}, payload){
         commit('SAVE_USER', payload)
+    },
+    logout({commit}){
+        commit('REMOVE_USER')
     },
     addToCartItem({commit}, payload) {
         commit('UPDATE_CART', payload)
