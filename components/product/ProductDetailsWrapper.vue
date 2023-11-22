@@ -5,22 +5,7 @@
                 <div class="col-md-6">
                     <div class="product-details-slider">
                         <div class="product-details-img">
-                            <swiper :options="swiperOptionTop" ref="swiperTop">
-                                <div class="large-img swiper-slide" v-for="(image, index) in product.imageUrl" :key="index">
-                                    <img class="img-fluid" :src="image" :alt="product.title">
-                                </div>
-                                <div class="quickview-nav swiper-button-prev">
-                                    <i class="pe-7s-angle-left"></i>
-                                </div>
-                                <div class="quickview-nav swiper-button-next">
-                                    <i class="pe-7s-angle-right"></i>
-                                </div>
-                            </swiper>
-                            <swiper class="mt-2" :options="swiperOptionThumbs" ref="swiperThumbs">
-                                <div class="thumb-img swiper-slide" v-for="(image, index) in product.images" :key="index">
-                                    <img class="img-fluid" :src="image" :alt="product.title">
-                                </div>
-                            </swiper>
+                          <img class="img-fluid" :src="product.img" :alt="product.title">
                         </div>
                     </div>
                 </div>
@@ -56,9 +41,8 @@
                             </div>
                         </div>
                         <div class="pro-details-meta">
-                            <span class="label">Categories:{{product.category}}</span>
+                            <span class="label">Food Category:{{product.category?.category_name}}</span>
                             <ul>
-
                             </ul>
                         </div>
                         <div class="pro-details-social">
@@ -104,40 +88,10 @@
         data() {
             return {
                 singleQuantity: 1,
-                swiperOptionTop: {
-                    loop: true,
-                    slidesPerView : 1,
-                    spaceBetween: 10,
-                    effect: 'fade',
-                    loopedSlides: 5, // looped slides should be the same
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev'
-                    }
-                },
-
-                swiperOptionThumbs: {
-                    loop: true,
-                    spaceBetween: 10,
-                    centeredSlides: true,
-                    slidesPerView: 5,
-                    freeMode: true,
-                    watchSlidesVisibility: true,
-                    watchSlidesProgress: true,
-                    slideToClickedSlide: true,
-                    loopedSlides: 5, // looped slides should be the same
-                },
             }
         },
 
-        mounted() {
-            this.$nextTick(() => {
-                const swiperTop = this.$refs.swiperTop.$swiper
-                const swiperThumbs = this.$refs.swiperThumbs.$swiper
-                swiperTop.controller.control = swiperThumbs
-                swiperThumbs.controller.control = swiperTop
-            })
-        },
+
 
         methods: {
             addToCart(product) {
@@ -156,7 +110,7 @@
             },
 
             increaseQuantity(){
-                if(this.product.quantity > this.singleQuantity) this.singleQuantity++
+                 this.singleQuantity++
             },
 
             decreaseQuantity() {
@@ -183,17 +137,6 @@
                 this.$store.dispatch('addToCompare', product)
             },
 
-            slugify(text) {
-                return text
-                    .toString()
-                    .toLowerCase()
-                    .replace(/\s+/g, "-") // Replace spaces with -
-                    .replace(/[^\w-]+/g, "") // Remove all non-word chars
-                    .replace(/--+/g, "-") // Replace multiple - with single -
-                    .replace(/^-+/, "") // Trim - from start of text
-                    .replace(/-+$/, ""); // Trim - from end of text
-                    
-            }
         },
     };
 </script>

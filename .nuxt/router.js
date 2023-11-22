@@ -19,6 +19,7 @@ const _5e3695d8 = () => interopDefault(import('..\\pages\\home-fashion-three.vue
 const _48956c06 = () => interopDefault(import('..\\pages\\home-fashion-two.vue' /* webpackChunkName: "pages/home-fashion-two" */))
 const _7ac50204 = () => interopDefault(import('..\\pages\\login-register.vue' /* webpackChunkName: "pages/login-register" */))
 const _46798eee = () => interopDefault(import('..\\pages\\my-account.vue' /* webpackChunkName: "pages/my-account" */))
+const _61bf2791 = () => interopDefault(import('..\\pages\\online-order.vue' /* webpackChunkName: "pages/online-order" */))
 const _3da29494 = () => interopDefault(import('..\\pages\\privacy-policy.vue' /* webpackChunkName: "pages/privacy-policy" */))
 const _06c48a3b = () => interopDefault(import('..\\pages\\Services.vue' /* webpackChunkName: "pages/Services" */))
 const _e4f8619a = () => interopDefault(import('..\\pages\\shop.vue' /* webpackChunkName: "pages/shop" */))
@@ -110,6 +111,10 @@ export const routerOptions = {
     path: "/my-account",
     component: _46798eee,
     name: "my-account"
+  }, {
+    path: "/online-order",
+    component: _61bf2791,
+    name: "online-order"
   }, {
     path: "/privacy-policy",
     component: _3da29494,

@@ -107,7 +107,6 @@ export default {
   props:['containerClass'],
   data() {
     return {
-      // cartItemCount: 0,
       wishlistItemCount: 0,
       compareItemCount: 0,
       user: null,

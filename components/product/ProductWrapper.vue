@@ -4,7 +4,7 @@
       <SectionTitleWithSubTitle
         title="DAILY DEALS!"
         classes="section-title"
-        v-if="isSectionTitle ? true : false"
+        v-if="!!isSectionTitle"
       />
       <div class="row ptb-50">
         <div
@@ -35,15 +35,10 @@ export default {
   },
 
   computed: {
-    newProducts() {
-      return this.$store.getters.getNewProducts;
-    },
-    bestProducts() {
-      return this.$store.getters.getBestProducts;
-    },
-    saleProducts() {
-      return this.$store.getters.getSaleProducts;
-    },
+    userType(){
+      return this.$store.getters.getUserType
+    }
+
 
   },
   data() {
@@ -54,11 +49,18 @@ export default {
   },
   methods:{
     async loadProductData() {
-      this.products = await this.$axios.$get("products?_limit=10")
-    }
+      try {
+        const response = await this.$axios.$get(`products/type/${this.userType}?limit=5`);
+        this.products =response.data
+        console.log("Product:", response.data)
+      } catch (error) {
+        console.error("Error loading product data:", error);
+      }
+    },
   },
   mounted  ()  {
      this.loadProductData()
+
   },
 };
 

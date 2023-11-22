@@ -1,6 +1,5 @@
 <template>
     <div class="cart-page-wrapper">
-        <HeaderWithTopbar containerClass="container" />
         <Breadcrumb pageTitle="checkout" />
         
         <!-- checkout section start -->
@@ -12,79 +11,52 @@
                             <h3>Billing Details</h3>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-20">
-                                        <label>First Name</label>
-                                        <input type="text">
-                                    </div>
+                                  <div class="billing-info mb-20">
+                                    <label>First Name</label>
+                                    <input type="text" v-model="formData.fname">
+                                    <div v-if="errors.fname" class="error-message">{{ errors.fname }}</div>
+                                  </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-20">
-                                        <label>Last Name</label>
-                                        <input type="text">
-                                    </div>
+                                  <div class="billing-info mb-20" >
+                                    <label> Last Name</label>
+                                    <input type="text" v-model="formData.lname">
+                                    <div v-if="errors.lname" class="error-message">{{ errors.lname }}</div>
+                                  </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="billing-info mb-20">
                                         <label>Company Name</label>
-                                        <input type="text">
+                                        <input type="text" v-model="formData.company_name">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <div class="billing-select mb-20">
-                                        <label>Country</label>
-                                        <select>
-                                            <option>Select a country</option>
-                                            <option>Azerbaijan</option>
-                                            <option>Bahamas</option>
-                                            <option>Bahrain</option>
-                                            <option>Bangladesh</option>
-                                            <option>Barbados</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="billing-info mb-20">
-                                        <label>Street Address</label>
-                                        <input class="billing-address" placeholder="House number and street name" type="text">
-                                        <input placeholder="Apartment, suite, unit etc." type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="billing-info mb-20">
-                                        <label>Town / City</label>
-                                        <input type="text">
-                                    </div>
+                                  <div class="billing-info mb-20" >
+                                    <label>Address</label>
+                                    <input class="billing-address" placeholder="House number and street name" type="text" v-model="formData.address">
+                                    <div v-if="errors.address" class="error-message">{{ errors.address }}</div>
+                                  </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-20">
-                                        <label>State / County</label>
-                                        <input type="text">
-                                    </div>
+                                  <div class="billing-info mb-20" >
+                                    <label>Phone</label>
+                                    <input type="text" v-model="formData.phone_num">
+                                    <div v-if="errors.phone_num" class="error-message">{{ errors.phone_num }}</div>
+                                  </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-20">
-                                        <label>Postcode / ZIP</label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-20">
-                                        <label>Phone</label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-20">
-                                        <label>Email Address</label>
-                                        <input type="text">
-                                    </div>
+                                  <div class="billing-info mb-20" >
+                                    <label>Email Address</label>
+                                    <input type="text" v-model="formData.email">
+                                    <div v-if="errors.email" class="error-message">{{ errors.email }}</div>
+                                  </div>
                                 </div>
                             </div>
                             <div class="additional-info-wrap">
                                 <h4>Additional information</h4>
                                 <div class="additional-info">
                                     <label>Order notes</label>
-                                    <textarea placeholder="Notes about your order, e.g. special notes for delivery. " name="message"></textarea>
+                                    <textarea placeholder="Notes about your order, e.g. special notes for delivery. " name="message" v-model="formData.additional_info"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -122,7 +94,7 @@
                                 </div>
                             </div>
                             <div class="place-order mt-25">
-                                <button class="btn-hover">Place Order</button>
+                                <button class="btn-hover" @click.prevent="submitOrder">Place Order</button>
                             </div>
                         </div>
                     </div>
@@ -140,9 +112,9 @@
                 </div>
             </div>
         </div>
-        <!-- checkout section end -->
-        <TheFooter />
+      <MessageModal :title="title"></MessageModal>
     </div>
+
 </template>
 
 <script>
@@ -152,6 +124,24 @@
             Breadcrumb: () => import("@/components/Breadcrumb"),
             TheFooter: () => import("@/components/TheFooter"),
         },
+      data(){
+          return{
+            title:"You Have Successfully Placed Your Order",
+            formData: {
+              fname: "",
+              lname: "",
+              phone_num:"",
+              email:"",
+              company_name: "",
+              address: "",
+              additional_info:"",
+              total_price:null,
+              user_id:'',
+              cart:[]
+            },
+            errors:{}
+          }
+      },
         computed: {
             products() {
                 return this.$store.getters.getCart
@@ -162,6 +152,69 @@
             },
         },
 
+      methods:{
+        validateForm() {
+          this.errors = {}; // Clear previous errors
+
+          if (!this.formData.fname.trim()) {
+            this.$set(this.errors, 'fname', 'First Name is required');
+          }
+
+          if (!this.formData.lname.trim()) {
+            this.$set(this.errors, 'lname', 'Last Name is required');
+          }
+
+          if (!this.formData.address.trim()) {
+            this.$set(this.errors, 'address', 'Address is required');
+          }
+
+          if (!this.formData.phone_num.trim()) {
+            this.$set(this.errors, 'phone_num', 'Phone Number is required');
+          } else if (!/^\d+$/.test(this.formData.phone_num.trim())) {
+            this.$set(this.errors, 'phone_num', 'Invalid Phone Number');
+          }
+
+          if (!this.formData.email.trim()) {
+            this.$set(this.errors, 'email', 'Email is required');
+          } else if (!/\S+@\S+\.\S+/.test(this.formData.email.trim())) {
+            this.$set(this.errors, 'email', 'Invalid Email');
+          }
+          return Object.keys(this.errors).length === 0;
+        },
+         async submitOrder() {
+          this.formData.total_price=this.total
+          this.formData.user_id=3
+          this.formData.cart=this.products.map(item => ({
+            product_id: item.id,
+            quantity: item.cartQuantity,
+            price: item.price* item.cartQuantity,
+          }));
+          console.log("Form Data:",this.formData)
+
+          if (this.validateForm()) {
+            try {
+              const response=await this.$axios.post("/orders",this.formData)
+              this.$modal.show('messageModal')
+              this.formData = {
+                fname: "",
+                lname: "",
+                company_name: "",
+                address: "",
+                phone_num: "",
+                email: "",
+                additional_info: "",
+              };
+              this.$store.commit('CLEAR_CART')
+
+            }catch (error){
+
+            }
+          }
+
+
+        }
+
+      },
         head() {
             return {
                 title: "Checkout"
@@ -169,3 +222,15 @@
         },
     };
 </script>
+
+<style scoped>
+.error {
+  border: 1px solid red;
+  padding: 4px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+</style>

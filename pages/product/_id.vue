@@ -20,15 +20,19 @@ export default {
             title: this.product.title
         }
     },
-  mounted() {
-      this.loadSingleProductData()
-  },
   methods: {
-      async loadSingleProductData() {
-        this.product=await this.$axios.$get(`products/${this.id}`).then(res=>{
-          return res
-        })
+    async loadSingleProductData() {
+      try {
+        const response = await this.$axios.$get(`products/${this.id}`);
+        this.product = response.data
+        console.log("Product:", response.data)
+      } catch (error) {
+        console.error("Error loading product data:", error);
       }
     },
+  },
+  mounted() {
+    this.loadSingleProductData()
+  },
 };
 </script>

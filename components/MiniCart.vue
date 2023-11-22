@@ -19,7 +19,7 @@
               }}</n-link>
             </h4>
             <h6>Qty: {{ product.cartQuantity }}</h6>
-            <span>${{ discountedPrice(product).toFixed(2) }}</span>
+            <span>${{ productPrice(product) }}</span>
           </div>
           <div class="shopping-cart-delete">
             <button @click="removeProduct(product)">
@@ -70,8 +70,8 @@ export default {
             this.$store.dispatch('removeProductFromCart', product)
         },
 
-        discountedPrice(product) {
-            return product.price - (product.price * product.discount / 100)
+        productPrice(product) {
+            return (product.price*product.cartQuantity).toFixed(1)
         }
     },
 };

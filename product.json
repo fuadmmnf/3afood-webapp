@@ -7,7 +7,7 @@
       "category": "Fruits",
       "imgUrl": "https://example.com/apples.jpg",
       "price": 2.99,
-      "type": "Retail",
+      "type": "retail",
       "unit": "Per Pound"
     },
     {
@@ -17,7 +17,7 @@
       "category": "Meat",
       "imgUrl": "https://example.com/beef.jpg",
       "price": 8.99,
-      "type": "Retail",
+      "type": "retail",
       "unit": "Per Pound"
     },
     {
@@ -27,7 +27,7 @@
       "category": "Seafood",
       "imgUrl": "https://example.com/salmon.jpg",
       "price": 12.99,
-      "type": "Retail",
+      "type": "retail",
       "unit": "Per Pound"
     },
     {
@@ -37,7 +37,7 @@
       "category": "Vegetables",
       "imgUrl": "https://example.com/spinach.jpg",
       "price": 3.49,
-      "type": "Retail",
+      "type": "retail",
       "unit": "Per Bunch"
     },
     {
@@ -47,7 +47,7 @@
       "category": "Dairy",
       "imgUrl": "https://example.com/cheese.jpg",
       "price": 6.99,
-      "type": "Retail",
+      "type": "retail",
       "unit": "Per Pound"
     },
     {
@@ -57,7 +57,7 @@
       "category": "Vegetables",
       "imgUrl": "https://example.com/tomatoes.jpg",
       "price": 2.79,
-      "type": "Retail",
+      "type": "retail",
       "unit": "Per Pound"
     },
     {
@@ -67,7 +67,7 @@
       "category": "Pasta",
       "imgUrl": "https://example.com/pasta.jpg",
       "price": 1.99,
-      "type": "Retail",
+      "type": "retail",
       "unit": "Per Pack"
     },
     {
@@ -77,7 +77,7 @@
       "category": "Fruits",
       "imgUrl": "https://example.com/blueberries.jpg",
       "price": 4.99,
-      "type": "Retail",
+      "type": "retail",
       "unit": "Per Pint"
     },
     {
@@ -87,7 +87,7 @@
       "category": "Dairy",
       "imgUrl": "https://example.com/eggs.jpg",
       "price": 2.49,
-      "type": "Retail",
+      "type": "retail",
       "unit": "Per Dozen"
     },
     {
@@ -97,7 +97,7 @@
       "category": "Grains",
       "imgUrl": "https://example.com/quinoa.jpg",
       "price": 5.99,
-      "type": "Retail",
+      "type": "retail",
       "unit": "Per Pound"
     }
   ]

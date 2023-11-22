@@ -19,7 +19,6 @@ export default {
         ]
 
     },
-
     // Global CSS (https://go.nuxtjs.dev/config-css)
     css: [
         '~/assets/scss/style.scss',
@@ -62,7 +61,7 @@ export default {
     ],
 
     axios: {
-        baseURL: 'http://localhost:8000/',
+        baseURL: 'http://127.0.0.1:8000/api',
         headers: {
             common: {
                 'Content-Type': 'application/json',

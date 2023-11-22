@@ -23,6 +23,9 @@ export const getters = {
     isAuthenticated(state){
         return !!state.user?.email;
     },
+    getUserType(state){
+        return state.user?.type
+    },
     getCart: state => {
         return state.cart
     },

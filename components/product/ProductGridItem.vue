@@ -2,16 +2,16 @@
   <div class="product-wrap mb-30">
     <div class="product-img">
       <n-link :to="`/product/${product.id}`">
-        <img class="default-img" src="https://flone.vuejstemplate.com/img/product/fashion/3.jpg" :alt="product.title" />
+        <img class="default-img" :src="product.img" :alt="product.title" />
       </n-link>
 
       <div
         class="product-action"
       >
         <div class="pro-same-action pro-cart">
-          <button class="btn" title="Add To Cart" @click="addToCart(product)">
+          <button class="btn" title="Add To Cart" @click="userType==='retail'?addToCart(product):requestForProduct(product.id)">
             <i class="pe-7s-cart"></i>
-            Add to cart
+            {{userType==='retail'?'Add To Cart':'Request For Product'}}
           </button>
         </div>
 
@@ -32,17 +32,6 @@
       <div class="product-price">
         <span>${{ product.price }}</span>
       </div>
-      <div class="product-content__list-view" v-if="layout === 'list'">
-        <p>{{ product.desc }}</p>
-        <div class="pro-action d-flex align-items-center">
-          <div class="pro-cart btn-hover">
-            <button class="btn" title="Add To Cart" @click="addToCart(product)">
-              <i class="pe-7s-cart"></i>
-              Add to cart
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -52,6 +41,9 @@ export default {
   props: ["product", "layout"],
 
   methods: {
+    requestForProduct(id){
+
+    },
     addToCart(product) {
       const prod = { ...product, cartQuantity: 1 };
       // for notification
@@ -60,7 +52,6 @@ export default {
       } else {
         this.$notify({ title: "Add to cart successfully!" });
       }
-
       this.$store.dispatch("addToCartItem", prod);
     },
 
@@ -94,6 +85,11 @@ export default {
       this.$modal.show("quickview", product);
     },
 
+  },
+  computed:{
+    userType(){
+      return this.$store.getters.getUserType
+    }
   },
   mounted() {
     console.log("product:"+ this.product)
