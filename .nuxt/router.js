@@ -20,6 +20,7 @@ const _48956c06 = () => interopDefault(import('..\\pages\\home-fashion-two.vue' 
 const _7ac50204 = () => interopDefault(import('..\\pages\\login-register.vue' /* webpackChunkName: "pages/login-register" */))
 const _46798eee = () => interopDefault(import('..\\pages\\my-account.vue' /* webpackChunkName: "pages/my-account" */))
 const _61bf2791 = () => interopDefault(import('..\\pages\\online-order.vue' /* webpackChunkName: "pages/online-order" */))
+const _dac1cafc = () => interopDefault(import('..\\pages\\our-products.vue' /* webpackChunkName: "pages/our-products" */))
 const _3da29494 = () => interopDefault(import('..\\pages\\privacy-policy.vue' /* webpackChunkName: "pages/privacy-policy" */))
 const _06c48a3b = () => interopDefault(import('..\\pages\\Services.vue' /* webpackChunkName: "pages/Services" */))
 const _e4f8619a = () => interopDefault(import('..\\pages\\shop.vue' /* webpackChunkName: "pages/shop" */))
@@ -30,6 +31,8 @@ const _8e61e078 = () => interopDefault(import('..\\pages\\shop-grid-two-column.v
 const _55b7e406 = () => interopDefault(import('..\\pages\\shop-list-full-width.vue' /* webpackChunkName: "pages/shop-list-full-width" */))
 const _6f477f1c = () => interopDefault(import('..\\pages\\shop-list-standard.vue' /* webpackChunkName: "pages/shop-list-standard" */))
 const _741bef7b = () => interopDefault(import('..\\pages\\terms-conditions.vue' /* webpackChunkName: "pages/terms-conditions" */))
+const _a8f0fae8 = () => interopDefault(import('..\\pages\\wholesale-cart.vue' /* webpackChunkName: "pages/wholesale-cart" */))
+const _3e27709c = () => interopDefault(import('..\\pages\\wholesale-checkout.vue' /* webpackChunkName: "pages/wholesale-checkout" */))
 const _564e5ffc = () => interopDefault(import('..\\pages\\wishlist.vue' /* webpackChunkName: "pages/wishlist" */))
 const _b116fcc2 = () => interopDefault(import('..\\pages\\blog\\blog-right-sidebar.vue' /* webpackChunkName: "pages/blog/blog-right-sidebar" */))
 const _0ba8d16a = () => interopDefault(import('..\\pages\\blog\\blog-without-sidebar.vue' /* webpackChunkName: "pages/blog/blog-without-sidebar" */))
@@ -116,6 +119,10 @@ export const routerOptions = {
     component: _61bf2791,
     name: "online-order"
   }, {
+    path: "/our-products",
+    component: _dac1cafc,
+    name: "our-products"
+  }, {
     path: "/privacy-policy",
     component: _3da29494,
     name: "privacy-policy"
@@ -155,6 +162,14 @@ export const routerOptions = {
     path: "/terms-conditions",
     component: _741bef7b,
     name: "terms-conditions"
+  }, {
+    path: "/wholesale-cart",
+    component: _a8f0fae8,
+    name: "wholesale-cart"
+  }, {
+    path: "/wholesale-checkout",
+    component: _3e27709c,
+    name: "wholesale-checkout"
   }, {
     path: "/wishlist",
     component: _564e5ffc,

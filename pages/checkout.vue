@@ -79,7 +79,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="your-order-bottom">
+                                    <div class="your-order-bottom" >
                                         <ul>
                                             <li class="your-order-shipping">Shipping</li>
                                             <li>Free shipping</li>
@@ -106,7 +106,7 @@
                                 <i class="pe-7s-cash"></i>
                             </div>
                             <h4>No items found in cart to checkout</h4>
-                            <n-link to="/shop" class="empty-cart__button">Shop Now</n-link>
+                            <n-link to="/our-products" class="empty-cart__button">Shop Now</n-link>
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,9 @@
             products() {
                 return this.$store.getters.getCart
             },
-
+            userType(){
+            return this.$store.getters.getUserType
+          },
             total() {
                 return this.$store.getters.getTotal
             },

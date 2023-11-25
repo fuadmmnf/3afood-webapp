@@ -9,7 +9,7 @@
         >
           <div class="shopping-cart-img">
             <n-link :to="`/product/${product.id}`">
-<!--              <img :src="product.images[0]" :alt="product.title" />-->
+              <img :src="product.img" :alt="product.title" />
             </n-link>
           </div>
           <div class="shopping-cart-title">
@@ -19,7 +19,7 @@
               }}</n-link>
             </h4>
             <h6>Qty: {{ product.cartQuantity }}</h6>
-            <span>${{ productPrice(product) }}</span>
+            <span v-if="userType==='retail'" >${{ productPrice(product) }}</span>
           </div>
           <div class="shopping-cart-delete">
             <button @click="removeProduct(product)">
@@ -28,7 +28,7 @@
           </div>
         </li>
       </ul>
-      <div class="shopping-cart-total">
+      <div class="shopping-cart-total" v-if="userType==='retail'">
         <h4>
           Total : <span class="shop-total">${{ total.toFixed(2) }}</span>
         </h4>
@@ -37,8 +37,8 @@
         class="shopping-cart-btn btn-hover text-center"
         @click="$emit('minicartClose')"
       >
-        <n-link to="/cart" class="default-btn">view cart</n-link>
-        <n-link to="/checkout" class="default-btn">checkout</n-link>
+        <n-link :to="userType==='retail'?'/cart':'/wholesale-cart'" class="default-btn">View Cart</n-link>
+        <n-link to="/checkout" class="default-btn">{{userType==='retail'?'Checkout':'Ask Price'}}</n-link>
       </div>
     </div>
     <div class="shopping-cart-content text-center" v-else>
@@ -52,6 +52,9 @@ export default {
     props: ["miniCart"],
 
     computed: {
+      userType(){
+        return this.$store.getters.getUserType
+      },
         products() {
             return this.$store.getters.getCart
         },

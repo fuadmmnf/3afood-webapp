@@ -2,7 +2,7 @@
   <div class="product-details-page-wrapper">
     <Breadcrumb :pageTitle="product.title" />
     <ProductDetailsWrapper :product="product" />
-    <ProductDetailsDescriptionReview />
+<!--    <ProductDetailsDescriptionReview />-->
 
   </div>
 </template>

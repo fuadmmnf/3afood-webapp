@@ -13,7 +13,7 @@
                     <div class="product-details-content ml-70">
                         <h2>{{ product.title }}</h2>
                         <div class="product-details-price">
-                            <span>${{ product.price}}</span>
+                            <span v-if="userType==='retail'">${{ product.price}}</span>
 
                         </div>
                         <div class="pro-details-rating-wrap">
@@ -33,7 +33,7 @@
                         <div class="pro-details-quality">
                             <div class="cart-plus-minus">
                                 <button @click="decreaseQuantity()" class="dec qtybutton">-</button>
-                                <input class="cart-plus-minus-box" type="text" :value="singleQuantity" readonly>
+                                <input class="cart-plus-minus-box" type="text"  v-model="singleQuantity" :readonly="userType==='retail'">
                                 <button @click="increaseQuantity()" class="inc qtybutton">+</button>
                             </div>
                             <div class="pro-details-cart btn-hover">
@@ -90,9 +90,11 @@
                 singleQuantity: 1,
             }
         },
-
-
-
+        computed:{
+          userType(){
+            return this.$store.getters.getUserType
+          },
+        },
         methods: {
             addToCart(product) {
                 const prod = {...product, cartQuantity: this.singleQuantity}

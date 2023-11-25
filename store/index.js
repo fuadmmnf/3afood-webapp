@@ -53,8 +53,7 @@ export const getters = {
     getTotal: state => {
         let total = 0;
         state.cart.forEach(item => {
-            let price = item.discount ? item.price - (item.price *(item.discount)/100) : item.price;
-            total += price * item.cartQuantity
+            total +=  item.price * item.cartQuantity
         })
 
         return total;
@@ -101,9 +100,23 @@ export const mutations = {
         const item = state.cart.find(el => payload.id === el.id)
         if (item) {
             item.cartQuantity = item.cartQuantity + payload.cartQuantity
-            item.total = item.cartQuantity * item.price
+            if(state.user.type==='retail'){
+                item.total = item.cartQuantity * item.price
+            }
         } else {
-            state.cart.push({...payload, cartQuantity: payload.cartQuantity, total: payload.price })
+            if(state.user.type==='retail'){
+                state.cart.push({...payload, cartQuantity: payload.cartQuantity, total: payload.price })
+            }
+            else {
+                state.cart.push({...payload, cartQuantity: payload.cartQuantity})
+            }
+
+        }
+    },
+    MANUAL_SET_CART_QUANTITY(state, payload) {
+        const item = state.cart.find(el => payload.id === el.id)
+        if (item) {
+            item.cartQuantity = payload.cartQuantity
         }
     },
 
@@ -116,7 +129,9 @@ export const mutations = {
     DECREASE_PRODUCT(state, payload) {
         const found = state.cart.find(el => payload.id === el.id)
         found.cartQuantity = found.cartQuantity - payload.cartQuantity
-        found.total = found.cartQuantity * payload.price
+        if(state.user.type==='retail'){
+            found.total = found.cartQuantity * payload.price
+        }
     },
 
     CLEAR_CART(state) {
@@ -171,6 +186,9 @@ export const actions = {
     },
     addToCartItem({commit}, payload) {
         commit('UPDATE_CART', payload)
+    },
+    manualSetCartQuantity({commit}, payload){
+        commit('MANUAL_SET_CART_QUANTITY', payload)
     },
 
     removeProductFromCart({commit}, product) {

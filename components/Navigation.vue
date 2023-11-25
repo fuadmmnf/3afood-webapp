@@ -4,7 +4,7 @@
         <n-link to="/">Home </n-link>
       </li>
       <li>
-        <n-link to="/">Our Products </n-link>
+        <n-link to="/our-products">Our Products </n-link>
       </li>
       <li>
         <n-link to="/about">About Us </n-link>

@@ -9,9 +9,9 @@
         class="product-action"
       >
         <div class="pro-same-action pro-cart">
-          <button class="btn" title="Add To Cart" @click="userType==='retail'?addToCart(product):requestForProduct(product.id)">
+          <button class="btn" title="Add To Cart" @click="addToCart(product)">
             <i class="pe-7s-cart"></i>
-            {{userType==='retail'?'Add To Cart':'Request For Product'}}
+            Add To Cart
           </button>
         </div>
 
@@ -29,7 +29,7 @@
         <i class="fa fa-star-o yellow"></i>
       </div>
 
-      <div class="product-price">
+      <div class="product-price" v-if="userType==='retail'">
         <span>${{ product.price }}</span>
       </div>
     </div>
@@ -41,9 +41,6 @@ export default {
   props: ["product", "layout"],
 
   methods: {
-    requestForProduct(id){
-
-    },
     addToCart(product) {
       const prod = { ...product, cartQuantity: 1 };
       // for notification
@@ -53,10 +50,6 @@ export default {
         this.$notify({ title: "Add to cart successfully!" });
       }
       this.$store.dispatch("addToCartItem", prod);
-    },
-
-    discountedPrice(product) {
-      return product.price - (product.price * product.discount) / 100;
     },
 
     addToWishlist(product) {
@@ -81,9 +74,6 @@ export default {
       this.$store.dispatch("addToCompare", product);
     },
 
-    onClick(product) {
-      this.$modal.show("quickview", product);
-    },
 
   },
   computed:{

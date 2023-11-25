@@ -5,8 +5,8 @@
     <div class="login-register-area pt-100 pb-100">
       <div class="container">
         <div class="login-register-tab-list nav">
-           <span class="active">
-             {{type}}
+          <span class="active">
+            {{ type }}
           </span>
         </div>
         <div class="row">
@@ -15,26 +15,45 @@
               <form @submit.prevent="signup">
                 <div class="input-div">
                   <input v-model="formData.name" :placeholder="placeholder" />
-                  <span class="text-danger" v-if="errors.name">Name field cannot be empty</span>
+                  <span class="text-danger" v-if="errors.name">{{
+                    errors.name
+                  }}</span>
                 </div>
                 <div class="input-div">
-                  <input v-model="formData.phone" placeholder="Phone" type="number" />
-                  <span class="text-danger" v-if="errors.phone">Phone field cannot be empty</span>
+                  <input
+                    v-model="formData.phone"
+                    placeholder="Phone"
+                    type="number"
+                  />
+                  <span class="text-danger" v-if="errors.phone">{{
+                    errors.phone
+                  }}</span>
                 </div>
                 <div class="input-div">
-                  <input v-model="formData.email" placeholder="Email" type="email" />
-                  <span class="text-danger" v-if="errors.email">Invalid email address</span>
+                  <input
+                    v-model="formData.email"
+                    placeholder="Email"
+                    type="email"
+                  />
+                  <span class="text-danger" v-if="errors.email">{{
+                    errors.email
+                  }}</span>
                 </div>
                 <div class="input-div">
                   <input v-model="formData.password" placeholder="Password" />
-                  <span class="text-danger" v-if="errors.password">Password must be at least 6 characters long</span>
+                  <span class="text-danger" v-if="errors.password">{{
+                    errors.password
+                  }}</span>
                 </div>
                 <div class="button-box">
                   <div class="text-center">
-                    Already Have an Account? <router-link :to="'/login/' + type">Sign In</router-link>
+                    Already Have an Account?
+                    <router-link :to="'/login/' + type">Sign In</router-link>
                   </div>
                   <div class="text-center pt-5">
-                    <button type="submit" @click.prevent="signup">Register</button>
+                    <button type="submit" @click.prevent="signup">
+                      Register
+                    </button>
                   </div>
                 </div>
               </form>
@@ -47,16 +66,14 @@
 </template>
 
 <script>
-
-
 export default {
   data() {
     return {
-      formData:{
-        name:'',
-        phone:'',
-        email:"",
-        password:""
+      formData: {
+        name: "",
+        phone: "",
+        email: "",
+        password: "",
       },
       errors: {
         name: false,
@@ -64,16 +81,19 @@ export default {
         email: false,
         password: false,
       },
-      type: this.$route.params.type
-    }
+      type: this.$route.params.type,
+    };
   },
-  computed:{
-    placeholder(){
-      return this.type==='wholesale'?"Company Name":"Your Name"
-    }
+  computed: {
+    placeholder() {
+      return this.type === "wholesale" ? "Company Name" : "Your Name";
+    },
   },
-  methods:{
-    signup() {
+  methods: {
+    isValidEmail(email) {
+      return /\S+@\S+\.\S+/.test(email);
+    },
+    validateForm() {
       // Reset errors
       this.errors = {
         name: false,
@@ -82,39 +102,59 @@ export default {
         password: false,
       };
 
-      // Perform validation
-      if (!this.formData.name) {
-        this.errors.name = true;
-      }
-      if (!this.formData.phone) {
-        this.errors.phone = true;
-      }
-      if (!this.formData.email || !this.isValidEmail(this.formData.email)) {
-        this.errors.email = true;
-      }
-      if (this.formData.password.length < 6) {
-        this.errors.password = true;
-      }
+      // Validation rules
+      const validationRules = {
+        name: {
+          condition: !this.formData.name,
+          message: 'Name field cannot be empty',
+        },
+        phone: {
+          condition: !this.formData.phone,
+          message: 'Phone field cannot be empty',
+        },
+        email: {
+          condition: !this.formData.email || !this.isValidEmail(this.formData.email),
+          message: 'Invalid email address',
+        },
+        password: {
+          condition: this.formData.password.length < 6,
+          message: 'Password must be at least 6 characters long',
+        },
+        // Add more fields as needed
+      };
 
-      // Check if there are any errors before proceeding
-      if (Object.values(this.errors).some((error) => error)) {
-        return; // Do not proceed if there are errors
-      }
-      const user={
-        name:"Rahat",
-        email:this.formData.email,
-        type:this.type
-      }
-      this.$store.dispatch('saveUserInfo',user)
-      this.$router.push("/");
+      // Check validation rules
+      Object.keys(validationRules).forEach((field) => {
+        if (validationRules[field].condition) {
+          this.errors[field] = validationRules[field].message;
+        }
+      });
+
+      // Return true if there are no errors
+      return !Object.values(this.errors).some((error) => error);
     },
+     async signup() {
+      if (this.validateForm()) {
+        try {
+          const response=await this.$axios.post("/register", {...this.formData,
+          'usertype':this.type
+          })
+          // console.log(response)
+          const user = {
+            email: response.data.data.email,
+            type: response.data.data.user_type,
+          };
+          await this.$store.dispatch("saveUserInfo", user);
+          await this.$router.push("/");
 
-    isValidEmail(email) {
-      return /\S+@\S+\.\S+/.test(email);
+        }catch (error){
+
+        }
+
+      }
+
     },
-  }
+  },
 
-}
-
-
+};
 </script>
