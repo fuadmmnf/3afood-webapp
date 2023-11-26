@@ -148,7 +148,16 @@ export default {
           await this.$router.push("/");
 
         }catch (error){
-
+          if (error.response && error.response.data && error.response.data.errors) {
+            const apiErrors = error.response.data.errors;
+            // Update errors based on API response
+            Object.keys(apiErrors).forEach((field) => {
+              if (this.errors.hasOwnProperty(field)) {
+                // Update error message dynamically from API response
+                this.errors[field] = apiErrors[field][0];
+              }
+            });
+          }
         }
 
       }

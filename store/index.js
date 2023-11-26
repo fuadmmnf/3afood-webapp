@@ -21,10 +21,13 @@ export const getters = {
     },
 
     isAuthenticated(state){
-        return !!state.user?.email;
+        return !!state.user?.name;
     },
     getUserType(state){
         return state.user?.type
+    },
+    getUsername(state){
+       return (state.user?.name.split(" ")[0]).slice(0,6)
     },
     getCart: state => {
         return state.cart
@@ -58,6 +61,7 @@ export const getters = {
 
         return total;
     },
+
 
     getNewProducts: state => {
         return state.products.filter(item => {

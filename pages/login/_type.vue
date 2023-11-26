@@ -6,27 +6,41 @@
       <div class="container">
         <div class="login-register-tab-list nav">
           <span class="active">
-             {{type}}
+            {{ type }}
           </span>
         </div>
         <div class="row">
           <div class="col-lg-7 col-12 ms-auto me-auto">
             <div class="login-form">
               <form>
+                <p class="text-center text-danger" v-if="errors.credentials">
+                  {{ errors.credentials }}
+                </p>
                 <div class="input-div">
-                  <input v-model="formData.email" placeholder="Email" type="email" />
-                  <span class="text-danger" v-if="errors.email">{{errors.email}}</span>
+                  <input
+                    v-model="formData.email"
+                    placeholder="Email"
+                    type="email"
+                  />
+                  <span class="text-danger" v-if="errors.email">{{
+                    errors.email
+                  }}</span>
                 </div>
                 <div class="input-div">
-                  <input v-model="formData.password" placeholder="Password" type="password" />
-                  <span class="text-danger" v-if="errors.password">{{errors.password}}</span>
+                  <input v-model="formData.password" placeholder="Password" />
+                  <span class="text-danger" v-if="errors.password">{{
+                    errors.password
+                  }}</span>
                 </div>
                 <div class="button-box">
-                  <div class=" text-center">
-                    <a href="#">Forgot Password? </a><router-link :to="'/register/' + type">Create Account</router-link>
+                  <div class="text-center">
+                    <a href="#">Forgot Password? </a
+                    ><router-link :to="'/register/' + type"
+                      >Create Account</router-link
+                    >
                   </div>
                   <div class="text-center pt-5">
-                    <button type="submit" @click.prevent="login" >Login</button>
+                    <button type="submit" @click.prevent="login">Login</button>
                   </div>
                 </div>
               </form>
@@ -38,53 +52,78 @@
   </div>
 </template>
 
-<script >
-
+<script>
 export default {
   data() {
     return {
-      formData:{
-        email:"",
-        password:""
+      formData: {
+        email: "",
+        password: "",
       },
       errors: {
-        email: '',
-        password: '',
+        credentials: false,
+        email: false,
+        password: false,
       },
-      type: this.$route.params.type
-    }
+      type: this.$route.params.type,
+    };
   },
-  methods:{
+  methods: {
     isValidEmail(email) {
       return /\S+@\S+\.\S+/.test(email);
     },
-    login(){
+    validateForm() {
       // Reset errors
       this.errors = {
-        email: '',
-        password: '',
+        credentials: false,
+        email: false,
+        password: false,
       };
 
-      // Perform validation
-      if (!this.formData.email || !this.isValidEmail(this.formData.email)) {
-        this.errors.email = "Invalid Email Address";
-      }
-      if (!this.formData.password.length) {
-        this.errors.password = "Password field cant be empty";
-      }
+      // Validation rules
+      const validationRules = {
+        email: {
+          condition:
+            !this.formData.email || !this.isValidEmail(this.formData.email),
+          message: "Invalid email address",
+        },
+        password: {
+          condition: !this.formData.password,
+          message: "Password Field cant be empty",
+        },
+        // Add more fields as needed
+      };
 
-      // Check if there are any errors before proceeding
-      if (Object.values(this.errors).some((error) => error)) {
-        return; // Do not proceed if there are errors
+      // Check validation rules
+      Object.keys(validationRules).forEach((field) => {
+        if (validationRules[field].condition) {
+          this.errors[field] = validationRules[field].message;
+        }
+      });
+
+      // Return true if there are no errors
+      return !Object.values(this.errors).some((error) => error);
+    },
+    async login() {
+      // Reset errors
+      if (this.validateForm()) {
+        try {
+          const response = await this.$axios.post("/login", this.formData);
+          // console.log(response)
+          const user = {
+            name: response.data.data.name,
+            token: response.data.data.token,
+            type: response.data.data.user_type,
+          };
+          await this.$store.dispatch("saveUserInfo", user);
+          await this.$router.push("/");
+        } catch (error) {
+          if (error.response && error.response.status === 401) {
+            this.errors.credentials=error.response.data.message
+          }
+        }
       }
-      const user={
-        name:"Rahat",
-        email:this.formData.email,
-        type:this.type
-      }
-      this.$store.dispatch('saveUserInfo',user)
-      this.$router.push("/");
-    }
-  }
-}
+    },
+  },
+};
 </script>
