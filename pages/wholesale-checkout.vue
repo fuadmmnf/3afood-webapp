@@ -82,7 +82,7 @@
                 </div>
               </div>
               <div class="place-order mt-25">
-                <button class="btn-hover">Place Order</button>
+                <button class="btn-hover"  @click.prevent="submitOrder">Place Order</button>
               </div>
             </div>
           </div>
@@ -172,12 +172,11 @@ export default {
       return Object.keys(this.errors).length === 0;
     },
     async submitOrder() {
-      this.formData.total_price=this.total
-      this.formData.user_id=3
+      this.formData.total_price=0
       this.formData.cart=this.products.map(item => ({
         product_id: item.id,
         quantity: item.cartQuantity,
-        price: item.price* item.cartQuantity,
+        price: 0,
       }));
       console.log("Form Data:",this.formData)
 
@@ -195,7 +194,6 @@ export default {
             additional_info: "",
           };
           this.$store.commit('CLEAR_CART')
-
         }catch (error){
 
         }

@@ -1,12 +1,11 @@
 <template>
   <div class="shop-page-wrapper">
     <Breadcrumb pageTitle="Login" />
-
     <div class="login-register-area pt-100 pb-100">
       <div class="container">
         <div class="login-register-tab-list nav">
           <span class="active">
-            {{ type }}
+            Login
           </span>
         </div>
         <div class="row">
@@ -18,25 +17,23 @@
                 </p>
                 <div class="input-div">
                   <input
-                    v-model="formData.email"
-                    placeholder="Email"
-                    type="email"
+                      v-model="formData.email"
+                      placeholder="Email"
+                      type="email"
                   />
                   <span class="text-danger" v-if="errors.email">{{
-                    errors.email
-                  }}</span>
+                      errors.email
+                    }}</span>
                 </div>
                 <div class="input-div">
-                  <input v-model="formData.password" placeholder="Password" />
+                  <input v-model="formData.password" type="password" placeholder="Password" />
                   <span class="text-danger" v-if="errors.password">{{
-                    errors.password
-                  }}</span>
+                      errors.password
+                    }}</span>
                 </div>
                 <div class="button-box">
                   <div class="text-center">
                     <a href="#">Forgot Password? </a
-                    ><router-link :to="'/register/' + type"
-                      >Create Account</router-link
                     >
                   </div>
                   <div class="text-center pt-5">
@@ -65,7 +62,6 @@ export default {
         email: false,
         password: false,
       },
-      type: this.$route.params.type,
     };
   },
   methods: {
@@ -84,7 +80,7 @@ export default {
       const validationRules = {
         email: {
           condition:
-            !this.formData.email || !this.isValidEmail(this.formData.email),
+              !this.formData.email || !this.isValidEmail(this.formData.email),
           message: "Invalid email address",
         },
         password: {
@@ -111,7 +107,7 @@ export default {
           const response = await this.$axios.post("/login", this.formData);
           // console.log(response)
           const user = {
-            name: response.data.data.name,
+            name: response.data.data.name.split(' ')[0].substring(0,5),
             token: response.data.data.token,
             type: response.data.data.user_type,
           };

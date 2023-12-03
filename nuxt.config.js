@@ -2,9 +2,10 @@ export default {
     generate: {
         fallback: true
     },
-
     target: 'server', // default is 'server'
-    
+
+
+
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
         title: '3A Food - VueJS eCommerce Template',
@@ -68,6 +69,10 @@ export default {
             },
         },
     },
+
+    // router: {
+    //     middleware: ['auth']
+    // },
 
     styleResources: {
         scss: [

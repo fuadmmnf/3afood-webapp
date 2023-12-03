@@ -14,14 +14,14 @@
             <div class="register-form">
               <form @submit.prevent="signup">
                 <div class="input-div">
-                  <input v-model="formData.name" :placeholder="placeholder" />
+                  <input v-model.trim="formData.name" :placeholder="placeholder" />
                   <span class="text-danger" v-if="errors.name">{{
                     errors.name
                   }}</span>
                 </div>
                 <div class="input-div">
                   <input
-                    v-model="formData.phone"
+                    v-model.trim="formData.phone"
                     placeholder="Phone"
                     type="number"
                   />
@@ -31,7 +31,7 @@
                 </div>
                 <div class="input-div">
                   <input
-                    v-model="formData.email"
+                    v-model.trim="formData.email"
                     placeholder="Email"
                     type="email"
                   />
@@ -40,7 +40,7 @@
                   }}</span>
                 </div>
                 <div class="input-div">
-                  <input v-model="formData.password" placeholder="Password" />
+                  <input v-model="formData.password" type="password" placeholder="Password" />
                   <span class="text-danger" v-if="errors.password">{{
                     errors.password
                   }}</span>
@@ -141,8 +141,9 @@ export default {
           })
           // console.log(response)
           const user = {
-            email: response.data.data.email,
+            name: response.data.data.name.split(' ')[0].substring(0,5),
             type: response.data.data.user_type,
+            token: response.data.data.token,
           };
           await this.$store.dispatch("saveUserInfo", user);
           await this.$router.push("/");

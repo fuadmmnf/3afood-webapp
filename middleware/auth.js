@@ -1,13 +1,15 @@
-import {store} from "core-js/internals/reflect-metadata";
-import * as $store from "@/store";
-
-export default async function ( { to, from, next }) {
-    const requiresAuth =$store.getters.isAuthenticated;
-    if (!requiresAuth) {
-        console.log("Not authenticated");
-        next("/login"); // Redirect to login page if not authenticated
-    } else {
-        next(); // Proceed to the requested route
+export default async function ( {store,route , redirect}) {
+    const requiresAuth =  store.getters.isAuthenticated
+    const allowedPaths = ['/', '/login', '/register/wholesale', '/register/retail','/about','/services','privacy-policy','/terms-conditions']; // Add allowed paths here
+    const isAllowedPath = allowedPaths.includes(route.path);
+    // console.log('Middleware running...');
+    // console.log('Required Auth:',requiresAuth)
+    // console.log('Allowed Path:',isAllowedPath)
+    if(requiresAuth || isAllowedPath){
+        redirect()
+    }
+    else
+    {
+        redirect('/register/wholesale'); // Redirect to login page if not authenticated
     }
 }
-

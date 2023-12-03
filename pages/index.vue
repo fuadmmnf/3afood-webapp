@@ -4,7 +4,7 @@
         <WelcomeMessage class="pt-50" />
         <Services></Services>
         <ServicePolicyTwo />
-        <ProductWrapper :isSectionTitle=true />
+<!--        <ProductWrapper :isSectionTitle=true />-->
         <Categories class="pt-70" :blogData="blogData" :title="'Retail'"></Categories>
         <Categories class="pt-70" :blogData="blogData" :title="'Wholesale'"></Categories>
         <OthersAppsLink class="pt-70"></OthersAppsLink>

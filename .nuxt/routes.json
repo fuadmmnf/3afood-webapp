@@ -91,6 +91,13 @@
     "_name": "_48956c06"
   },
   {
+    "name": "login",
+    "path": "/login",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\login.vue",
+    "chunkName": "pages/login",
+    "_name": "_3c80ad7c"
+  },
+  {
     "name": "login-register",
     "path": "/login-register",
     "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\login-register.vue",
@@ -110,6 +117,13 @@
     "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\online-order.vue",
     "chunkName": "pages/online-order",
     "_name": "_61bf2791"
+  },
+  {
+    "name": "order-history",
+    "path": "/order-history",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\order-history.vue",
+    "chunkName": "pages/order-history",
+    "_name": "_60c603b0"
   },
   {
     "name": "our-products",
@@ -243,13 +257,6 @@
     "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\blog\\\\_slug.vue",
     "chunkName": "pages/blog/_slug",
     "_name": "_4cf9870a"
-  },
-  {
-    "name": "login-type",
-    "path": "/login/:type?",
-    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\login\\\\_type.vue",
-    "chunkName": "pages/login/_type",
-    "_name": "_3f6de74d"
   },
   {
     "name": "product-id",

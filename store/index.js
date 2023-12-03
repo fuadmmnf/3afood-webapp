@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 import products from "../data/product.json";
 
+
 Vue.use(Vuex)
 
 export const state = () => ({
@@ -10,7 +11,11 @@ export const state = () => ({
     cart: [],
     wishlist: [],
     compare: [],
-    user:null,
+    user: {
+        name:null,
+        token:null,
+        type:null
+    },
 })
 
 
@@ -21,13 +26,17 @@ export const getters = {
     },
 
     isAuthenticated(state){
-        return !!state.user?.name;
+        return !!state.user;
     },
     getUserType(state){
         return state.user?.type
     },
     getUsername(state){
-       return (state.user?.name.split(" ")[0]).slice(0,6)
+       // return (state.user?.name.split(" ")[0]).slice(0,6)
+        return state.user?.name;
+    },
+    getAccessToken(state){
+        return state.user?.token;
     },
     getCart: state => {
         return state.cart
@@ -56,7 +65,7 @@ export const getters = {
     getTotal: state => {
         let total = 0;
         state.cart.forEach(item => {
-            total +=  item.price * item.cartQuantity
+            total +=  item.total
         })
 
         return total;
@@ -166,6 +175,12 @@ export const mutations = {
         }
     },
 
+    SHOW_MODAL(state, text) {
+          this._vm.$modal.show('responseModal',{
+              modalText:text
+          })
+    },
+
     REMOVE_FROM_COMPARE(state, product) {
         state.compare = state.compare.filter(item => {
             return product.id !== item.id
@@ -174,16 +189,35 @@ export const mutations = {
     SAVE_USER(state, user){
         state.user=user
     },
+    UPDATE_USER_NAME(state,name){
+        state.user.name=name;
+    },
     REMOVE_USER(state,user){
         state.user=null
     }
 }
 
+function parseCookies(cookieString) {
+    return cookieString
+        .split(';')
+        .map(cookie => cookie.split('='))
+        .reduce((accumulator, [key, value]) => {
+            accumulator[key.trim()] = decodeURIComponent(value);
+            return accumulator;
+        }, {});
+}
 
 // contains your actions
 export const actions = {
+
+    showModal({ commit }, { text }) {
+        commit('SHOW_MODAL',text);
+    },
     saveUserInfo({commit}, payload){
         commit('SAVE_USER', payload)
+    },
+    updateUserName({commit},payload){
+        commit('UPDATE_USER_NAME', payload)
     },
     logout({commit}){
         commit('REMOVE_USER')

@@ -19,10 +19,10 @@
                         </div>
                         <div class="footer-list">
                             <ul>
-                              <li><n-link to="/shop">Services</n-link></li>
-                              <li><n-link to="/shop">Products</n-link></li>
+                              <li><n-link to="/services">Services</n-link></li>
+                              <li><n-link to="/our-products">Products</n-link></li>
                               <li><n-link to="/about">About us</n-link></li>
-                              <li><n-link to="/shop">Conatct Us</n-link></li>
+                              <li><n-link to="/contact">Contact Us</n-link></li>
                             </ul>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                         </div>
                         <div class="footer-list">
                             <ul>
-                                <li><n-link to="/about">Terms & Conditions</n-link></li>
+                                <li><n-link to="/terms-conditions">Terms & Conditions</n-link></li>
                                 <li><n-link to="/privacy-policy">Privacy & Support Policy</n-link></li>
                                 <li><n-link to="/about">FAQs</n-link></li>
                             </ul>

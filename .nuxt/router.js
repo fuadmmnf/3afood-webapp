@@ -17,9 +17,11 @@ const _666660c7 = () => interopDefault(import('..\\pages\\home-fashion-seven.vue
 const _076ba8c8 = () => interopDefault(import('..\\pages\\home-fashion-six.vue' /* webpackChunkName: "pages/home-fashion-six" */))
 const _5e3695d8 = () => interopDefault(import('..\\pages\\home-fashion-three.vue' /* webpackChunkName: "pages/home-fashion-three" */))
 const _48956c06 = () => interopDefault(import('..\\pages\\home-fashion-two.vue' /* webpackChunkName: "pages/home-fashion-two" */))
+const _3c80ad7c = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
 const _7ac50204 = () => interopDefault(import('..\\pages\\login-register.vue' /* webpackChunkName: "pages/login-register" */))
 const _46798eee = () => interopDefault(import('..\\pages\\my-account.vue' /* webpackChunkName: "pages/my-account" */))
 const _61bf2791 = () => interopDefault(import('..\\pages\\online-order.vue' /* webpackChunkName: "pages/online-order" */))
+const _60c603b0 = () => interopDefault(import('..\\pages\\order-history.vue' /* webpackChunkName: "pages/order-history" */))
 const _dac1cafc = () => interopDefault(import('..\\pages\\our-products.vue' /* webpackChunkName: "pages/our-products" */))
 const _3da29494 = () => interopDefault(import('..\\pages\\privacy-policy.vue' /* webpackChunkName: "pages/privacy-policy" */))
 const _06c48a3b = () => interopDefault(import('..\\pages\\Services.vue' /* webpackChunkName: "pages/Services" */))
@@ -39,7 +41,6 @@ const _0ba8d16a = () => interopDefault(import('..\\pages\\blog\\blog-without-sid
 const _d93832c6 = () => interopDefault(import('..\\pages\\product\\product-affiliate.vue' /* webpackChunkName: "pages/product/product-affiliate" */))
 const _72d90a65 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 const _4cf9870a = () => interopDefault(import('..\\pages\\blog\\_slug.vue' /* webpackChunkName: "pages/blog/_slug" */))
-const _3f6de74d = () => interopDefault(import('..\\pages\\login\\_type.vue' /* webpackChunkName: "pages/login/_type" */))
 const _f94b7930 = () => interopDefault(import('..\\pages\\product\\_id.vue' /* webpackChunkName: "pages/product/_id" */))
 const _6de2f269 = () => interopDefault(import('..\\pages\\register\\_type.vue' /* webpackChunkName: "pages/register/_type" */))
 
@@ -107,6 +108,10 @@ export const routerOptions = {
     component: _48956c06,
     name: "home-fashion-two"
   }, {
+    path: "/login",
+    component: _3c80ad7c,
+    name: "login"
+  }, {
     path: "/login-register",
     component: _7ac50204,
     name: "login-register"
@@ -118,6 +123,10 @@ export const routerOptions = {
     path: "/online-order",
     component: _61bf2791,
     name: "online-order"
+  }, {
+    path: "/order-history",
+    component: _60c603b0,
+    name: "order-history"
   }, {
     path: "/our-products",
     component: _dac1cafc,
@@ -194,10 +203,6 @@ export const routerOptions = {
     path: "/blog/:slug",
     component: _4cf9870a,
     name: "blog-slug"
-  }, {
-    path: "/login/:type?",
-    component: _3f6de74d,
-    name: "login-type"
   }, {
     path: "/product/:id?",
     component: _f94b7930,

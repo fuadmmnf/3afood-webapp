@@ -51,22 +51,10 @@
                 <div class="same-style account-setting d-none d-lg-block">
                   <button
                     class="account-setting-active"
-                    @click="
-                      isOpenAccountSettings =
-                        isOpenAccountSettings === '' ? 'Login' : ''
-                    "
                   >
-                    <span>Login</span>
+                    <n-link to="/login">Login</n-link>
                   </button>
-                  <div
-                    class="account-dropdown"
-                    :class="{ active: isOpenAccountSettings === 'Login' }"
-                  >
-                    <ul>
-                      <li><n-link to="/login/retail">Retail</n-link></li>
-                      <li><n-link to="/login/wholesale">Wholesale</n-link></li>
-                    </ul>
-                  </div>
+
                 </div>
                 <div class="same-style account-setting d-none d-lg-block">
                   <button
@@ -109,7 +97,8 @@
                     :class="{ active: isOpenAccountSettings === 'Profile' }"
                   >
                     <ul>
-                      <li><n-link to="/profile">My Profile</n-link></li>
+                      <li><n-link to="/my-account">My Profile</n-link></li>
+                      <li><n-link to="/order-history">My Orders</n-link></li>
                       <li><a href="" @click.prevent="logout">Logout</a></li>
                     </ul>
                   </div>
@@ -180,8 +169,17 @@ export default {
       let scroll = window.scrollY;
       this.isSticky = scroll >= 200;
     },
-    logout() {
-      this.$store.dispatch("logout");
+    async logout() {
+      try{
+        const response=await this.$axios.post('/logout');
+        await this.$store.dispatch("logout");
+        this.$router.push('/login')
+      }catch (error){
+        console.log(error)
+
+      }
+
+
     },
   },
   mounted() {

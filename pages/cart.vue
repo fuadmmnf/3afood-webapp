@@ -39,7 +39,7 @@
                                                 <button @click="incrementProduct(product)" class="inc qtybutton">+</button>
                                             </div>
                                         </td>
-                                        <td class="product-subtotal">${{ product.total.toFixed(2) }}</td>
+                                        <td class="product-subtotal">${{ product.total?.toFixed(2) }}</td>
                                         <td class="product-remove">
                                             <button @click="removeProduct(product)"><i class="fa fa-times"></i></button>
                                         </td>
@@ -65,8 +65,8 @@
                                     <div class="title-wrap">
                                         <h4 class="cart-bottom-title section-bg-gary-cart">Cart Total</h4>
                                     </div>
-                                    <h5>Total products <span>${{ total.toFixed(2) }}</span></h5>
-                                    <h4 class="grand-total-title">Grand Total  <span>${{ total.toFixed(2) }}</span></h4>
+                                    <h5>Total products <span>{{ $store.getters.cartItemCount }}</span></h5>
+                                    <h4 class="grand-total-title">Grand Total  <span>${{ total?.toFixed(2) }}</span></h4>
                                     <n-link to="/checkout">Proceed to Checkout</n-link>
                                 </div>
                             </div>

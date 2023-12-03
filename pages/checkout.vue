@@ -185,7 +185,6 @@
         },
          async submitOrder() {
           this.formData.total_price=this.total
-          this.formData.user_id=3
           this.formData.cart=this.products.map(item => ({
             product_id: item.id,
             quantity: item.cartQuantity,
@@ -207,7 +206,6 @@
                 additional_info: "",
               };
               this.$store.commit('CLEAR_CART')
-
             }catch (error){
 
             }

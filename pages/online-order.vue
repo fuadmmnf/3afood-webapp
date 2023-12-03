@@ -9,7 +9,7 @@
             <p>To place an online order, please download the product list first and fill in the necessary items in the spreadsheet. Once you finish send the Excel order file using the form below.</p>
           </div>
           <div class="text-center py-3">
-            <button class="empty-cart__button btn-hover">Download</button>
+            <button class="empty-cart__button btn-hover">Download Product List</button>
           </div>
         </div>
       </div>
@@ -214,7 +214,14 @@ export default {
       };
     },
   },
+
+  head() {
+    return {
+      title: "Ship Supply Order"
+    }
+  },
 };
+
 </script>
 
 <style>

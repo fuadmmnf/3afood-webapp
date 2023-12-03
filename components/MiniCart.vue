@@ -38,7 +38,8 @@
         @click="$emit('minicartClose')"
       >
         <n-link :to="userType==='retail'?'/cart':'/wholesale-cart'" class="default-btn">View Cart</n-link>
-        <n-link to="/checkout" class="default-btn">{{userType==='retail'?'Checkout':'Ask Price'}}</n-link>
+        <n-link to="/checkout" v-if="userType==='retail'" class="default-btn">Checkout</n-link>
+        <n-link to="/wholesale-checkout" v-else class="default-btn">Ask Price</n-link>
       </div>
     </div>
     <div class="shopping-cart-content text-center" v-else>
