@@ -82,7 +82,7 @@
                 </div>
               </div>
               <div class="place-order mt-25">
-                <button class="btn-hover"  @click.prevent="submitOrder">Place Order</button>
+                <button class="btn-hover"  @click.prevent="submitOrder">Ask Price</button>
               </div>
             </div>
           </div>

@@ -59,9 +59,13 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="footer-widget mb-30 ml-70">
                         <div class="footer-title">
-                            <h3>SUBSCRIBE</h3>
+                          <div class="developer-logo">
+                            <a href="https://www.innovabd.tech/" target="_blank">
+                              <img src="/img/logo/innova-logo.png" width="50%" alt="logo">
+                            </a>
+                          </div>
                         </div>
-                        <div class="subscribe-style">
+                        <div class="subscribe-style mt-10">
                             <p>Developed by Innova Tech Bangladesh</p>
                         </div>
                     </div>

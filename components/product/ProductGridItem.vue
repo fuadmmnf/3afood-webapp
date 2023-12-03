@@ -23,12 +23,6 @@
           product.title
         }}</n-link>
       </h3>
-      <div class="product-rating">
-        <i class="fa fa-star-o yellow"></i>
-        <i class="fa fa-star-o yellow"></i>
-        <i class="fa fa-star-o yellow"></i>
-      </div>
-
       <div class="product-price" v-if="userType==='retail'">
         <span>${{ product.price }}</span>
       </div>

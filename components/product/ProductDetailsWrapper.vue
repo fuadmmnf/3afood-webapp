@@ -14,19 +14,6 @@
                         <h2>{{ product.title }}</h2>
                         <div class="product-details-price">
                             <span v-if="userType==='retail'">${{ product.price}}</span>
-
-                        </div>
-                        <div class="pro-details-rating-wrap">
-                            <div class="pro-details-rating">
-                                <i class="fa fa-star-o yellow"></i>
-                                <i class="fa fa-star-o yellow"></i>
-                                <i class="fa fa-star-o yellow"></i>
-                                <i class="fa fa-star-o yellow"></i>
-                                <i class="fa fa-star-o yellow"></i>
-                            </div>
-
-
-                            <span><a href="#">5 Reviews</a></span>
                         </div>
                         <p>{{ product.desc }}</p>
 
@@ -41,37 +28,8 @@
                             </div>
                         </div>
                         <div class="pro-details-meta">
-                            <span class="label">Food Category:{{product.category?.category_name}}</span>
+                            <span class="label">Food Category: {{product.category?.category_name}}</span>
                             <ul>
-                            </ul>
-                        </div>
-                        <div class="pro-details-social">
-                            <ul>
-                                <li>
-                                    <a href="https://www.facebook.com/" target="_blank">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://dribbble.com/" target="_blank">
-                                        <i class="fa fa-dribbble"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.pinterest.com/" target="_blank">
-                                        <i class="fa fa-pinterest-p"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://twitter.com/" target="_blank">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linkedin.com/" target="_blank">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </div>

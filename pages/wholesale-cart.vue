@@ -51,7 +51,7 @@
                     <button @click="clearCart()">Clear Shopping Cart</button>
                   </div>
                   <div class="cart-clear">
-                    <n-link to="/wholesale-checkout">Proceed to Order</n-link>
+                    <n-link to="/wholesale-checkout">Ask Price</n-link>
                   </div>
                 </div>
               </div>
