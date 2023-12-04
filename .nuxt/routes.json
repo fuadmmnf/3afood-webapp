@@ -42,6 +42,13 @@
     "_name": "_12109bf3"
   },
   {
+    "name": "faqs",
+    "path": "/faqs",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\faqs.vue",
+    "chunkName": "pages/faqs",
+    "_name": "_4f463e4c"
+  },
+  {
     "name": "home-cosmetics",
     "path": "/home-cosmetics",
     "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\home-cosmetics.vue",

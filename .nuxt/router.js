@@ -10,6 +10,7 @@ const _bb076b46 = () => interopDefault(import('..\\pages\\cart.vue' /* webpackCh
 const _3da6bf03 = () => interopDefault(import('..\\pages\\checkout.vue' /* webpackChunkName: "pages/checkout" */))
 const _11e66b90 = () => interopDefault(import('..\\pages\\compare.vue' /* webpackChunkName: "pages/compare" */))
 const _12109bf3 = () => interopDefault(import('..\\pages\\contact.vue' /* webpackChunkName: "pages/contact" */))
+const _4f463e4c = () => interopDefault(import('..\\pages\\faqs.vue' /* webpackChunkName: "pages/faqs" */))
 const _54fa0bda = () => interopDefault(import('..\\pages\\home-cosmetics.vue' /* webpackChunkName: "pages/home-cosmetics" */))
 const _4608a768 = () => interopDefault(import('..\\pages\\home-fashion-five.vue' /* webpackChunkName: "pages/home-fashion-five" */))
 const _fb1f3848 = () => interopDefault(import('..\\pages\\home-fashion-four.vue' /* webpackChunkName: "pages/home-fashion-four" */))
@@ -79,6 +80,10 @@ export const routerOptions = {
     path: "/contact",
     component: _12109bf3,
     name: "contact"
+  }, {
+    path: "/faqs",
+    component: _4f463e4c,
+    name: "faqs"
   }, {
     path: "/home-cosmetics",
     component: _54fa0bda,
