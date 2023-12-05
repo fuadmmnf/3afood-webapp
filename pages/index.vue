@@ -9,6 +9,7 @@
         <Categories class="pt-70" :blogData="blogData" :title="'Wholesale'"></Categories>
         <OthersAppsLink class="pt-70"></OthersAppsLink>
 
+
            <!--<BlogWrapper />-->
     </div>
 </template>

@@ -9,6 +9,7 @@ Vue.use(Vuex)
 export const state = () => ({
     products: products,
     cart: [],
+    spinner:false,
     wishlist: [],
     compare: [],
     user: {
@@ -32,7 +33,6 @@ export const getters = {
         return state.user?.type
     },
     getUsername(state){
-       // return (state.user?.name.split(" ")[0]).slice(0,6)
         return state.user?.name;
     },
     getAccessToken(state){
@@ -70,8 +70,6 @@ export const getters = {
 
         return total;
     },
-
-
     getNewProducts: state => {
         return state.products.filter(item => {
             return item.new
@@ -87,7 +85,6 @@ export const getters = {
             return item.discount
         })
     },
-
     categoryList: state => {
         return ["all categories",...new Set(state.products.map((list) => list.category).flat())]
     },
@@ -100,6 +97,9 @@ export const getters = {
     colorList: state => {
         return ["all colors",...new Set(state.products.map((list) => list.variation?.color).flat())].filter(Boolean)
     },
+    showSpinner:state =>{
+        return state.spinner
+    }
 }
 
 
@@ -112,7 +112,7 @@ export const mutations = {
     UPDATE_CART(state, payload) {
         const item = state.cart.find(el => payload.id === el.id)
         if (item) {
-            item.cartQuantity = item.cartQuantity + payload.cartQuantity
+            item.cartQuantity = item.cartQuantity + payload.cartQuantity;
             if(state.user.type==='retail'){
                 item.total = item.cartQuantity * item.price
             }
@@ -194,6 +194,12 @@ export const mutations = {
     },
     REMOVE_USER(state,user){
         state.user=null
+    },
+    SHOW_SPINNER(state){
+        state.spinner=true;
+    },
+    HIDE_SPINNER(state){
+        state.spinner=false;
     }
 }
 
@@ -252,5 +258,11 @@ export const actions = {
     removeFromCompare({commit}, product) {
         commit('REMOVE_FROM_COMPARE', product)
     },
+    showSpinner({commit},payload){
+        commit('SHOW_SPINNER',payload)
+    },
+    hideSpinner({commit},payload){
+        commit('HIDE_SPINNER',payload)
+    }
 }
 

@@ -55,7 +55,8 @@
         },
         methods: {
             addToCart(product) {
-                const prod = {...product, cartQuantity: this.singleQuantity}
+
+                const prod = {...product, cartQuantity:this.userType==='retail'?(this.singleQuantity):parseFloat(this.singleQuantity)}
                 // for notification
                 if (this.$store.state.cart.find(el => product.id === el.id)) {
                     this.$notify({ title: 'Already added to cart update with one' })

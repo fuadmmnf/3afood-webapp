@@ -109,7 +109,7 @@ export default {
       }
     },
     updateProductQuantity(product, event) {
-      const value = parseInt(event.target.value, 10);
+      const value = this.$store.getters.getUserType==='retail'? parseInt(event.target.value, 5):parseFloat(event.target.value);
       if (!isNaN(value) && value >= 1) {
         this.$store.dispatch('manualSetCartQuantity', {...product, cartQuantity: value });
       }

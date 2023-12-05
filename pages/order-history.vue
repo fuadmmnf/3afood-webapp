@@ -31,7 +31,8 @@
                   </td>
                   <td>
                     <div v-for="(product, productIndex) in order.products" :key="productIndex">
-                      {{ product.title }} X {{ product.quantity }} = ${{ product.price }}
+
+                      {{ product.title }} X {{$store.getters.getUserType==='retail'?parseInt(product.quantity):product.quantity }} {{$store.getters.getUserType==='retail'?`= $${product.price}`:''}}
                     </div>
                   </td>
                   <td>${{ order.total_price }}</td>

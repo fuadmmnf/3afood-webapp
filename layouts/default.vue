@@ -1,6 +1,7 @@
 <template>
     <div>
       <HeaderWithTopbar containerClass="container" />
+      <Spinner></Spinner>
         <Nuxt />
         <client-only>
             <notifications position="bottom left" classes='vue-notification success' />
