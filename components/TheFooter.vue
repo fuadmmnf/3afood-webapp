@@ -66,7 +66,9 @@
                           </div>
                         </div>
                         <div class="subscribe-style mt-10">
-                            <p>Developed by Innova Tech Bangladesh</p>
+                          <a href="https://www.innovabd.tech/" target="_blank">
+                            <p>Innova Tech Bangladesh</p>
+                          </a>
                         </div>
                     </div>
                 </div>

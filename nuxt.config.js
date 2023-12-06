@@ -8,7 +8,7 @@ export default {
 
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
-        title: '3A Food - VueJS eCommerce Template',
+        title: '3A Food',
         titleTemplate: '3A Food | %s',
         meta: [
             { charset: 'utf-8' },

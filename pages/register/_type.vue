@@ -48,7 +48,7 @@
                 <div class="button-box">
                   <div class="text-center">
                     Already Have an Account?
-                    <router-link :to="'/login/' + type">Sign In</router-link>
+                    <router-link to="/login">Sign In</router-link>
                   </div>
                   <div class="text-center pt-5">
                     <button type="submit" @click.prevent="signup">
@@ -164,6 +164,11 @@ export default {
       }
 
     },
+  },
+  head() {
+    return {
+      title: "Register"
+    }
   },
 
 };

@@ -80,7 +80,7 @@ export default {
   },
   head() {
     return {
-      title: "Shop grid no sidebar"
+      title: "Our Products"
     }
   }
 };

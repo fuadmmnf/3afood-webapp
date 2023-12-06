@@ -4,7 +4,6 @@
       <n-link :to="`/product/${product.id}`">
         <img class="default-img" :src="product.img" :alt="product.title" />
       </n-link>
-
       <div
         class="product-action"
       >

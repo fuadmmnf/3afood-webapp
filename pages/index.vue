@@ -8,9 +8,6 @@
         <Categories class="pt-70" :blogData="blogData" :title="'Retail'"></Categories>
         <Categories class="pt-70" :blogData="blogData" :title="'Wholesale'"></Categories>
         <OthersAppsLink class="pt-70"></OthersAppsLink>
-
-
-           <!--<BlogWrapper />-->
     </div>
 </template>
 
@@ -34,9 +31,9 @@ import ServicePolicyTwo from "@/components/policy/ServicePolicyTwo.vue";
          blogData
        }
       },
-        head() {
+      head() {
             return {
-                title: 'Home Fashion One'
+                title: 'Home'
             }
         },
     };

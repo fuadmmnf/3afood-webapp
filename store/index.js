@@ -194,6 +194,7 @@ export const mutations = {
     },
     REMOVE_USER(state,user){
         state.user=null
+        state.cart=[]
     },
     SHOW_SPINNER(state){
         state.spinner=true;
