@@ -1,11 +1,11 @@
 <template>
   <div class="shop-page-wrapper">
-    <Breadcrumb pageTitle="Login" />
+    <Breadcrumb pageTitle="Forgot Password" />
     <div class="login-register-area pt-100 pb-100">
       <div class="container">
         <div class="login-register-tab-list nav">
           <span class="active">
-            Login
+            Reset Password
           </span>
         </div>
         <div class="row">
@@ -14,6 +14,9 @@
               <form>
                 <p class="text-center text-danger" v-if="errors.credentials">
                   {{ errors.credentials }}
+                </p>
+                <p class="text-center text-success-emphasis" v-if="success">
+                  {{ success }}
                 </p>
                 <div class="input-div">
                   <input
@@ -25,20 +28,9 @@
                       errors.email
                     }}</span>
                 </div>
-                <div class="input-div">
-                  <input v-model="formData.password" type="password" placeholder="Password" />
-                  <span class="text-danger" v-if="errors.password">{{
-                      errors.password
-                    }}</span>
-                </div>
                 <div class="button-box">
-                  <div class="text-center">
-                    <n-link to="/forgot-password">
-                      Forgot Password?
-                    </n-link>
-                  </div>
-                  <div class="text-center pt-5">
-                    <button type="submit" @click.prevent="login">Login</button>
+                  <div class="text-center pt-1">
+                    <button type="submit" @click.prevent="forgot_password">Reset</button>
                   </div>
                 </div>
               </form>
@@ -56,13 +48,11 @@ export default {
     return {
       formData: {
         email: "",
-        password: "",
       },
       errors: {
         credentials: false,
-        email: false,
-        password: false,
       },
+      success:false
     };
   },
   methods: {
@@ -74,7 +64,6 @@ export default {
       this.errors = {
         credentials: false,
         email: false,
-        password: false,
       };
 
       // Validation rules
@@ -84,11 +73,6 @@ export default {
               !this.formData.email || !this.isValidEmail(this.formData.email),
           message: "Invalid email address",
         },
-        password: {
-          condition: !this.formData.password,
-          message: "Password Field cant be empty",
-        },
-        // Add more fields as needed
       };
 
       // Check validation rules
@@ -97,34 +81,26 @@ export default {
           this.errors[field] = validationRules[field].message;
         }
       });
-
       // Return true if there are no errors
       return !Object.values(this.errors).some((error) => error);
     },
-    async login() {
+    async forgot_password() {
       // Reset errors
+      this.success=false;
       if (this.validateForm()) {
         try {
-          const response = await this.$axios.post("/login", this.formData);
-          // console.log(response)
-          const user = {
-            name: response.data.data.name.split(' ')[0].substring(0,5),
-            token: response.data.data.token,
-            type: response.data.data.user_type,
-          };
-          await this.$store.dispatch("saveUserInfo", user);
-          await this.$router.push("/");
+          const response = await this.$axios.post("/reset-password", this.formData);
+          console.log(response)
+          this.success= response.data.message
         } catch (error) {
-          if (error.response && error.response.status === 401) {
-            this.errors.credentials=error.response.data.message
-          }
+          this.errors.credentials=error.response.data.message
         }
       }
     },
   },
   head() {
     return {
-      title: "Login"
+      title: "Forgot-Password"
     }
   },
 };

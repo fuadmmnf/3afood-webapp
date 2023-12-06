@@ -1,6 +1,6 @@
 export default async function ( {store,route , redirect}) {
     const requiresAuth =  store.getters.isAuthenticated
-    const allowedPaths = ['/', '/login', '/register/wholesale', '/register/retail','/about','/services','privacy-policy','/terms-conditions']; // Add allowed paths here
+    const allowedPaths = ['/', '/login','/forgot-password' ,'/register/wholesale', '/register/retail','/about','/services','privacy-policy','/terms-conditions','/online-order']; // Add allowed paths here
     const isAllowedPath = allowedPaths.includes(route.path);
     // console.log('Middleware running...');
     // console.log('Required Auth:',requiresAuth)
@@ -10,6 +10,6 @@ export default async function ( {store,route , redirect}) {
     }
     else
     {
-        redirect('/register/wholesale'); // Redirect to login page if not authenticated
+        redirect('/login'); // Redirect to forgot_password page if not authenticated
     }
 }

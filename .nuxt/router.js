@@ -11,6 +11,7 @@ const _3da6bf03 = () => interopDefault(import('..\\pages\\checkout.vue' /* webpa
 const _11e66b90 = () => interopDefault(import('..\\pages\\compare.vue' /* webpackChunkName: "pages/compare" */))
 const _12109bf3 = () => interopDefault(import('..\\pages\\contact.vue' /* webpackChunkName: "pages/contact" */))
 const _4f463e4c = () => interopDefault(import('..\\pages\\faqs.vue' /* webpackChunkName: "pages/faqs" */))
+const _22b1c458 = () => interopDefault(import('..\\pages\\forgot-password.vue' /* webpackChunkName: "pages/forgot-password" */))
 const _54fa0bda = () => interopDefault(import('..\\pages\\home-cosmetics.vue' /* webpackChunkName: "pages/home-cosmetics" */))
 const _4608a768 = () => interopDefault(import('..\\pages\\home-fashion-five.vue' /* webpackChunkName: "pages/home-fashion-five" */))
 const _fb1f3848 = () => interopDefault(import('..\\pages\\home-fashion-four.vue' /* webpackChunkName: "pages/home-fashion-four" */))
@@ -84,6 +85,10 @@ export const routerOptions = {
     path: "/faqs",
     component: _4f463e4c,
     name: "faqs"
+  }, {
+    path: "/forgot-password",
+    component: _22b1c458,
+    name: "forgot-password"
   }, {
     path: "/home-cosmetics",
     component: _54fa0bda,

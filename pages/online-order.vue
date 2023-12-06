@@ -42,8 +42,8 @@
                 <div class="col-lg-6 col-md-6">
                   <div class="billing-info mb-20">
                     <label>ABN</label>
-                    <input type="text" v-model="formData.abn">
-                    <span class="text-danger" v-if="errors.abn">{{ errors.abn }}</span>
+                    <input type="text" v-model="formData.avn">
+                    <span class="text-danger" v-if="errors.avn">{{ errors.avn }}</span>
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -63,7 +63,7 @@
               </div>
               <div class="col-lg-12">
                 <div class="billing-info mb-20">
-                  <label>Address</label>
+                  <label>File</label>
                   <input class="billing-address" type="file" @change="handleFileChange">
                   <span class="text-danger" v-if="errors.file">{{ errors.file }}</span>
                 </div>
@@ -72,7 +72,7 @@
                 <h4>Additional information</h4>
                 <div class="additional-info">
                   <label>Order notes</label>
-                  <textarea placeholder="Notes about your order, e.g. special notes for delivery." name="message" v-model="formData.additional_information"></textarea>
+                  <textarea placeholder="Notes about your order, e.g. special notes for delivery." name="message" v-model="formData.additional_info"></textarea>
                 </div>
               </div>
               <div class="text-center py-3">
@@ -97,17 +97,17 @@ export default {
         name: '',
         email: '',
         business_name: '',
-        abn: '',
+        avn: '',
         contact_info: '',
         website_name: '',
         file: null,
-        additional_information: '',
+        additional_info: '',
       },
       errors: {
         name: '',
         email: '',
         business_name: '',
-        abn: '',
+        avn: '',
         contact_info: '',
         website_name: '',
         file: '',
@@ -123,7 +123,7 @@ export default {
         name: '',
         email: '',
         business_name: '',
-        abn: '',
+        avn: '',
         contact_info: '',
         website_name: '',
         file: '',
@@ -207,7 +207,7 @@ export default {
         name: '',
         email: '',
         business_name: '',
-        abn: '',
+        avn: '',
         contact_info: '',
         website_name: '',
         file: '',

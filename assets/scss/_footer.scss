@@ -6,6 +6,7 @@
         margin-top: 10px;
         @media #{$xs-layout, $md-layout}{
             margin-top: 0px;
+            width: 50%!important;
         }
         @media #{$lg-layout}{
             margin-top: 28px;

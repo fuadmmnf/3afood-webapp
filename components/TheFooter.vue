@@ -6,7 +6,7 @@
                     <div class="copyright mb-30">
                         <div class="footer-logo">
                             <n-link to="/">
-                                <img src="/img/logo/3A-foods-logo@0-5x.png" width="70%" alt="logo">
+                                <img src="/img/logo/3A-foods-logo@0-5x.png" width="50%" alt="logo">
                             </n-link>
                         </div>
                         <p>© 2022 <a href="#" target="_blank">3A Food</a>.<br> All Rights Reserved</p>

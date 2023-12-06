@@ -31,7 +31,7 @@
                 <n-link to="/">
                   <img
                     src="/img/logo/3A-foods-logo@0-5x.png"
-                    alt="flone logo"
+                    alt="3a Foods logo"
                   />
                 </n-link>
               </div>
@@ -44,22 +44,19 @@
               </div>
             </div>
             <div class="col-lg-2 col-md-6 col-8">
-              <div
-                class="header-right-wrap"
-                v-if="!$store.getters.isAuthenticated"
-              >
-                <div class="same-style account-setting d-none d-lg-block">
+              <div class="header-right-wrap align-items-center justify-content-end">
+                <div v-if="!$store.getters.isAuthenticated" class="same-style account-setting d-lg-block">
                   <button
-                    class="account-setting-active"
+                      class="account-setting-active"
                   >
                     <n-link to="/login">Login</n-link>
                   </button>
 
                 </div>
-                <div class="same-style account-setting d-none d-lg-block">
+                <div v-if="!$store.getters.isAuthenticated" class="same-style account-setting  d-lg-block">
                   <button
-                    class="account-setting-active"
-                    @click="
+                      class="account-setting-active"
+                      @click="
                       isOpenAccountSettings =
                         isOpenAccountSettings === 'Register' ? '' : 'Register'
                     "
@@ -67,8 +64,8 @@
                     <span>Register</span>
                   </button>
                   <div
-                    class="account-dropdown"
-                    :class="{ active: isOpenAccountSettings === 'Register' }"
+                      class="account-dropdown"
+                      :class="{ active: isOpenAccountSettings === 'Register' }"
                   >
                     <ul>
                       <li><n-link to="/register/retail">Retail</n-link></li>
@@ -79,9 +76,7 @@
                     </ul>
                   </div>
                 </div>
-              </div>
-              <div v-else class="header-right-wrap align-items-center">
-                <div class="same-style account-setting d-none d-lg-block">
+                <div  v-if="$store.getters.isAuthenticated" class="same-style account-setting d-lg-block">
                   <button
                     class="account-setting-active"
                     @click="
@@ -103,7 +98,7 @@
                     </ul>
                   </div>
                 </div>
-                <div class="same-style cart-wrap">
+                <div  v-if="$store.getters.isAuthenticated" class="same-style cart-wrap">
                   <button class="icon-cart" @click="openCart = !openCart">
                     <i class="pe-7s-shopbag"></i>
                     <span class="count-style">{{ cartItemCount }}</span>
@@ -173,7 +168,7 @@ export default {
       try{
         const response=await this.$axios.post('/logout');
         await this.$store.dispatch("logout");
-        this.$router.push('/login')
+        this.$router.push('/forgot_password')
       }catch (error){
         console.log(error)
 
