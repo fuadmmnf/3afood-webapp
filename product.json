@@ -1,0 +1,104 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Organic Apples",
+      "desc": "Fresh organic apples picked from local orchards.",
+      "category": "Fruits",
+      "imgUrl": "https://example.com/apples.jpg",
+      "price": 2.99,
+      "type": "retail",
+      "unit": "Per Pound"
+    },
+    {
+      "id": 2,
+      "title": "Grass-fed Beef",
+      "desc": "Premium grass-fed beef for a delicious meal.",
+      "category": "Meat",
+      "imgUrl": "https://example.com/beef.jpg",
+      "price": 8.99,
+      "type": "retail",
+      "unit": "Per Pound"
+    },
+    {
+      "id": 3,
+      "title": "Fresh Salmon",
+      "desc": "Wild-caught fresh salmon for a healthy protein source.",
+      "category": "Seafood",
+      "imgUrl": "https://example.com/salmon.jpg",
+      "price": 12.99,
+      "type": "retail",
+      "unit": "Per Pound"
+    },
+    {
+      "id": 4,
+      "title": "Organic Spinach",
+      "desc": "Nutrient-rich organic spinach for salads and smoothies.",
+      "category": "Vegetables",
+      "imgUrl": "https://example.com/spinach.jpg",
+      "price": 3.49,
+      "type": "retail",
+      "unit": "Per Bunch"
+    },
+    {
+      "id": 5,
+      "title": "Artisanal Cheese",
+      "desc": "Handcrafted artisanal cheese for a gourmet experience.",
+      "category": "Dairy",
+      "imgUrl": "https://example.com/cheese.jpg",
+      "price": 6.99,
+      "type": "retail",
+      "unit": "Per Pound"
+    },
+    {
+      "id": 6,
+      "title": "Organic Tomatoes",
+      "desc": "Juicy organic tomatoes for fresh salads and cooking.",
+      "category": "Vegetables",
+      "imgUrl": "https://example.com/tomatoes.jpg",
+      "price": 2.79,
+      "type": "retail",
+      "unit": "Per Pound"
+    },
+    {
+      "id": 7,
+      "title": "Whole Grain Pasta",
+      "desc": "Wholesome whole grain pasta for a nutritious meal.",
+      "category": "Pasta",
+      "imgUrl": "https://example.com/pasta.jpg",
+      "price": 1.99,
+      "type": "retail",
+      "unit": "Per Pack"
+    },
+    {
+      "id": 8,
+      "title": "Organic Blueberries",
+      "desc": "Sweet organic blueberries for snacks and desserts.",
+      "category": "Fruits",
+      "imgUrl": "https://example.com/blueberries.jpg",
+      "price": 4.99,
+      "type": "retail",
+      "unit": "Per Pint"
+    },
+    {
+      "id": 9,
+      "title": "Free-range Eggs",
+      "desc": "Farm-fresh free-range eggs for a healthy breakfast.",
+      "category": "Dairy",
+      "imgUrl": "https://example.com/eggs.jpg",
+      "price": 2.49,
+      "type": "retail",
+      "unit": "Per Dozen"
+    },
+    {
+      "id": 10,
+      "title": "Organic Quinoa",
+      "desc": "High-quality organic quinoa for a complete protein source.",
+      "category": "Grains",
+      "imgUrl": "https://example.com/quinoa.jpg",
+      "price": 5.99,
+      "type": "retail",
+      "unit": "Per Pound"
+    }
+  ]
+}

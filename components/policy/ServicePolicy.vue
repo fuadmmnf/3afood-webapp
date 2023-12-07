@@ -1,6 +1,7 @@
 <template>
     <div class="support-area pt-100 pb-90">
         <div class="container">
+          <SectionTitleWithSubTitle classes="section-title-2 mb-60" title="Why Us?" subTitle="There are some new arrival collections on this winter" />
             <div class="row mtn-30">
                 <div class="col-lg-3 col-sm-6 mt-30" v-for="(policy, index) in policies" :key="index">
                     <div class="support-wrap support-1">

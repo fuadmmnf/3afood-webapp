@@ -20,6 +20,12 @@
   "Breadcrumb": {
     "description": "Auto imported from components/Breadcrumb.vue"
   },
+  "Categories": {
+    "description": "Auto imported from components/Categories.vue"
+  },
+  "CategoriesItem": {
+    "description": "Auto imported from components/CategoriesItem.vue"
+  },
   "ContactInfo": {
     "description": "Auto imported from components/ContactInfo.vue"
   },
@@ -50,6 +56,9 @@
   "Login": {
     "description": "Auto imported from components/Login.vue"
   },
+  "MessageModal": {
+    "description": "Auto imported from components/MessageModal.vue"
+  },
   "MiniCart": {
     "description": "Auto imported from components/MiniCart.vue"
   },
@@ -65,6 +74,9 @@
   "OffCanvasMobileMenu": {
     "description": "Auto imported from components/OffCanvasMobileMenu.vue"
   },
+  "OthersAppsLink": {
+    "description": "Auto imported from components/OthersAppsLink.vue"
+  },
   "ProductDetailsDescriptionReview": {
     "description": "Auto imported from components/ProductDetailsDescriptionReview.vue"
   },
@@ -74,14 +86,23 @@
   "Register": {
     "description": "Auto imported from components/Register.vue"
   },
+  "ResponseModal": {
+    "description": "Auto imported from components/ResponseModal.vue"
+  },
   "ResponsiveMobileMenu": {
     "description": "Auto imported from components/ResponsiveMobileMenu.vue"
   },
   "SectionTitleWithSubTitle": {
     "description": "Auto imported from components/SectionTitleWithSubTitle.vue"
   },
+  "Services": {
+    "description": "Auto imported from components/Services.vue"
+  },
   "ShopSidebar": {
     "description": "Auto imported from components/ShopSidebar.vue"
+  },
+  "Spinner": {
+    "description": "Auto imported from components/Spinner.vue"
   },
   "TeamMembers": {
     "description": "Auto imported from components/TeamMembers.vue"
@@ -97,18 +118,6 @@
   },
   "WelcomeMessage": {
     "description": "Auto imported from components/WelcomeMessage.vue"
-  },
-  "PolicyServicePolicy": {
-    "description": "Auto imported from components/policy/ServicePolicy.vue"
-  },
-  "PolicyServicePolicyFour": {
-    "description": "Auto imported from components/policy/ServicePolicyFour.vue"
-  },
-  "PolicyServicePolicyThree": {
-    "description": "Auto imported from components/policy/ServicePolicyThree.vue"
-  },
-  "PolicyServicePolicyTwo": {
-    "description": "Auto imported from components/policy/ServicePolicyTwo.vue"
   },
   "BannerItem": {
     "description": "Auto imported from components/banner/BannerItem.vue"
@@ -181,5 +190,17 @@
   },
   "HeroSliderTwo": {
     "description": "Auto imported from components/hero/HeroSliderTwo.vue"
+  },
+  "PolicyServicePolicy": {
+    "description": "Auto imported from components/policy/ServicePolicy.vue"
+  },
+  "PolicyServicePolicyFour": {
+    "description": "Auto imported from components/policy/ServicePolicyFour.vue"
+  },
+  "PolicyServicePolicyThree": {
+    "description": "Auto imported from components/policy/ServicePolicyThree.vue"
+  },
+  "PolicyServicePolicyTwo": {
+    "description": "Auto imported from components/policy/ServicePolicyTwo.vue"
   }
 }

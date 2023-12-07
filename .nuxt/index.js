@@ -5,7 +5,7 @@ import ClientOnly from 'vue-client-only'
 import NoSsr from 'vue-no-ssr'
 import { createRouter } from './router.js'
 import NuxtChild from './components/nuxt-child.js'
-import NuxtError from '../layouts/error.vue'
+import NuxtError from '..\\layouts\\error.vue'
 import Nuxt from './components/nuxt.js'
 import App from './App.js'
 import { setContext, getLocation, getRouteData, normalizeError } from './utils'
@@ -13,14 +13,16 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_0c8f1c0e from 'nuxt_plugin_plugin_0c8f1c0e' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_axios_4a430a8f from 'nuxt_plugin_axios_4a430a8f' // Source: ./axios.js (mode: 'all')
-import nuxt_plugin_vueawesomeswiper_5ce03f58 from 'nuxt_plugin_vueawesomeswiper_5ce03f58' // Source: ../plugins/vue-awesome-swiper.js (mode: 'all')
-import nuxt_plugin_vuejspagiante_7edc93b2 from 'nuxt_plugin_vuejspagiante_7edc93b2' // Source: ../plugins/vuejs-pagiante.js (mode: 'all')
-import nuxt_plugin_observevisibility_b986de04 from 'nuxt_plugin_observevisibility_b986de04' // Source: ../plugins/observe-visibility.js (mode: 'all')
-import nuxt_plugin_bootstrap_68fdc73f from 'nuxt_plugin_bootstrap_68fdc73f' // Source: ../plugins/bootstrap.js (mode: 'client')
-import nuxt_plugin_vuejsmodal_f50827f4 from 'nuxt_plugin_vuejsmodal_f50827f4' // Source: ../plugins/vue-js-modal (mode: 'client')
-import nuxt_plugin_notificationsclient_f727f91e from 'nuxt_plugin_notificationsclient_f727f91e' // Source: ../plugins/notifications-client.js (mode: 'client')
+import nuxt_plugin_plugin_13459178 from 'nuxt_plugin_plugin_13459178' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_axios_ec1d0cca from 'nuxt_plugin_axios_ec1d0cca' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_vueawesomeswiper_5ce03f58 from 'nuxt_plugin_vueawesomeswiper_5ce03f58' // Source: ..\\plugins\\vue-awesome-swiper.js (mode: 'all')
+import nuxt_plugin_vuejspagiante_7edc93b2 from 'nuxt_plugin_vuejspagiante_7edc93b2' // Source: ..\\plugins\\vuejs-pagiante.js (mode: 'all')
+import nuxt_plugin_observevisibility_b986de04 from 'nuxt_plugin_observevisibility_b986de04' // Source: ..\\plugins\\observe-visibility.js (mode: 'all')
+import nuxt_plugin_axios_5659d192 from 'nuxt_plugin_axios_5659d192' // Source: ..\\plugins\\axios.js (mode: 'all')
+import nuxt_plugin_localStorage_0afba2b0 from 'nuxt_plugin_localStorage_0afba2b0' // Source: ..\\plugins\\localStorage.js (mode: 'client')
+import nuxt_plugin_bootstrap_68fdc73f from 'nuxt_plugin_bootstrap_68fdc73f' // Source: ..\\plugins\\bootstrap.js (mode: 'client')
+import nuxt_plugin_vuejsmodal_f50827f4 from 'nuxt_plugin_vuejsmodal_f50827f4' // Source: ..\\plugins\\vue-js-modal (mode: 'client')
+import nuxt_plugin_notificationsclient_f727f91e from 'nuxt_plugin_notificationsclient_f727f91e' // Source: ..\\plugins\\notifications-client.js (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -88,7 +90,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"Flone - VueJS eCommerce Template","titleTemplate":"Flone | %s","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+    head: {"title":"3A Food","titleTemplate":"3A Food | %s","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002F3a-food-favicon.png"}],"style":[],"script":[]},
 
     store,
     router,
@@ -218,12 +220,12 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_0c8f1c0e === 'function') {
-    await nuxt_plugin_plugin_0c8f1c0e(app.context, inject)
+  if (typeof nuxt_plugin_plugin_13459178 === 'function') {
+    await nuxt_plugin_plugin_13459178(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_4a430a8f === 'function') {
-    await nuxt_plugin_axios_4a430a8f(app.context, inject)
+  if (typeof nuxt_plugin_axios_ec1d0cca === 'function') {
+    await nuxt_plugin_axios_ec1d0cca(app.context, inject)
   }
 
   if (typeof nuxt_plugin_vueawesomeswiper_5ce03f58 === 'function') {
@@ -236,6 +238,14 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_observevisibility_b986de04 === 'function') {
     await nuxt_plugin_observevisibility_b986de04(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_axios_5659d192 === 'function') {
+    await nuxt_plugin_axios_5659d192(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_localStorage_0afba2b0 === 'function') {
+    await nuxt_plugin_localStorage_0afba2b0(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_bootstrap_68fdc73f === 'function') {

@@ -2,7 +2,7 @@ import createPersistedState from 'vuex-persistedstate'
  
 export default ({store}) => {
   createPersistedState({
-      key: 'yourkey',
-      paths: []
+      key: '3aFood',
+      paths: ['user','cart']
   })(store)
 }

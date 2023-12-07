@@ -57,14 +57,27 @@
                         subTitle: "New Arrival",
                         title: "Final Sale",
                         desc: "30% off Winter Vacation",
-                        backgroundImage: "/img/slider/slider-4-1.jpg"
+                        backgroundImage: "/img/slider/3aFood/SEAFOODS.jpg"
                     },
                     {
                         subTitle: "New Arrival",
                         title: "Final Sale",
                         desc: "40% off Winter Vacation",
-                        backgroundImage: "/img/slider/slider-4-2.jpg"
-                    }
+                        backgroundImage: "/img/slider/3aFood/SHIP_SUPPLY.jpg"
+                    },
+                  {
+                    subTitle: "New Arrival",
+                    title: "Final Sale",
+                    desc: "40% off Winter Vacation",
+                    backgroundImage: "/img/slider/3aFood/shutterstock_708645067.jpg"
+                  },
+                  {
+                    subTitle: "New Arrival",
+                    title: "Final Sale",
+                    desc: "40% off Winter Vacation",
+                    backgroundImage: "/img/slider/3aFood/SPICES.jpg"
+                  }
+
                 ]
             }
         },

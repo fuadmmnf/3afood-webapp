@@ -1,21 +1,17 @@
 <template>
     <div class="about-page-wrapper">
-        <HeaderWithTopbar containerClass="container" />
         <Breadcrumb pageTitle="about us" />
         <WelcomeMessage class="pt-100 pb-95" />
         <BannerStyleOne class="pb-70" />
         <AboutMission />
-        <FunFact />
-        <TeamMembers />
-        <BrandLogoCarousel />
-        <TheFooter />
+      <OthersAppsLink class="pt-70"></OthersAppsLink>
+
     </div>
 </template>
 
 <script>
     export default {
         components: {
-            HeaderWithTopbar: () => import('@/components/HeaderWithTopbar'), 
             Breadcrumb: () => import('@/components/Breadcrumb'), 
             WelcomeMessage: () => import('@/components/WelcomeMessage'), 
             BannerStyleOne: () => import('@/components/banner/BannerStyleOne'), 
@@ -23,7 +19,8 @@
             FunFact: () => import('@/components/FunFact'), 
             TeamMembers: () => import('@/components/TeamMembers'), 
             BrandLogoCarousel: () => import('@/components/BrandLogoCarousel'), 
-            TheFooter: () => import('@/components/TheFooter'), 
+            TheFooter: () => import('@/components/TheFooter'),
+            OthersAppsLink:()=>import('@/components/OthersAppsLink.vue'),
         },
         head() {
             return {

@@ -3,13 +3,20 @@ import Vuex from 'vuex'
 
 import products from "../data/product.json";
 
+
 Vue.use(Vuex)
 
 export const state = () => ({
     products: products,
     cart: [],
+    spinner:false,
     wishlist: [],
-    compare: []
+    compare: [],
+    user: {
+        name:null,
+        token:null,
+        type:null
+    },
 })
 
 
@@ -19,6 +26,18 @@ export const getters = {
         return state.products
     },
 
+    isAuthenticated(state){
+        return !!state.user;
+    },
+    getUserType(state){
+        return state.user?.type
+    },
+    getUsername(state){
+        return state.user?.name;
+    },
+    getAccessToken(state){
+        return state.user?.token;
+    },
     getCart: state => {
         return state.cart
     },
@@ -46,13 +65,11 @@ export const getters = {
     getTotal: state => {
         let total = 0;
         state.cart.forEach(item => {
-            let price = item.discount ? item.price - (item.price *(item.discount)/100) : item.price;
-            total += price * item.cartQuantity
+            total +=  item.total
         })
 
         return total;
     },
-
     getNewProducts: state => {
         return state.products.filter(item => {
             return item.new
@@ -68,7 +85,6 @@ export const getters = {
             return item.discount
         })
     },
-
     categoryList: state => {
         return ["all categories",...new Set(state.products.map((list) => list.category).flat())]
     },
@@ -81,6 +97,9 @@ export const getters = {
     colorList: state => {
         return ["all colors",...new Set(state.products.map((list) => list.variation?.color).flat())].filter(Boolean)
     },
+    showSpinner:state =>{
+        return state.spinner
+    }
 }
 
 
@@ -93,12 +112,24 @@ export const mutations = {
     UPDATE_CART(state, payload) {
         const item = state.cart.find(el => payload.id === el.id)
         if (item) {
-            const price = item.discount ? item.price - (item.price *(item.discount)/100) : item.price;
-            item.cartQuantity = item.cartQuantity + payload.cartQuantity
-            item.total = item.cartQuantity * price
+            item.cartQuantity = item.cartQuantity + payload.cartQuantity;
+            if(state.user.type==='retail'){
+                item.total = item.cartQuantity * item.price
+            }
         } else {
-            const price = payload.discount ? payload.price - (payload.price *(payload.discount)/100) : payload.price;
-            state.cart.push({...payload, cartQuantity: payload.cartQuantity, total: price })
+            if(state.user.type==='retail'){
+                state.cart.push({...payload, cartQuantity: payload.cartQuantity, total: payload.price })
+            }
+            else {
+                state.cart.push({...payload, cartQuantity: payload.cartQuantity})
+            }
+
+        }
+    },
+    MANUAL_SET_CART_QUANTITY(state, payload) {
+        const item = state.cart.find(el => payload.id === el.id)
+        if (item) {
+            item.cartQuantity = payload.cartQuantity
         }
     },
 
@@ -110,9 +141,10 @@ export const mutations = {
 
     DECREASE_PRODUCT(state, payload) {
         const found = state.cart.find(el => payload.id === el.id)
-        const price = found.discount ? found.price - (found.price *(found.discount)/100) : found.price;
         found.cartQuantity = found.cartQuantity - payload.cartQuantity
-        found.total = found.cartQuantity * price
+        if(state.user.type==='retail'){
+            found.total = found.cartQuantity * payload.price
+        }
     },
 
     CLEAR_CART(state) {
@@ -143,18 +175,65 @@ export const mutations = {
         }
     },
 
+    SHOW_MODAL(state, text) {
+          this._vm.$modal.show('responseModal',{
+              modalText:text
+          })
+    },
+
     REMOVE_FROM_COMPARE(state, product) {
         state.compare = state.compare.filter(item => {
             return product.id !== item.id
         });
     },
+    SAVE_USER(state, user){
+        state.user=user
+    },
+    UPDATE_USER_NAME(state,name){
+        state.user.name=name;
+    },
+    REMOVE_USER(state,user){
+        state.user=null
+        state.cart=[]
+    },
+    SHOW_SPINNER(state){
+        state.spinner=true;
+    },
+    HIDE_SPINNER(state){
+        state.spinner=false;
+    }
 }
 
+function parseCookies(cookieString) {
+    return cookieString
+        .split(';')
+        .map(cookie => cookie.split('='))
+        .reduce((accumulator, [key, value]) => {
+            accumulator[key.trim()] = decodeURIComponent(value);
+            return accumulator;
+        }, {});
+}
 
 // contains your actions
 export const actions = {
+
+    showModal({ commit }, { text }) {
+        commit('SHOW_MODAL',text);
+    },
+    saveUserInfo({commit}, payload){
+        commit('SAVE_USER', payload)
+    },
+    updateUserName({commit},payload){
+        commit('UPDATE_USER_NAME', payload)
+    },
+    logout({commit}){
+        commit('REMOVE_USER')
+    },
     addToCartItem({commit}, payload) {
         commit('UPDATE_CART', payload)
+    },
+    manualSetCartQuantity({commit}, payload){
+        commit('MANUAL_SET_CART_QUANTITY', payload)
     },
 
     removeProductFromCart({commit}, product) {
@@ -180,5 +259,11 @@ export const actions = {
     removeFromCompare({commit}, product) {
         commit('REMOVE_FROM_COMPARE', product)
     },
+    showSpinner({commit},payload){
+        commit('SHOW_SPINNER',payload)
+    },
+    hideSpinner({commit},payload){
+        commit('HIDE_SPINNER',payload)
+    }
 }
 

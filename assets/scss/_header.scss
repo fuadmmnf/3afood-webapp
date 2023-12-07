@@ -43,9 +43,10 @@
     }
 }
 .logo {
-	margin-top: 32px;
+    width: 100px;
+	padding: 10px;
     @media #{$md-layout, $xs-layout}{
-        margin-top: 0px;
+        margin-top: 10px;
     }
     &.logo-hm5 {
         margin-top: 41px;
@@ -317,7 +318,7 @@
 
 .header-right-wrap {
     display: flex;
-    justify-content: flex-end;
+    //justify-content: flex-end;
     margin-top: 32px;
     @media #{$md-layout}{
         margin-top: 0px;
@@ -405,10 +406,30 @@
     }
     .same-style.account-setting {
         button {
-            font-size: 24px;
-            background-color: transparent;
-            border: none;
-            padding: 0;
+            background-color: #f2f2f2;
+            border: medium none;
+            color:black;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1;
+            padding: 11px 30px;
+            text-transform: uppercase;
+            transition: all 0.3s ease 0s;
+            display: flex;
+            align-items: center;
+            @media #{$xs-layout} {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                padding: 11px 20px;
+            }
+            @media #{$md-layout} {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                padding: 11px 20px;
+            }
         }
     }
     .same-style.cart-wrap {
@@ -721,8 +742,15 @@
     @media #{$xs-layout}{
         justify-content: center;
     }
+    i{
+        margin-right: 5px;
+    }
     .same-language-currency {
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
         margin-right: 54px;
         @media #{$xs-layout}{
             margin-right: 15px;
@@ -1193,8 +1221,10 @@
                 justify-content: center;
             }
             .header-offer {
+                font-size: 15px;
                 p {
                     text-align: center;
+
                 }
             }
         }

@@ -56,10 +56,6 @@
                 this.currentPage = Number(pageNum);
             },
         },
-        head() {
-            return {
-                title: "Blog Without Sidebar"
-            }
-        }
+
     };
 </script>

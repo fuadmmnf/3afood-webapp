@@ -2,24 +2,24 @@ export default {
     generate: {
         fallback: true
     },
-
     target: 'server', // default is 'server'
-    
+
+
+
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
-        title: 'Flone - VueJS eCommerce Template',
-        titleTemplate: 'Flone | %s',
+        title: '3A Food',
+        titleTemplate: '3A Food | %s',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { hid: 'description', name: 'description', content: '' }
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: 'icon', type: 'image/x-icon', href: '/3a-food-favicon.png' },
         ]
 
     },
-
     // Global CSS (https://go.nuxtjs.dev/config-css)
     css: [
         '~/assets/scss/style.scss',
@@ -31,6 +31,8 @@ export default {
         '~/plugins/vue-awesome-swiper.js',
         '~/plugins/vuejs-pagiante.js',
         '~/plugins/observe-visibility.js',
+        '~/plugins/axios.js',
+        { src: '~plugins/localStorage.js' , ssr: false },
         { 
             src: '~/plugins/bootstrap.js', 
             mode: 'client'
@@ -56,14 +58,27 @@ export default {
     modules: [
         '@nuxtjs/style-resources',
         '@nuxtjs/axios',
+
     ],
+
+    axios: {
+        baseURL: 'http://127.0.0.1:8000/api',
+        headers: {
+            common: {
+                'Content-Type': 'application/json',
+            },
+        },
+    },
+
+    // router: {
+    //     middleware: ['auth']
+    // },
 
     styleResources: {
         scss: [
             '~/assets/scss/_variables.scss',
         ]
     },
-
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {
         extractCSS: true,
