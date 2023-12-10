@@ -5,7 +5,7 @@
                 <div class="col-md-6">
                     <div class="product-details-slider">
                         <div class="product-details-img">
-                          <img class="img-fluid" :src="product.img" :alt="product.title">
+                          <img class="img-fluid" :src="path+product.img" :alt="product.title">
                         </div>
                     </div>
                 </div>
@@ -45,6 +45,7 @@
 
         data() {
             return {
+              path:process.env.WEB_DEV_URL,
                 singleQuantity: 1,
             }
         },

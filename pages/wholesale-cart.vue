@@ -21,7 +21,7 @@
                 <tr v-for="(product, index) in products" :key="index">
                   <td class="product-thumbnail">
                     <n-link :to="`/product/${product.id}`">
-                      <img :src="product.img" :alt="product.title">
+                      <img :src="path+product.img" :alt="product.title">
                     </n-link>
                   </td>
                   <td class="product-name">
@@ -82,7 +82,8 @@ export default {
   },
   data() {
     return {
-      singleQuantity: 1
+      singleQuantity: 1,
+      path:process.env.WEB_DEV_URL
     }
   },
 

@@ -9,7 +9,7 @@
         >
           <div class="shopping-cart-img">
             <n-link :to="`/product/${product.id}`">
-              <img :src="product.img" :alt="product.title" />
+              <img :src="path+product.img" :alt="product.title" />
             </n-link>
           </div>
           <div class="shopping-cart-title">
@@ -51,6 +51,11 @@
 <script>
 export default {
     props: ["miniCart"],
+  data(){
+      return{
+        path:process.env.WEB_DEV_URL
+      }
+  },
 
     computed: {
       userType(){
