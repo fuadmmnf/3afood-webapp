@@ -52,6 +52,7 @@ export default {
 
     // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
     buildModules: [
+        '@nuxtjs/dotenv'
     ],
 
     // Modules (https://go.nuxtjs.dev/config-modules)
@@ -62,7 +63,9 @@ export default {
     ],
 
     axios: {
-        baseURL: 'http://127.0.0.1:8000/api',
+        baseURL: process.env.DEV
+            ? process.env.DEV_API_URL
+            : process.env.BUILD_API_URL,
         headers: {
             common: {
                 'Content-Type': 'application/json',

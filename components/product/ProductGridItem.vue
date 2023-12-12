@@ -2,7 +2,7 @@
   <div class="product-wrap mb-30">
     <div class="product-img">
       <n-link :to="`/product/${product.id}`">
-        <img class="default-img" :src="product.img" :alt="product.title" />
+        <img class="default-img" :src="path+product.img" :alt="product.title" />
       </n-link>
       <div
         class="product-action"
@@ -32,7 +32,11 @@
 <script>
 export default {
   props: ["product", "layout"],
-
+  data(){
+    return{
+      path:process.env.WEB_DEV_URL
+    }
+  },
   methods: {
     addToCart(product) {
       const prod = { ...product, cartQuantity: 1 };

@@ -43,6 +43,7 @@ export default {
       currentPage: 1,
       perPage: 9,
       products:[],
+
     }
   },
 
