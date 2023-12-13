@@ -168,7 +168,7 @@ export default {
       try{
         const response=await this.$axios.post('/logout');
         await this.$store.dispatch("logout");
-        this.$router.push('/forgot_password')
+        this.$router.push('/login')
       }catch (error){
         console.log(error)
 
