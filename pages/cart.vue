@@ -30,7 +30,7 @@
                                             <n-link :to="`/product/${product.id}`">{{ product.title }}</n-link>
                                         </td>
                                         <td class="product-price-cart">
-                                            <del class="old">${{ product.price.toFixed(2) }}</del>
+                                            <del class="old">${{ parseFloat(product.price).toFixed(2) }}</del>
                                         </td>
                                         <td class="product-quantity">
                                             <div class="cart-plus-minus">
@@ -39,7 +39,7 @@
                                                 <button @click="incrementProduct(product)" class="inc qtybutton">+</button>
                                             </div>
                                         </td>
-                                        <td class="product-subtotal">${{ product.total?.toFixed(2) }}</td>
+                                        <td class="product-subtotal">${{ parseFloat(product.total)?.toFixed(2) }}</td>
                                         <td class="product-remove">
                                             <button @click="removeProduct(product)"><i class="fa fa-times"></i></button>
                                         </td>
@@ -66,7 +66,7 @@
                                         <h4 class="cart-bottom-title section-bg-gary-cart">Cart Total</h4>
                                     </div>
                                     <h5>Total products <span>{{ $store.getters.cartItemCount }}</span></h5>
-                                    <h4 class="grand-total-title">Grand Total  <span>${{ total?.toFixed(2) }}</span></h4>
+                                    <h4 class="grand-total-title">Grand Total  <span>${{ parseFloat(total)?.toFixed(2) }}</span></h4>
                                     <n-link to="/checkout">Proceed to Checkout</n-link>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@
         },
         data() {
             return {
-                path:process.env.WEB_DEV_URL,
+                path:"",
                 singleQuantity: 1
             }
         },
@@ -121,7 +121,7 @@
             decrementProduct(product) {
                 const prod = { ...product, cartQuantity: 1 }
                 if (product.cartQuantity > 1) {
-                    this.$store.dispatch('decreaseProduct', prod)
+                    this.$store.dispatch('decreaseProdu ct', prod)
                 }
             },
 
@@ -145,7 +145,9 @@
                 }
             }
         },
-
+      mounted() {
+        this.path = process.env.dev? process.env.WEB_DEV_URL: process.env.WEB_BUILD_URL
+      },
         head() {
             return {
                 title: "Cart"

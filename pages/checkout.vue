@@ -75,7 +75,7 @@
                                     <div class="your-order-middle">
                                         <ul>
                                             <li v-for="(product, index) in products" :key="index">
-                                                <span class="order-middle-left">{{ product.title }}  X  {{ product.cartQuantity }}</span> <span class="order-price">${{ product.total.toFixed(2) }}</span>
+                                                <span class="order-middle-left">{{ product.title }}  X  {{ product.cartQuantity }}</span> <span class="order-price">${{ parseFloat(product.total).toFixed(2) }}</span>
                                             </li>
                                         </ul>
                                     </div>

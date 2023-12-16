@@ -65,7 +65,7 @@ export const getters = {
     getTotal: state => {
         let total = 0;
         state.cart.forEach(item => {
-            total +=  item.total
+            total += parseFloat(item.total)
         })
 
         return total;
@@ -126,6 +126,7 @@ export const mutations = {
 
         }
     },
+
     MANUAL_SET_CART_QUANTITY(state, payload) {
         const item = state.cart.find(el => payload.id === el.id)
         if (item) {

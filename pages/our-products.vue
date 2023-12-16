@@ -6,8 +6,7 @@
     <div class="shop-area pt-100 pb-100">
       <div class="container">
         <div class="row flex-row-reverse">
-          <div class="col-lg-12">
-
+          <div class="col-lg-12" v-if="$store.getters.isAuthenticated">
             <!-- shop product -->
             <div class="shop-bottom-area mt-35">
               <div class="row product-layout" :class="{ 'list': layout === 'list', 'grid three-column': layout === 'threeColumn', 'grid two-column': layout === 'twoColumn' }">
@@ -20,6 +19,12 @@
 
             <div v-if="getPaginateCount > 1">
               <pagination class="pro-pagination-style shop-pagination mt-30" v-model="currentPage" :per-page="perPage" :records="products.length" @paginate="paginateClickCallback" :page-count="getPaginateCount" />
+            </div>
+          </div  >
+          <div class="col-12" v-else>
+            <div class="empty-cart text-center">
+              <h4>Sorry, you need to log in to view our products.</h4>
+              <n-link to="/login" class="empty-cart__button">Login</n-link>
             </div>
           </div>
         </div>
@@ -76,7 +81,10 @@ export default {
     },
   },
   mounted  ()  {
-    this.loadProductData()
+    if(this.$store.getters.isAuthenticated){
+      this.loadProductData()
+    }
+
 
   },
   head() {

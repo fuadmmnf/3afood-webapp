@@ -108,7 +108,15 @@ export default {
           const response = await this.$axios.post("/login", this.formData);
           // console.log(response)
           const user = {
-            name: response.data.data.name.split(' ')[0].substring(0,5),
+            name: (() => {
+              const firstName = response.data.data.name.split(' ')[0];
+
+              if (firstName.length > 7) {
+                return firstName.substring(0, 5) + '..';
+              } else {
+                return firstName;
+              }
+            })(),
             token: response.data.data.token,
             type: response.data.data.user_type,
           };

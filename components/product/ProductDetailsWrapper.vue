@@ -45,8 +45,8 @@
 
         data() {
             return {
-              path:process.env.WEB_DEV_URL,
-                singleQuantity: 1,
+              path:'',
+              singleQuantity: 1,
             }
         },
         computed:{
@@ -54,7 +54,8 @@
             return this.$store.getters.getUserType
           },
         },
-        methods: {
+
+      methods: {
             addToCart(product) {
 
                 const prod = {...product, cartQuantity:this.userType==='retail'?(this.singleQuantity):parseFloat(this.singleQuantity)}
@@ -100,5 +101,8 @@
             },
 
         },
+      mounted() {
+        this.path = process.env.dev? process.env.WEB_DEV_URL: process.env.WEB_BUILD_URL
+      },
     };
 </script>

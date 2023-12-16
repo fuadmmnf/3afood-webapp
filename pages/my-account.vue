@@ -238,7 +238,11 @@ export default {
           const response=await this.$axios.patch("/users/update-account", this.userInfo)
           console.log(response)
           await this.fetchData();
-          this.$store.commit('UPDATE_USER_NAME',this.userInfo.name.split(' ')[0].substring(0,5))
+          let firstName = this.userInfo.name
+          if (firstName.length > 7) {
+                firstName= firstName.substring(0, 5) + '..';
+          }
+          this.$store.commit('UPDATE_USER_NAME',firstName)
           this.title=response.data.message;
           this.$modal.show('messageModal')
 

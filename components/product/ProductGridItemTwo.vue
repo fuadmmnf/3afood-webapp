@@ -28,7 +28,7 @@
                 </h3>
                 <div class="price-2">
                     <span>${{ discountedPrice(product).toFixed(2) }}</span>
-                    <span class="old" v-if="product.discount > 0">${{ product.price.toFixed(2) }}</span>
+                    <span class="old" v-if="product.discount > 0">${{ parseFloat(product.price).toFixed(2) }}</span>
                 </div>
             </div>
             <div class="pro-wishlist-2">

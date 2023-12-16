@@ -83,7 +83,7 @@ export default {
   data() {
     return {
       singleQuantity: 1,
-      path:process.env.WEB_DEV_URL
+      path:""
     }
   },
 
@@ -132,7 +132,9 @@ export default {
       }
     }
   },
-
+  mounted() {
+    this.path = process.env.dev? process.env.WEB_DEV_URL: process.env.WEB_BUILD_URL
+  },
   head() {
     return {
       title: "Cart"

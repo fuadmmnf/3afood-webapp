@@ -30,7 +30,8 @@
       </ul>
       <div class="shopping-cart-total" v-if="userType==='retail'">
         <h4>
-          Total : <span class="shop-total">${{ total.toFixed(2) }}</span>
+          Total : <span class="shop-total">${{
+            parseFloat(total).toFixed(2) }}</span>
         </h4>
       </div>
       <div
@@ -53,7 +54,7 @@ export default {
     props: ["miniCart"],
   data(){
       return{
-        path:process.env.WEB_DEV_URL
+        path:""
       }
   },
 
@@ -68,10 +69,6 @@ export default {
             return this.$store.getters.getTotal
         }
     },
-
-  mounted() {
-      console.log("Cart:"+this.$store.getters.getCart)
-  },
   methods: {
         removeProduct(product) {
             // for notification
@@ -83,5 +80,9 @@ export default {
             return (product.price*product.cartQuantity).toFixed(1)
         }
     },
+  mounted() {
+    this.path = process.env.dev? process.env.WEB_DEV_URL: process.env.WEB_BUILD_URL
+  },
+
 };
 </script>
