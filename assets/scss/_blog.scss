@@ -107,10 +107,15 @@
         a {
             img {
                 width: 100%;
+                height: 120px;
                 transform: scale(1);
                 transition: all .5s ease 0s;
+                @media #{$xs-layout} {
+                    height: 250px;
+                }
             }
         }
+
     }
     .blog-content-2 {
         padding: 10px 30px 10px;
@@ -121,6 +126,7 @@
         }
         @media #{$xs-layout} {
             padding: 20px 15px 29px;
+
         }
         .blog-meta-2 {
             display: flex;
