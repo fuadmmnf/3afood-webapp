@@ -1,8 +1,10 @@
+
 export default {
     generate: {
         fallback: true
     },
-    target: 'server', // default is 'server'
+    // target: 'server', // default is 'server'
+    ssr: false,
 
 
 

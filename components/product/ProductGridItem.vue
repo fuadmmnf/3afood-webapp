@@ -34,7 +34,7 @@ export default {
   props: ["product", "layout"],
   data(){
     return{
-      path:process.env.WEB_DEV_URL
+      path:''
     }
   },
   methods: {
@@ -79,6 +79,7 @@ export default {
     }
   },
   mounted() {
+    this.path = process.env.dev? process.env.WEB_DEV_URL: process.env.WEB_BUILD_URL
     console.log("product:"+ this.product)
   },
 };

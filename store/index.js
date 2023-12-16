@@ -27,7 +27,7 @@ export const getters = {
     },
 
     isAuthenticated(state){
-        return !!state.user;
+        return (state.user !==null && state.user.token !== null);
     },
     getUserType(state){
         return state.user?.type
