@@ -76,7 +76,7 @@
         ul {
             display: block;
             text-align: center;
-            margin-top: -5px;
+            //margin-top: -5px;
                 li{
                     display: inline-block;
                     padding: 0 15px;
@@ -302,7 +302,7 @@
 
 .is-sticky .logo ,
 .is-sticky .header-right-wrap {
-	margin-top: 22px;
+	//margin-top: 22px;
     @media #{$md-layout, $xs-layout, $md-layout}{
         margin-top: 0px;
     }
@@ -312,19 +312,19 @@
 	top: 160%;
     @media #{$xs-layout, $md-layout}{
 		top: 100%;
-        margin-top: 14px;
+        //margin-top: 14px;
 	}
 }
 
 .header-right-wrap {
     display: flex;
     //justify-content: flex-end;
-    margin-top: 32px;
+    //margin-top: 32px;
     @media #{$md-layout}{
-        margin-top: 0px;
+        //margin-top: 0px;
     }
     @media #{$xs-layout}{
-        margin-top: 2px;
+        //margin-top: 2px;
     }
     .same-style {
         margin-left: 15px;

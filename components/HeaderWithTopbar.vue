@@ -43,7 +43,7 @@
                 </nav>
               </div>
             </div>
-            <div class="col-lg-2 col-md-6 col-8">
+            <div class="col-lg-2 col-md-6 col-8 d-flex">
               <div class="header-right-wrap align-items-center">
                 <div v-if="!$store.getters.isAuthenticated" class="same-style account-setting d-lg-block">
                   <button
