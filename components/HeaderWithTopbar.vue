@@ -6,10 +6,10 @@
           <div class="header-top-inner">
             <div class="language-currency-wrap">
               <div class="same-language-currency language-style">
-                <i class="pe-7s-phone"></i> <span>08 9456 2685</span>
+                <i class="pe-7s-phone"></i><a href="tel:0894562685">08 9456 2685</a>
               </div>
               <div class="same-language-currency language-style">
-                <i class="pe-7s-mail"></i> <span>info@3afoods.com.au</span>
+                <i class="pe-7s-mail"></i><a href="mailto:info@3afoods.com.au">info@3afoods.com.au</a>
               </div>
               <div class="same-language-currency language-style"></div>
             </div>

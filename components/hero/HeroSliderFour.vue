@@ -10,7 +10,7 @@
                                 <h1>{{ slider.title }}</h1>
                                 <p>{{ slider.desc }}</p>
                                 <div class="slider-btn btn-hover">
-                                    <n-link to="/shop">SHOP NOW</n-link>
+                                    <n-link :to="slider.link">{{slider.btn_label}}</n-link>
                                 </div>
                             </div>
                         </div>
@@ -54,30 +54,37 @@
 
                 sliderData: [
                     {
-                        subTitle: "New Arrival",
-                        title: "Final Sale",
-                        desc: "30% off Winter Vacation",
-                        backgroundImage: "/img/slider/3aFood/SEAFOODS.jpg"
-                    },
-                    {
-                        subTitle: "New Arrival",
-                        title: "Final Sale",
-                        desc: "40% off Winter Vacation",
-                        backgroundImage: "/img/slider/3aFood/SHIP_SUPPLY.jpg"
+                        subTitle: "Food Services",
+                        title: "300+ Wholesale Product",
+                        desc: "Lets see our products",
+                        link:"/our-products",
+                        btn_label:"View Products",
+                        backgroundImage: "/img/slider/3aFood/shutterstock_708645067.jpg"
                     },
                   {
-                    subTitle: "New Arrival",
-                    title: "Final Sale",
-                    desc: "40% off Winter Vacation",
-                    backgroundImage: "/img/slider/3aFood/shutterstock_708645067.jpg"
+                    subTitle: "Food Services",
+                    title: "50+ Retail Product",
+                    desc: "Lets see our products",
+                    link:"/our-products",
+                    btn_label:"View Products",
+                    backgroundImage: "/img/slider/3aFood/SPICES.jpg"
                   },
                   {
-                    subTitle: "New Arrival",
-                    title: "Final Sale",
-                    desc: "40% off Winter Vacation",
-                    backgroundImage: "/img/slider/3aFood/SPICES.jpg"
-                  }
-
+                    subTitle: "Food Services",
+                    title: "Best In The Town",
+                    desc: "Lets see our products",
+                    link: "/our-products",
+                    btn_label: "View Products",
+                    backgroundImage: "/img/slider/3aFood/SEAFOODS.jpg"
+                  },
+                  {
+                    subTitle: "Ship Supply Order",
+                    title: "Best In The Town",
+                    desc: "Lets see our products",
+                    link: "/online-order",
+                    btn_label: "See Product List",
+                    backgroundImage: "/img/slider/3aFood/SHIP_SUPPLY.jpg"
+                  },
                 ]
             }
         },
