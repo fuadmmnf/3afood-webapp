@@ -134,6 +134,7 @@
               email:"",
               company_name: "",
               address: "",
+              type:this.userType,
               additional_info:"",
               total_price:null,
               user_id:'',

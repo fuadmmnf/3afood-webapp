@@ -122,9 +122,9 @@ export default {
         email:"",
         company_name: "",
         address: "",
+        type:"",
         additional_info:"",
         total_price:null,
-        user_id:'',
         cart:[]
       },
       errors:{}
@@ -182,6 +182,7 @@ export default {
 
       if (this.validateForm()) {
         try {
+          this.formData.type=this.userType
           const response=await this.$axios.post("/orders",this.formData)
           this.$modal.show('messageModal')
           this.formData = {

@@ -53,15 +53,16 @@
                   </button>
 
                 </div>
-                <div v-if="!$store.getters.isAuthenticated" class="same-style account-setting  d-lg-block">
+                <div v-if="!$store.getters.isAuthenticated" class="same-style account-setting  active-btn d-lg-block">
                   <button
-                      class="account-setting-active"
+                      class="account-setting-active active-btn"
+
                       @click="
                       isOpenAccountSettings =
                         isOpenAccountSettings === 'Register' ? '' : 'Register'
                     "
                   >
-                    <span>Register</span>
+                    <span class="active-btn">Register</span>
                   </button>
                   <div
                       class="account-dropdown"
@@ -76,16 +77,16 @@
                     </ul>
                   </div>
                 </div>
-                <div  v-if="$store.getters.isAuthenticated" class="same-style account-setting d-lg-block">
+                <div  v-if="$store.getters.isAuthenticated" class="same-style account-setting d-lg-block active-btn">
                   <button
-                    class="account-setting-active"
+                    class="account-setting-active active-btn"
                     @click="
                       isOpenAccountSettings =
                         isOpenAccountSettings === 'Profile' ? '' : 'Profile'
                     "
                   >
-                    <span><i class="pe-7s-user mr-10"></i></span>
-                    <span>{{ $store.getters.getUsername }}</span>
+                    <span><i class="pe-7s-user mr-10 active-btn"></i></span>
+                    <span class="active-btn">{{ $store.getters.getUsername }}</span>
                   </button>
                   <div
                     class="account-dropdown"
@@ -108,12 +109,12 @@
                     @minicartClose="openCart = !openCart"
                   />
                 </div>
-                <div class="same-style mobile-menu-toggler d-block d-lg-none">
+                <div class="same-style nav-btn mobile-menu-toggler d-block d-lg-none">
                   <button
-                    class="mobile-aside-button"
+                    class="mobile-aside-button nav-btn"
                     @click="navOpen = !navOpen"
                   >
-                    <i class="pe-7s-menu"></i>
+                    <i class="pe-7s-menu nav-btn"></i>
                   </button>
                 </div>
               </div>
@@ -140,7 +141,7 @@ export default {
       user: null,
       isSticky: false,
       isOpenSearch: false,
-      isOpenAccountSettings: false,
+      isOpenAccountSettings: '',
       openCart: false,
       navOpen: false,
     };
@@ -164,6 +165,19 @@ export default {
       let scroll = window.scrollY;
       this.isSticky = scroll >= 200;
     },
+    handleClick(e){
+      const classname = e.target.className;
+        if(this.isOpenAccountSettings && !classname.includes("active-btn")){
+          this.isOpenAccountSettings =false;
+      }
+      if(this.navOpen && !classname.includes("nav-btn")){
+        this.navOpen =false;
+      }
+
+
+
+    },
+
     async logout() {
       try{
         const response=await this.$axios.post('/logout');
@@ -176,6 +190,12 @@ export default {
 
 
     },
+  },
+  created () {
+    window.addEventListener('click', this.handleClick);
+  },
+  destroyed () {
+    window.removeEventListener('click', this.handleClick);
   },
   mounted() {
     window.addEventListener("scroll", this.onScroll);
