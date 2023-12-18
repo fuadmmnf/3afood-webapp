@@ -109,7 +109,7 @@
                     @minicartClose="openCart = !openCart"
                   />
                 </div>
-                <div class="same-style nav-btn mobile-menu-toggler d-block d-lg-none">
+                <div class="same-style nav-btn mobile-menu-toggler d-block d-lg-none d-tpggler">
                   <button
                     class="mobile-aside-button nav-btn"
                     @click="navOpen = !navOpen"
