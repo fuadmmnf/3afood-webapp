@@ -314,16 +314,21 @@
         //margin-top: 14px;
 	}
 }
+//.right-header{
+//    @media #{$xs-layout, $md-layout, $lg-layout}{
+//      justify-content: flex-end;
+//    }
+//}
 
 .header-right-wrap {
     display: flex;
-    //justify-content: flex-end;
-    //margin-top: 32px;
+
     @media #{$md-layout}{
         //margin-top: 0px;
+        justify-content: flex-end;
     }
     @media #{$xs-layout}{
-        //margin-top: 2px;
+        justify-content: flex-end;
     }
     .same-style {
         margin-left: 15px;

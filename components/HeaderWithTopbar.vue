@@ -43,8 +43,8 @@
                 </nav>
               </div>
             </div>
-            <div class="col-lg-2 col-md-6 col-8 d-flex">
-              <div class="header-right-wrap align-items-center">
+            <div class="col-lg-2 col-md-6 col-8 d-flex justify-content-end justify-content-lg-center ">
+              <div class="header-right-wrap align-items-center ">
                 <div v-if="!$store.getters.isAuthenticated" class="same-style account-setting d-lg-block">
                   <button
                       class="account-setting-active"
@@ -109,7 +109,7 @@
                     @minicartClose="openCart = !openCart"
                   />
                 </div>
-                <div class="same-style nav-btn mobile-menu-toggler d-block d-lg-none d-tpggler">
+                <div class="same-style nav-btn mobile-menu-toggler d-block d-lg-none ">
                   <button
                     class="mobile-aside-button nav-btn"
                     @click="navOpen = !navOpen"
