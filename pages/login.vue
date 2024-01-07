@@ -36,6 +36,9 @@
                     <n-link to="/forgot-password">
                       Forgot Password?
                     </n-link>
+                    <n-link :to="'/register/'+type" v-if="type">
+                      Register
+                    </n-link>
                   </div>
                   <div class="text-center pt-5">
                     <button type="submit" @click.prevent="login">Login</button>
@@ -54,6 +57,7 @@
 export default {
   data() {
     return {
+      type:this.$route.query.type,
       formData: {
         email: "",
         password: "",
@@ -121,7 +125,14 @@ export default {
             type: response.data.data.user_type,
           };
           await this.$store.dispatch("saveUserInfo", user);
-          await this.$router.push("/");
+
+
+          if(response.data.data.user_type==='ship_supply'){
+            await this.$router.push("/ship-supply");
+          }
+          else {
+            await this.$router.push("/our-products");
+          }
         } catch (error) {
           if (error.response && error.response.status === 401) {
             this.errors.credentials=error.response.data.message

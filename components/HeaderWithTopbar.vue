@@ -56,7 +56,6 @@
                 <div v-if="!$store.getters.isAuthenticated" class="same-style account-setting  active-btn d-lg-block">
                   <button
                       class="account-setting-active active-btn"
-
                       @click="
                       isOpenAccountSettings =
                         isOpenAccountSettings === 'Register' ? '' : 'Register'
@@ -72,8 +71,8 @@
                       <li><n-link to="/register/retail">Retail</n-link></li>
                       <li>
                         <n-link to="/register/wholesale">Wholesale</n-link>
+                        <n-link to="/register/ship_supply">Ship Supply</n-link>
                       </li>
-                      <!--                                            <li><n-link to="/my-account">my account</n-link></li>-->
                     </ul>
                   </div>
                 </div>
@@ -149,16 +148,7 @@ export default {
   computed: {
     cartItemCount() {
       return this.$store.getters.cartItemCount;
-    },
-    wishlistItemCountComputed() {
-      return this.$store.getters.wishlistItemCount;
-    },
-    compareItemCountComputed() {
-      return this.$store.getters.compareItemCount;
-    },
-    userComputed() {
-      return this.$store.getters.user;
-    },
+    }
   },
   methods: {
     onScroll() {
@@ -173,9 +163,6 @@ export default {
       if(this.navOpen && !classname.includes("nav-btn")){
         this.navOpen =false;
       }
-
-
-
     },
 
     async logout() {
@@ -185,10 +172,7 @@ export default {
         this.$router.push('/login')
       }catch (error){
         console.log(error)
-
       }
-
-
     },
   },
   created () {

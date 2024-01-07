@@ -29,6 +29,15 @@ export const getters = {
     isAuthenticated(state){
         return (state.user !==null && state.user.token !== null);
     },
+    isRetail(state){
+        return (state.user !==null && state.user.type === 'retail');
+    },
+    isWholesale(state){
+        return (state.user !==null && state.user.type === 'wholesale');
+    },
+    isShipSupply(state){
+        return (state.user !==null && state.user.type === 'ship_supply');
+    },
     getUserType(state){
         return state.user?.type
     },

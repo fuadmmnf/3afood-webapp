@@ -14,10 +14,22 @@
             <div class="register-form">
               <form @submit.prevent="signup">
                 <div class="input-div">
-                  <input v-model.trim="formData.name" :placeholder="placeholder" />
+                  <input v-model.trim="formData.name" placeholder="Name" />
                   <span class="text-danger" v-if="errors.name">{{
                     errors.name
                   }}</span>
+                </div>
+                <div class="input-div" v-if="type!=='retail'">
+                  <input v-model.trim="formData.company_name"  placeholder="Company Name*" />
+                  <span class="text-danger" v-if="errors.company_name">{{
+                      errors.company_name
+                    }}</span>
+                </div>
+                <div class="input-div" v-if="type!=='retail'">
+                  <input v-model.trim="formData.avn"  placeholder="AVN*" />
+                  <span class="text-danger" v-if="errors.avn">{{
+                      errors.avn
+                    }}</span>
                 </div>
                 <div class="input-div">
                   <input
@@ -32,7 +44,7 @@
                 <div class="input-div">
                   <input
                     v-model.trim="formData.email"
-                    placeholder="Email"
+                    placeholder="Email*"
                     type="email"
                   />
                   <span class="text-danger" v-if="errors.email">{{
@@ -40,7 +52,7 @@
                   }}</span>
                 </div>
                 <div class="input-div">
-                  <input v-model="formData.password" type="password" placeholder="Password" />
+                  <input v-model="formData.password" type="password" placeholder="Password*" />
                   <span class="text-danger" v-if="errors.password">{{
                     errors.password
                   }}</span>
@@ -71,6 +83,8 @@ export default {
     return {
       formData: {
         name: "",
+        company_name:"",
+        avn:"",
         phone: "",
         email: "",
         password: "",
@@ -97,6 +111,8 @@ export default {
       // Reset errors
       this.errors = {
         name: false,
+        company_name: false,
+        avn: false,
         phone: false,
         email: false,
         password: false,
@@ -104,36 +120,52 @@ export default {
 
       // Validation rules
       const validationRules = {
-        name: {
-          condition: !this.formData.name,
-          message: 'Name field cannot be empty',
+        retail: {
+          name: {
+            condition: !this.formData.name,
+            message: 'Name field cannot be empty',
+          },
+          email: {
+            condition: !this.formData.email || !this.isValidEmail(this.formData.email),
+            message: 'Invalid email address',
+          },
+          password: {
+            condition: this.formData.password.length < 6,
+            message: 'Password must be at least 6 characters long',
+          },
         },
-        phone: {
-          condition: !this.formData.phone,
-          message: 'Phone field cannot be empty',
+        wholesale: {
+          company_name: {
+            condition: !this.formData.company_name,
+            message: 'Company Name field cannot be empty',
+          },
+          avn: {
+            condition: !this.formData.avn,
+            message: 'AVN field cannot be empty',
+          },
+          email: {
+            condition: !this.formData.email || !this.isValidEmail(this.formData.email),
+            message: 'Invalid email address',
+          },
+          password: {
+            condition: this.formData.password.length < 6,
+            message: 'Password must be at least 6 characters long',
+          },
         },
-        email: {
-          condition: !this.formData.email || !this.isValidEmail(this.formData.email),
-          message: 'Invalid email address',
-        },
-        password: {
-          condition: this.formData.password.length < 6,
-          message: 'Password must be at least 6 characters long',
-        },
-        // Add more fields as needed
       };
 
-      // Check validation rules
-      Object.keys(validationRules).forEach((field) => {
-        if (validationRules[field].condition) {
-          this.errors[field] = validationRules[field].message;
+      // Check validation rules based on user type
+      const userTypeRules = validationRules[this.type==='ship_supply'?'wholesale':this.type];
+      Object.keys(userTypeRules).forEach((field) => {
+        if (userTypeRules[field].condition) {
+          this.errors[field] = userTypeRules[field].message;
         }
       });
 
       // Return true if there are no errors
       return !Object.values(this.errors).some((error) => error);
     },
-     async signup() {
+    async signup() {
       if (this.validateForm()) {
         try {
           const response=await this.$axios.post("/register", {...this.formData,
@@ -154,7 +186,14 @@ export default {
             token: response.data.data.token,
           };
           await this.$store.dispatch("saveUserInfo", user);
-          await this.$router.push("/");
+
+          if(response.data.data.user_type==='ship_supply'){
+            await this.$router.push("/ship-supply");
+          }
+          else {
+            await this.$router.push("/our-products");
+          }
+
 
         }catch (error){
           if (error.response && error.response.data && error.response.data.errors) {

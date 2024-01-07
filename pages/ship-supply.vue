@@ -220,7 +220,7 @@ export default {
 
   head() {
     return {
-      title: "Ship Supply Order"
+      title: "Ship Supply"
     }
   },
 };
