@@ -28,12 +28,10 @@
           <div class="row">
             <div class="col-lg-2 col-md-6 col-4">
               <div class="logo">
-                <n-link to="/">
-                  <img
+                <img
                     src="/img/logo/3A-foods-logo@0-5x.png"
                     alt="3a Foods logo"
-                  />
-                </n-link>
+                />
               </div>
             </div>
             <div class="col-lg-8 d-none d-lg-block">
@@ -93,12 +91,12 @@
                   >
                     <ul>
                       <li><n-link to="/my-account">My Profile</n-link></li>
-                      <li><n-link to="/order-history">My Orders</n-link></li>
+                      <li v-if="!$store.getters.isShipSupply"><n-link to="/order-history">My Orders</n-link></li>
                       <li><a href="" @click.prevent="logout">Logout</a></li>
                     </ul>
                   </div>
                 </div>
-                <div  v-if="$store.getters.isAuthenticated" class="same-style cart-wrap">
+                <div  v-if="$store.getters.isAuthenticated && !$store.getters.isShipSupply " class="same-style cart-wrap">
                   <button class="icon-cart" @click="openCart = !openCart">
                     <i class="pe-7s-shopbag"></i>
                     <span class="count-style">{{ cartItemCount }}</span>

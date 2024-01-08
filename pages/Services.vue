@@ -11,7 +11,7 @@
              We offer a wide range of provisions and bond goods required by the crew. We source our fresh fruit & vegetables, meat, chilled and dry provisions locally. We are also specialised on ethnic spices and foods for transnational crew needs. Click here for our product list.
            </p>
            <div class="service-btn btn-hover ">
-             <n-link  to="'/ship-supply" v-if="$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
+             <n-link  to="/ship-supply" v-if="$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
              <n-link  :to="'/login?type='+type" v-else class="default-btn">Login</n-link>
            </div>
          </div>
@@ -31,7 +31,7 @@
              To learn more about our products and services please <router-link class="text-warning" to="/contact">contact us</router-link>
            </p>
            <div class="service-btn btn-hover ">
-             <n-link  to="'/our-products" v-if="$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
+             <n-link  to="/our-products" v-if="$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
              <n-link  :to="'/login?type='+type" v-else class="default-btn">Login</n-link>
            </div>
          </div>
@@ -51,7 +51,7 @@
              To learn more about our products and services please <router-link class="text-warning" to="/contact">contact us</router-link>
            </p>
            <div class="service-btn btn-hover ">
-             <n-link  to="'/our-products" v-if="$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
+             <n-link  to="/our-products" v-if="$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
              <n-link  :to="'/login?type='+type" v-else class="default-btn">Login</n-link>
            </div>
          </div>

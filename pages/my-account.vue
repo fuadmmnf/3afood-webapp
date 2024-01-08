@@ -30,15 +30,29 @@
                         <div class="row">
                           <div class="col-lg-12 col-md-6">
                             <div class="billing-info">
-                              <label>{{
-                                userType === "retail"
-                                  ? "Your Name"
-                                  : "Company Name"
-                              }}</label>
+                              <label>Your Name</label>
                               <input type="text" v-model.trim="userInfo.name" />
                               <span class="text-danger" v-if="errors.name">{{
                                 errors.name
                               }}</span>
+                            </div>
+                          </div>
+                          <div class="col-lg-12 col-md-6" v-if="userType!=='retail'">
+                            <div class="billing-info">
+                              <label>Company Name</label>
+                              <input type="text" v-model.trim="userInfo.company_name" />
+                              <span class="text-danger" v-if="errors.company_name">{{
+                                  errors.company_name
+                                }}</span>
+                            </div>
+                          </div>
+                          <div class="col-lg-12 col-md-6" v-if="userType!=='retail'">
+                            <div class="billing-info">
+                              <label>ABN</label>
+                              <input type="text" v-model.trim="userInfo.avn" />
+                              <span class="text-danger" v-if="errors.avn">{{
+                                  errors.avn
+                                }}</span>
                             </div>
                           </div>
                           <div class="col-lg-6 col-md-6">
@@ -161,6 +175,8 @@ export default {
        userInfo:{
          name:'',
          email:'',
+         company_name:'',
+         avm:'',
          phone:'',
          current_password:'',
          type:this.userType
@@ -202,33 +218,63 @@ export default {
         email: false,
         current_password: false,
       };
-
-      // Validation rules
       const validationRules = {
-        name: {
-          condition: !this.userInfo.name,
-          message: 'Name field cannot be empty',
+        retail: {
+          name: {
+            condition: !this.userInfo.name,
+            message: 'Name field cannot be empty',
+          },
+          phone: {
+            condition: !this.userInfo.phone,
+            message: 'Phone field cannot be empty',
+          },
+          email: {
+            condition: !this.userInfo.email || !this.isValidEmail(this.userInfo.email),
+            message: 'Invalid email address',
+          },
+          current_password: {
+            condition: !this.userInfo.current_password,
+            message: 'You have to enter your current password to update your information',
+          },
         },
-        phone: {
-          condition: !this.userInfo.phone,
-          message: 'Phone field cannot be empty',
-        },
-        email: {
-          condition: !this.userInfo.email || !this.isValidEmail(this.userInfo.email),
-          message: 'Invalid email address',
-        },
-        current_password: {
-          condition: !this.userInfo.current_password,
-          message: 'You have to enter your current password to update your information',
+        wholesale: {
+          name: {
+            condition: !this.userInfo.name,
+            message: 'Name field cannot be empty',
+          },
+          phone: {
+            condition: !this.userInfo.phone,
+            message: 'Phone field cannot be empty',
+          },
+          company_name: {
+            condition: !this.userInfo.company_name,
+            message: 'Company Name field cannot be empty',
+          },
+          avn: {
+            condition: !this.userInfo.avn,
+            message: 'AVN field cannot be empty',
+          },
+          email: {
+            condition: !this.userInfo.email || !this.isValidEmail(this.userInfo.email),
+            message: 'Invalid email address',
+          },
+          current_password: {
+            condition: !this.userInfo.current_password,
+            message: 'You have to enter your current password to update your information',
+          },
         },
       };
+      // Validation rules
 
-      // Check validation rules
-      Object.keys(validationRules).forEach((field) => {
-        if (validationRules[field].condition) {
-          this.errors[field] = validationRules[field].message;
+
+      // Check validation rules based on user type
+      const userTypeRules = validationRules[this.userType==='ship_supply'?'wholesale':this.userType];
+      Object.keys(userTypeRules).forEach((field) => {
+        if (userTypeRules[field].condition) {
+          this.errors[field] = userTypeRules[field].message;
         }
       });
+
       // Return true if there are no errors
       return !Object.values(this.errors).some((error) => error);
     },
@@ -316,11 +362,7 @@ export default {
     async fetchData(){
           try {
             const response=await this.$axios.get('/users/user')
-            this.userInfo={
-              name:response.data.data.name,
-              email: response.data.data.email,
-              phone: response.data.data.phone,
-            }
+            this.userInfo=response.data.data
           }catch (error){
             console.log(error)
           }

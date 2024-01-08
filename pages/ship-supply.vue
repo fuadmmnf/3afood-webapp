@@ -10,77 +10,78 @@
           </div>
           <div class="text-center py-3">
             <button class="empty-cart__button btn-hover" @click="openProductDownload" >See Product List</button>
+            <n-link to="/contact" class="empty-cart__button btn-hover">Contact Us</n-link>
           </div>
         </div>
       </div>
       <div class="container pt-50">
-        <div class="row">
-          <div class="col-lg-7 mx-auto">
-            <div class="billing-info-wrap">
-              <div class="row">
-                <div class="col-lg-6 col-md-6">
-                  <div class="billing-info mb-20">
-                    <label>Your Name</label>
-                    <input type="text" v-model="formData.name">
-                    <span class="text-danger" v-if="errors.name">{{ errors.name }}</span>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="billing-info mb-20">
-                    <label>Email</label>
-                    <input type="email" v-model="formData.email">
-                    <span class="text-danger" v-if="errors.email">{{ errors.email }}</span>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="billing-info mb-20">
-                    <label>Business Name</label>
-                    <input type="text" v-model="formData.business_name">
-                    <span class="text-danger" v-if="errors.business_name">{{ errors.business_name }}</span>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="billing-info mb-20">
-                    <label>ABN</label>
-                    <input type="text" v-model="formData.avn">
-                    <span class="text-danger" v-if="errors.avn">{{ errors.avn }}</span>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="billing-info mb-20">
-                    <label>Contact info</label>
-                    <input type="text" v-model="formData.contact_info">
-                    <span class="text-danger" v-if="errors.contact_info">{{ errors.contact_info }}</span>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="billing-info mb-20">
-                    <label>Website address</label>
-                    <input type="text" v-model="formData.website_name">
-                    <span class="text-danger" v-if="errors.website_name">{{ errors.website_name }}</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="billing-info mb-20">
-                  <label>File</label>
-                  <input class="billing-address" type="file" @change="handleFileChange">
-                  <span class="text-danger" v-if="errors.file">{{ errors.file }}</span>
-                </div>
-              </div>
-              <div class="additional-info-wrap">
-                <h4>Additional information</h4>
-                <div class="additional-info">
-                  <label>Order notes</label>
-                  <textarea placeholder="Notes about your order, e.g. special notes for delivery." name="message" v-model="formData.additional_info"></textarea>
-                </div>
-              </div>
-              <div class="text-center py-3">
-                <button class="empty-cart__button btn-hover" @click.prevent="submitOrder">Place Your Order</button>
-              </div>
-            </div>
-          </div>
-        </div>
+<!--        <div class="row">-->
+<!--          <div class="col-lg-7 mx-auto">-->
+<!--            <div class="billing-info-wrap">-->
+<!--              <div class="row">-->
+<!--                <div class="col-lg-6 col-md-6">-->
+<!--                  <div class="billing-info mb-20">-->
+<!--                    <label>Your Name</label>-->
+<!--                    <input type="text" v-model="formData.name">-->
+<!--                    <span class="text-danger" v-if="errors.name">{{ errors.name }}</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-6 col-md-6">-->
+<!--                  <div class="billing-info mb-20">-->
+<!--                    <label>Email</label>-->
+<!--                    <input type="email" v-model="formData.email">-->
+<!--                    <span class="text-danger" v-if="errors.email">{{ errors.email }}</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-6 col-md-6">-->
+<!--                  <div class="billing-info mb-20">-->
+<!--                    <label>Business Name</label>-->
+<!--                    <input type="text" v-model="formData.business_name">-->
+<!--                    <span class="text-danger" v-if="errors.business_name">{{ errors.business_name }}</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-6 col-md-6">-->
+<!--                  <div class="billing-info mb-20">-->
+<!--                    <label>ABN</label>-->
+<!--                    <input type="text" v-model="formData.avn">-->
+<!--                    <span class="text-danger" v-if="errors.avn">{{ errors.avn }}</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-6 col-md-6">-->
+<!--                  <div class="billing-info mb-20">-->
+<!--                    <label>Contact info</label>-->
+<!--                    <input type="text" v-model="formData.contact_info">-->
+<!--                    <span class="text-danger" v-if="errors.contact_info">{{ errors.contact_info }}</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-6 col-md-6">-->
+<!--                  <div class="billing-info mb-20">-->
+<!--                    <label>Website address</label>-->
+<!--                    <input type="text" v-model="formData.website_name">-->
+<!--                    <span class="text-danger" v-if="errors.website_name">{{ errors.website_name }}</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-lg-12">-->
+<!--                <div class="billing-info mb-20">-->
+<!--                  <label>File</label>-->
+<!--                  <input class="billing-address" type="file" @change="handleFileChange">-->
+<!--                  <span class="text-danger" v-if="errors.file">{{ errors.file }}</span>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="additional-info-wrap">-->
+<!--                <h4>Additional information</h4>-->
+<!--                <div class="additional-info">-->
+<!--                  <label>Order notes</label>-->
+<!--                  <textarea placeholder="Notes about your order, e.g. special notes for delivery." name="message" v-model="formData.additional_info"></textarea>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="text-center py-3">-->
+<!--                <button class="empty-cart__button btn-hover" @click.prevent="submitOrder">Place Your Order</button>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
       </div>
     </div>
     <MessageModal :title="title"></MessageModal>

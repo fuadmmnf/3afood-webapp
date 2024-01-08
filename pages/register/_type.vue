@@ -14,7 +14,7 @@
             <div class="register-form">
               <form @submit.prevent="signup">
                 <div class="input-div">
-                  <input v-model.trim="formData.name" placeholder="Name" />
+                  <input v-model.trim="formData.name" placeholder="Name*" />
                   <span class="text-danger" v-if="errors.name">{{
                     errors.name
                   }}</span>
@@ -26,7 +26,7 @@
                     }}</span>
                 </div>
                 <div class="input-div" v-if="type!=='retail'">
-                  <input v-model.trim="formData.avn"  placeholder="AVN*" />
+                  <input v-model.trim="formData.avn"  placeholder="ABN*" />
                   <span class="text-danger" v-if="errors.avn">{{
                       errors.avn
                     }}</span>
@@ -34,7 +34,7 @@
                 <div class="input-div">
                   <input
                     v-model.trim="formData.phone"
-                    placeholder="Phone"
+                    placeholder="Phone*"
                     type="number"
                   />
                   <span class="text-danger" v-if="errors.phone">{{
@@ -60,7 +60,7 @@
                 <div class="button-box">
                   <div class="text-center">
                     Already Have an Account?
-                    <router-link to="/login">Sign In</router-link>
+                    <router-link :to="'/login?type='+type">Sign In</router-link>
                   </div>
                   <div class="text-center pt-5">
                     <button type="submit" @click.prevent="signup">
@@ -125,6 +125,10 @@ export default {
             condition: !this.formData.name,
             message: 'Name field cannot be empty',
           },
+          phone: {
+            condition: !this.formData.phone,
+            message: 'Phone field cannot be empty',
+          },
           email: {
             condition: !this.formData.email || !this.isValidEmail(this.formData.email),
             message: 'Invalid email address',
@@ -135,9 +139,17 @@ export default {
           },
         },
         wholesale: {
+          name: {
+            condition: !this.formData.name,
+            message: 'Name field cannot be empty',
+          },
           company_name: {
             condition: !this.formData.company_name,
             message: 'Company Name field cannot be empty',
+          },
+          phone: {
+            condition: !this.formData.phone,
+            message: 'Phone field cannot be empty',
           },
           avn: {
             condition: !this.formData.avn,

@@ -37,7 +37,7 @@
                       Forgot Password?
                     </n-link>
                     <n-link :to="'/register/'+type" v-if="type">
-                      Register
+                      Not a user?
                     </n-link>
                   </div>
                   <div class="text-center pt-5">
