@@ -6,7 +6,6 @@
         <ServicePolicyTwo />
 <!--        <ProductWrapper :isSectionTitle=true />-->
         <Categories class="pt-70" :blogData="blogData" :title="'Retail'"></Categories>
-        <Categories class="pt-70" :blogData="blogData" :title="'Wholesale'"></Categories>
         <OthersAppsLink class="pt-70"></OthersAppsLink>
     </div>
 </template>

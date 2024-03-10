@@ -3,7 +3,7 @@
   <div class="blog-without-sidebar">
     <div class="blog-area">
       <div class="container">
-        <SectionTitleWithSubTitle classes="section-title-2 mb-60" :title="'Top Categories('+title+')'"  />
+        <SectionTitleWithSubTitle classes="section-title-2 mb-60" :title="'Top Categories'"  />
         <div class="row">
           <div class="col-12">
             <div class="ml-20">
