@@ -1,7 +1,7 @@
 <template>
     <div class="support-area pt-100 pb-90">
         <div class="container">
-          <SectionTitleWithSubTitle classes="section-title-2 mb-60" title="Why Us?" subTitle="There are some new arrival collections on this winter" />
+          <SectionTitleWithSubTitle classes="section-title-2 mb-60" title="Why Us?" subTitle="The main reasons behind our success" />
             <div class="row mtn-30">
                 <div class="col-md-4 col-sm-6 mt-30" v-for="(policy, index) in policies" :key="index">
                     <div class="support-wrap-2 support-shape text-center">
@@ -24,18 +24,19 @@
                 policies: [
                     {
                         icon: "/img/icon-img/support-1.png",
-                        title: "Free Shipping",
-                        subTitle: "Free shipping on all order consectetu adipisicing elit sed"
+                        title: "Fast Response",
+                        subTitle: "Quick, efficient service. Your needs are addressed promptly"
                     },
                     {
                         icon: "/img/icon-img/support-2.png",
-                        title: "Support 24/7",
-                        subTitle: "Support 24 hours a day consectetu adipisicing elit sed"
+                        title: "Quality Products",
+                        subTitle: "Top-notch selections. Quality assured. Your trusted source for excellence"
                     },
                     {
                         icon: "/img/icon-img/support-3.png",
-                        title: "Money Return",
-                        subTitle: "30 days for free return consectetu adipisicing elit sed"
+                        title: "Customer Satisfaction",
+                        subTitle: "Your satisfaction drives us. Quality, service, care - every time"
+
                     }
                 ]
             }
