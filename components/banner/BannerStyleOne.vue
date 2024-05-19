@@ -2,7 +2,7 @@
     <div class="banner-area">
         <div class="container">
             <div class="row mtn-30">
-                <div class="col-md-4 mt-30" v-for="(banner, index) in banners" :key="index">
+                <div class="col-md-6 mt-30" v-for="(banner, index) in banners" :key="index">
                     <BannerItem :banner="banner" />
                 </div>
             </div>
@@ -18,21 +18,13 @@
                 {
                     id: 1,
                     title: "Watches",
-                    price: 99,
-                    imgSrc: "/img/banner/banner-1.jpg"
+                    imgSrc: "/img/mission/tamanna-rumee-dqVPEGkuR_U-unsplash.jpg"
                 },
                 {
                     id: 2,
                     title: "Plo Bag",
-                    price: 80,
-                    imgSrc: "/img/banner/banner-2.jpg"
+                    imgSrc: "/img/mission/mike-bergmann-tHjXXy1kk_Q-unsplash.jpg"
                 },
-                {
-                    id: 3,
-                    title: "Sunglass",
-                    price: 79,
-                    imgSrc: "/img/banner/banner-3.jpg"
-                }
             ]
         };
     },

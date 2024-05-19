@@ -61,14 +61,14 @@
                         btn_label:"View Products",
                         backgroundImage: "/img/slider/3aFood/shutterstock_708645067.jpg"
                     },
-                  {
-                    subTitle: "Food Services",
-                    title: "50+ Retail Product",
-                    desc: "Lets see our products",
-                    link:"/our-products",
-                    btn_label:"View Products",
-                    backgroundImage: "/img/slider/3aFood/SPICES.jpg"
-                  },
+                  // {
+                  //   subTitle: "Food Services",
+                  //   title: "50+ Retail Product",
+                  //   desc: "Lets see our products",
+                  //   link:"/our-products",
+                  //   btn_label:"View Products",
+                  //   backgroundImage: "/img/slider/3aFood/SPICES.jpg"
+                  // },
                   {
                     subTitle: "Food Services",
                     title: "Best In The Town",

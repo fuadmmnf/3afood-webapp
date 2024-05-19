@@ -28,10 +28,12 @@
           <div class="row">
             <div class="col-lg-2 col-md-6 col-4">
               <div class="logo">
-                <img
+                <n-link  to="/"> <img
                     src="/img/logo/3A-foods-logo@0-5x.png"
                     alt="3a Foods logo"
-                />
+                /> </n-link>
+
+
               </div>
             </div>
             <div class="col-lg-8 d-none d-lg-block">
@@ -66,7 +68,7 @@
                       :class="{ active: isOpenAccountSettings === 'Register' }"
                   >
                     <ul>
-                      <li><n-link to="/register/retail">Retail</n-link></li>
+<!--                      <li><n-link to="/register/retail">Retail</n-link></li>-->
                       <li>
                         <n-link to="/register/wholesale">Wholesale</n-link>
                         <n-link to="/register/ship_supply">Ship Supply</n-link>

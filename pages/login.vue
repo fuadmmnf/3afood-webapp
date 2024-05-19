@@ -3,6 +3,7 @@
     <Breadcrumb pageTitle="Login" />
     <div class="login-register-area pt-100 pb-100">
       <div class="container">
+        <h4 class="text-center my-4">Please login first to view our product list</h4>
         <div class="login-register-tab-list nav">
           <span class="active">
             Login

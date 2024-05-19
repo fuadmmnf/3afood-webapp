@@ -8,7 +8,7 @@
              Ship Supply
            </h4>
            <p class="service-des">
-             We offer a wide range of provisions and bond goods required by the crew. We source our fresh fruit & vegetables, meat, chilled and dry provisions locally. We are also specialised on ethnic spices and foods for transnational crew needs. Click here for our product list.
+             We offer a wide range of provisions and bond goods required by the crew. We source our fresh fruit & vegetables, meat, chilled and dry provisions locally. We are also specialised on ethnic spices and foods for transnational crew needs. To know about our product list please email to info@3afoods.com.au
            </p>
            <div class="service-btn btn-hover ">
              <n-link  to="/ship-supply" v-if="$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
@@ -17,7 +17,7 @@
          </div>
          <div class="col-lg-5 col-md-8 col-10 mx-auto">
            <div class="service-img">
-             <img class="" src="https://www.3afoods.com.au/wp-content/uploads/2020/08/shutterstock_1674592507_sm.jpg" alt="">
+             <img src="../static/img/slider/3aFood/SHIP_SUPPLY.jpg" alt="">
            </div>
          </div>
        </div>
@@ -37,7 +37,7 @@
          </div>
          <div class="col-lg-5 col-md-8 col-10 mx-auto">
            <div class="service-img">
-             <img src="https://www.3afoods.com.au/wp-content/uploads/2019/03/foods_service.jpg" alt="">
+             <img src="/static/img/slider/SPICES.jpg" alt="">
            </div>
          </div>
        </div>
@@ -47,8 +47,8 @@
            Wholesale Food Services
            </h4>
            <p class="service-des">
-             We supply all catering necessities to hotels, restaurants, cafes, pizza shops and offices in Western Australia. We offer an extensive product range including dry products, meats, frozen foods (seafoods & vegetables), cleaning materials, packaging and disposable items. We always respond very fast and offer the highest quality with a competitive price because "Customer Satisfaction" is our priority.
-             To learn more about our products and services please <router-link class="text-warning" to="/contact">contact us</router-link>
+             We supply all catering necessities to hotels, restaurants, cafes, pizza shops and offices in Western Australia. We offer an extensive product range including dry products, meats, frozen foods (sea foods & vegetables), cleaning materials, packaging and disposable items. We always response very fast and offer the highest quality with a competitive price because “Customer Satisfaction” is our priority. To learn about our product range please email to info@3afoods.com.au
+             <router-link class="text-warning" to="/contact">contact us</router-link>
            </p>
            <div class="service-btn btn-hover ">
              <n-link  to="/our-products" v-if="$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
@@ -57,7 +57,7 @@
          </div>
          <div class="col-lg-5 col-md-8 col-10 mx-auto">
            <div class="service-img">
-             <img src="https://www.3afoods.com.au/wp-content/uploads/2019/03/foods_service.jpg" alt="">
+             <img src="../static/img/slider/3aFood/SPICES.jpg" alt="">
            </div>
          </div>
        </div>

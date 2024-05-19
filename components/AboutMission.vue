@@ -2,7 +2,7 @@
     <div class="about-mission-area pb-70">
         <div class="container">
             <div class="row">
-                <div class="col-md-4" v-for="(item, index) in items" :key="index">
+                <div class="col-md-6" v-for="(item, index) in items" :key="index">
                     <div class="single-mission mb-30">
                         <h3>{{ item.title }}</h3>
                         <p>{{ item.desc }}</p>
@@ -21,18 +21,14 @@
                     {
                         id: 1,
                         title: "Our vision",
-                        desc: "Flone provide how all this mistaken idea of denounc pleasure and sing pain was born an will give you a ete account of the system, and expound the actual teangs the eat explorer of the truth."
+                        desc: "Our mission is to create a great shopping environment where satisfaction is guaranteed. From our humble beginnings as a neighborhood grocer, we've grown to serve statewide, providing quality products to businesses across Western Australia"
+
                     },
                     {
                         id: 2,
                         title: "Our mission",
-                        desc: "Flone provide how all this mistaken idea of denounc pleasure and sing pain was born an will give you a ete account of the system, and expound the actual teangs the eat explorer of the truth."
+                        desc: "Our vision is to become the leading supplier of quality groceries and provisions across Western Australia, serving businesses of all sizes with a focus on customer satisfaction. From our humble beginnings as a local grocer, we strive to expand statewide while providing an exceptional shopping experience"
                     },
-                    {
-                        id: 3,
-                        title: "Our goal",
-                        desc: "Flone provide how all this mistaken idea of denounc pleasure and sing pain was born an will give you a ete account of the system, and expound the actual teangs the eat explorer of the truth."
-                    }
                 ]
             }
         },
