@@ -119,6 +119,39 @@
   "WelcomeMessage": {
     "description": "Auto imported from components/WelcomeMessage.vue"
   },
+  "ProductDetailsWrapper": {
+    "description": "Auto imported from components/product/ProductDetailsWrapper.vue"
+  },
+  "ProductGridItem": {
+    "description": "Auto imported from components/product/ProductGridItem.vue"
+  },
+  "ProductGridItemTwo": {
+    "description": "Auto imported from components/product/ProductGridItemTwo.vue"
+  },
+  "ProductGridStyleThree": {
+    "description": "Auto imported from components/product/ProductGridStyleThree.vue"
+  },
+  "ProductWrapper": {
+    "description": "Auto imported from components/product/ProductWrapper.vue"
+  },
+  "ProductWrapperCosmetics": {
+    "description": "Auto imported from components/product/ProductWrapperCosmetics.vue"
+  },
+  "ProductWrapperFive": {
+    "description": "Auto imported from components/product/ProductWrapperFive.vue"
+  },
+  "ProductWrapperFour": {
+    "description": "Auto imported from components/product/ProductWrapperFour.vue"
+  },
+  "ProductWrapperSeven": {
+    "description": "Auto imported from components/product/ProductWrapperSeven.vue"
+  },
+  "ProductWrapperThree": {
+    "description": "Auto imported from components/product/ProductWrapperThree.vue"
+  },
+  "ProductWrapperTwo": {
+    "description": "Auto imported from components/product/ProductWrapperTwo.vue"
+  },
   "BannerItem": {
     "description": "Auto imported from components/banner/BannerItem.vue"
   },
@@ -169,38 +202,5 @@
   },
   "PolicyServicePolicyTwo": {
     "description": "Auto imported from components/policy/ServicePolicyTwo.vue"
-  },
-  "ProductDetailsWrapper": {
-    "description": "Auto imported from components/product/ProductDetailsWrapper.vue"
-  },
-  "ProductGridItem": {
-    "description": "Auto imported from components/product/ProductGridItem.vue"
-  },
-  "ProductGridItemTwo": {
-    "description": "Auto imported from components/product/ProductGridItemTwo.vue"
-  },
-  "ProductGridStyleThree": {
-    "description": "Auto imported from components/product/ProductGridStyleThree.vue"
-  },
-  "ProductWrapper": {
-    "description": "Auto imported from components/product/ProductWrapper.vue"
-  },
-  "ProductWrapperCosmetics": {
-    "description": "Auto imported from components/product/ProductWrapperCosmetics.vue"
-  },
-  "ProductWrapperFive": {
-    "description": "Auto imported from components/product/ProductWrapperFive.vue"
-  },
-  "ProductWrapperFour": {
-    "description": "Auto imported from components/product/ProductWrapperFour.vue"
-  },
-  "ProductWrapperSeven": {
-    "description": "Auto imported from components/product/ProductWrapperSeven.vue"
-  },
-  "ProductWrapperThree": {
-    "description": "Auto imported from components/product/ProductWrapperThree.vue"
-  },
-  "ProductWrapperTwo": {
-    "description": "Auto imported from components/product/ProductWrapperTwo.vue"
   }
 }
