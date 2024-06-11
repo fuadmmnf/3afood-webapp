@@ -35,6 +35,8 @@
 </template>
 
 <script>
+
+
 export default {
   components: {
     Breadcrumb: () => import('@/components/Breadcrumb'),

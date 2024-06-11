@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import blogData from "@/data/blog.json";
+import blogData from "@/data/category.json";
 import ServicePolicyTwo from "@/components/policy/ServicePolicyTwo.vue";
     export default {
         components: {

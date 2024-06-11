@@ -30,7 +30,7 @@
 </template>
 
 <script>
-    import blogData from "@/data/blog.json";
+    import blogData from "@/data/category.json";
     export default {
         components: {
             HeaderWithTopbar: () => import("@/components/HeaderWithTopbar"),
