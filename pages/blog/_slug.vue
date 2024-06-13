@@ -123,7 +123,7 @@
 </template>
 
 <script>
-    import blog from "@/data/blog.json";
+    import blog from "@/data/category.json";
 
     export default {
         data() {

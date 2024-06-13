@@ -5,7 +5,8 @@
                 <div class="col-md-6">
                     <div class="product-details-slider">
                         <div class="product-details-img">
-                          <img class="img-fluid" :src="path+product.img" :alt="product.title">
+                          <img class="img-fluid" v-if="product.img" :src="path+product.img" :alt="product.title">
+                          <img class="img-fluid" v-else :src="getCategoryImage(product?.category?.category_name)" :alt="product.title" />
                         </div>
                     </div>
                 </div>
@@ -40,6 +41,8 @@
 </template>
 
 <script>
+import categoryData from "@/data/category.json";
+
     export default {
         props: ['product'],
 
@@ -56,6 +59,9 @@
         },
 
       methods: {
+        getCategoryImage(category_name){
+          return categoryData.find((category)=>category.title===category_name)?.imgSrc
+        },
             addToCart(product) {
 
                 const prod = {...product, cartQuantity:this.userType==='retail'?(this.singleQuantity):parseFloat(this.singleQuantity)}
@@ -103,6 +109,7 @@
         },
       mounted() {
         this.path = process.env.dev? process.env.WEB_DEV_URL: process.env.WEB_BUILD_URL
+        console.log(this.product)
       },
     };
 </script>

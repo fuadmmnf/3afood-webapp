@@ -2,7 +2,8 @@
   <div class="product-wrap mb-30">
     <div class="product-img">
       <n-link :to="`/product/${product.id}`">
-        <img class="default-img" :src="path+product.img" :alt="product.title" />
+        <img class="default-img" v-if="product.img" :src="path+product.img" :alt="product.title" />
+        <img class="default-img" v-else :src="getCategoryImage(product.category.category_name)" :alt="product.title" />
       </n-link>
       <div
         class="product-action"
@@ -30,6 +31,7 @@
 </template>
 
 <script>
+import categoryData from "@/data/category.json";
 export default {
   props: ["product", "layout"],
   data(){
@@ -71,6 +73,10 @@ export default {
       this.$store.dispatch("addToCompare", product);
     },
 
+    getCategoryImage(category_name){
+      console.log(categoryData)
+      return categoryData.find((category)=>category.title===category_name)?.imgSrc
+    }
 
   },
   computed:{
