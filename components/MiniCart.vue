@@ -9,7 +9,8 @@
         >
           <div class="shopping-cart-img">
             <n-link :to="`/product/${product.id}`">
-              <img :src="path+product.img" :alt="product.title" />
+              <img v-if="product.img" :src="path+product.img" :alt="product.title" />
+              <img v-else :src="getCategoryImage(product?.category?.category_name)" :alt="product.title" />
             </n-link>
           </div>
           <div class="shopping-cart-title">
@@ -50,6 +51,8 @@
 </template>
 
 <script>
+import categoryData from "@/data/category.json";
+
 export default {
     props: ["miniCart"],
   data(){
@@ -70,6 +73,9 @@ export default {
         }
     },
   methods: {
+    getCategoryImage(category_name){
+      return categoryData.find((category)=>category.title===category_name)?.imgSrc
+    },
         removeProduct(product) {
             // for notification
             this.$notify({ title: 'Item remove from cart!'})
