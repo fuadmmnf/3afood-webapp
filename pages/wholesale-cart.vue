@@ -21,7 +21,8 @@
                 <tr v-for="(product, index) in products" :key="index">
                   <td class="product-thumbnail">
                     <n-link :to="`/product/${product.id}`">
-                      <img :src="path+product.img" :alt="product.title">
+                      <img v-if="product.img" :src="path+product.img" :alt="product.title">
+                      <img v-else :src="getCategoryImage(product?.category?.category_name)" :alt="product.title" />
                     </n-link>
                   </td>
                   <td class="product-name">
@@ -73,6 +74,8 @@
 </template>
 
 <script>
+import categoryData from "@/data/category.json";
+
 export default {
   // middleware:['auth'],
   components: {
@@ -98,6 +101,9 @@ export default {
   },
 
   methods: {
+    getCategoryImage(category_name){
+      return categoryData.find((category)=>category.title===category_name)?.imgSrc
+    },
     incrementProduct(product) {
       const prod = { ...product, cartQuantity: 1 }
       this.$store.dispatch('addToCartItem', prod)

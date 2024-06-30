@@ -3,7 +3,7 @@
       <li v-if="!$store.getters.isAuthenticated">
         <n-link  to="/">Home </n-link>
       </li>
-      <li v-if="$store.getters.isRetail">
+      <li v-if="$store.getters.isRetail || $store.getters.isWholesale ">
         <n-link to="/our-products">Our Products</n-link>
       </li>
       <li v-if="$store.getters.isShipSupply">
