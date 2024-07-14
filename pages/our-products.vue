@@ -29,7 +29,7 @@
 
             <!-- shop product -->
             <div class="shop-bottom-area mt-35">
-              <div v-if="products.length > 0">
+              <div v-if="products?.length">
                 <div class="row product-layout" :class="{ 'list': layout === 'list', 'grid three-column': layout === 'threeColumn', 'grid two-column': layout === 'twoColumn' }">
                   <div class="col-xl-4 col-sm-6" v-for="(product, index) in products" :key="index">
                     <ProductGridItem :product="product" :layout="layout" />
@@ -88,10 +88,10 @@ export default {
     getItems() {
       let start = (this.currentPage - 1) * this.perPage;
       let end = this.currentPage * this.perPage;
-      return this.products.slice(start, end);
+      return this.products?.slice(start, end);
     },
     getPaginateCount() {
-      return Math.ceil(this.products.length / this.perPage);
+      return Math.ceil(this.products?.length / this.perPage);
     },
   },
 
