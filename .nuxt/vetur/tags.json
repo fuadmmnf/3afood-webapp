@@ -119,6 +119,30 @@
   "WelcomeMessage": {
     "description": "Auto imported from components/WelcomeMessage.vue"
   },
+  "HeroSlider": {
+    "description": "Auto imported from components/hero/HeroSlider.vue"
+  },
+  "HeroSliderCosmetics": {
+    "description": "Auto imported from components/hero/HeroSliderCosmetics.vue"
+  },
+  "HeroSliderFive": {
+    "description": "Auto imported from components/hero/HeroSliderFive.vue"
+  },
+  "HeroSliderFour": {
+    "description": "Auto imported from components/hero/HeroSliderFour.vue"
+  },
+  "HeroSliderSeven": {
+    "description": "Auto imported from components/hero/HeroSliderSeven.vue"
+  },
+  "HeroSliderSix": {
+    "description": "Auto imported from components/hero/HeroSliderSix.vue"
+  },
+  "HeroSliderThree": {
+    "description": "Auto imported from components/hero/HeroSliderThree.vue"
+  },
+  "HeroSliderTwo": {
+    "description": "Auto imported from components/hero/HeroSliderTwo.vue"
+  },
   "ProductDetailsWrapper": {
     "description": "Auto imported from components/product/ProductDetailsWrapper.vue"
   },
@@ -152,6 +176,18 @@
   "ProductWrapperTwo": {
     "description": "Auto imported from components/product/ProductWrapperTwo.vue"
   },
+  "PolicyServicePolicy": {
+    "description": "Auto imported from components/policy/ServicePolicy.vue"
+  },
+  "PolicyServicePolicyFour": {
+    "description": "Auto imported from components/policy/ServicePolicyFour.vue"
+  },
+  "PolicyServicePolicyThree": {
+    "description": "Auto imported from components/policy/ServicePolicyThree.vue"
+  },
+  "PolicyServicePolicyTwo": {
+    "description": "Auto imported from components/policy/ServicePolicyTwo.vue"
+  },
   "BannerItem": {
     "description": "Auto imported from components/banner/BannerItem.vue"
   },
@@ -166,41 +202,5 @@
   },
   "BannerStyleTwo": {
     "description": "Auto imported from components/banner/BannerStyleTwo.vue"
-  },
-  "HeroSlider": {
-    "description": "Auto imported from components/hero/HeroSlider.vue"
-  },
-  "HeroSliderCosmetics": {
-    "description": "Auto imported from components/hero/HeroSliderCosmetics.vue"
-  },
-  "HeroSliderFive": {
-    "description": "Auto imported from components/hero/HeroSliderFive.vue"
-  },
-  "HeroSliderFour": {
-    "description": "Auto imported from components/hero/HeroSliderFour.vue"
-  },
-  "HeroSliderSeven": {
-    "description": "Auto imported from components/hero/HeroSliderSeven.vue"
-  },
-  "HeroSliderSix": {
-    "description": "Auto imported from components/hero/HeroSliderSix.vue"
-  },
-  "HeroSliderThree": {
-    "description": "Auto imported from components/hero/HeroSliderThree.vue"
-  },
-  "HeroSliderTwo": {
-    "description": "Auto imported from components/hero/HeroSliderTwo.vue"
-  },
-  "PolicyServicePolicy": {
-    "description": "Auto imported from components/policy/ServicePolicy.vue"
-  },
-  "PolicyServicePolicyFour": {
-    "description": "Auto imported from components/policy/ServicePolicyFour.vue"
-  },
-  "PolicyServicePolicyThree": {
-    "description": "Auto imported from components/policy/ServicePolicyThree.vue"
-  },
-  "PolicyServicePolicyTwo": {
-    "description": "Auto imported from components/policy/ServicePolicyTwo.vue"
   }
 }
