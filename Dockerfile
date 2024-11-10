@@ -2,10 +2,10 @@
 FROM node:lts-alpine as build-stage
 WORKDIR /app
 COPY package*.json ./
-#RUN npm i -g @quasar/cli
+#RUN npm i -g nuxt
 RUN npm install
 COPY . .
-RUN nuxt build
+RUN npm run build
 
 # production stage
 FROM nginx:stable-alpine as production-stage
