@@ -2,7 +2,7 @@
 version: '3.7'
 networks:
   network-custom:
-    name: 3afoods_web
+    name: 3afoods_frontend
     external: true
 services:
   quasar-admin:
