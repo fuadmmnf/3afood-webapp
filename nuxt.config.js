@@ -6,7 +6,9 @@ export default {
     // target: 'server', // default is 'server'
     ssr: false,
 
-
+    devServer: {
+        disableHostCheck: true
+    },
 
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
