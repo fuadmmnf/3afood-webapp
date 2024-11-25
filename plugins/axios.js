@@ -1,5 +1,4 @@
 
-
 export default function ({ $axios,store, redirect ,app}) {
     $axios.interceptors.request.use((config) => {
         const accessToken = store.getters.getAccessToken

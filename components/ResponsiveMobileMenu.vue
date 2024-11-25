@@ -33,9 +33,11 @@
       <li>
         <n-link to="/about">About Us </n-link>
       </li>
-      <li>
-        <n-link to="/faqs">FAQs </n-link>
-      </li>
+
+<!--      <li>-->
+<!--        <n-link to="/faqs">FAQs </n-link>-->
+<!--      </li>-->
+
       <li>
         <n-link to="/contact">Contact Us</n-link>
       </li>

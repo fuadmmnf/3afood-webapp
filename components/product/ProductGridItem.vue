@@ -74,7 +74,6 @@ export default {
     },
 
     getCategoryImage(category_name){
-      console.log(categoryData)
       return categoryData.find((category)=>category.title===category_name)?.imgSrc
     }
 
@@ -86,7 +85,6 @@ export default {
   },
   mounted() {
     this.path = process.env.dev? process.env.WEB_DEV_URL: process.env.WEB_BUILD_URL
-    console.log("product:"+ this.product)
   },
 };
 </script>
