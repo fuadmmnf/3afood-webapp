@@ -1,0 +1,9 @@
+# for local development
+version: '3.7'
+services:
+  quasar-admin:
+    container_name: 3afoods-web-prod
+    build:
+      context: .
+    ports:
+      - "${NGINX_HOST_PORT}:80"
