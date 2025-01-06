@@ -46,6 +46,7 @@ You can directly use them in pages and other components without the need to impo
 - `<TheFooter>` | `<the-footer>` (components/TheFooter.vue)
 - `<TheHeader>` | `<the-header>` (components/TheHeader.vue)
 - `<WelcomeMessage>` | `<welcome-message>` (components/WelcomeMessage.vue)
+
 - `<BannerItem>` | `<banner-item>` (components/banner/BannerItem.vue)
 - `<BannerStyleFour>` | `<banner-style-four>` (components/banner/BannerStyleFour.vue)
 - `<BannerStyleOne>` | `<banner-style-one>` (components/banner/BannerStyleOne.vue)
