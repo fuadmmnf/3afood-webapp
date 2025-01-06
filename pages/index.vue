@@ -19,7 +19,7 @@ import ServicePolicyTwo from "@/components/policy/ServicePolicyTwo.vue";
           OthersAppsLink:()=>import('@/components/OthersAppsLink.vue'),
           ServicePolicyTwo,
             TheHeader: () => import('@/components/TheHeader'),
-            HeroSlider: () => import('@/components/hero/HeroSlider'),
+            HeroSliderFour: () => import('@/components/hero/HeroSliderFour.vue'),
             ServicePolicy: () => import('@/components/policy/ServicePolicy'),
             ProductWrapper: () => import('@/components/product/ProductWrapper'),
             BlogWrapper: () => import('@/components/BlogWrapper'),

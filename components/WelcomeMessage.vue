@@ -1,10 +1,10 @@
 <template>
     <div class="welcome-area">
         <div class="container">
-            <div class="welcome-content text-center">
-                <h5>{{ subTitle }}</h5>
-                <h1>{{ title }}</h1>
-                <p>{{ desc }}</p>
+            <div class="welcome-content text-center" v-if="aboutUs">
+                <h5>Who Are We</h5>
+              <h1>{{ aboutUs.title }}</h1>
+              <p>{{ aboutUs.desc }}</p>
             </div>
         </div>
     </div>
@@ -14,10 +14,28 @@
     export default {
         data() {
             return {
-                title: "Welcome To 3A Foods",
-                subTitle: "Who Are We",
-                desc: "Welcome to 3A Foods, your premier source for quality groceries and meats in South Lake, Western Australia. Established in 2015, we've grown to serve local communities, restaurants, hotels, and cafes statewide, including Port Hedland and Karratha. Explore our wide selection of dry goods, fresh meats, frozen seafood, and ethnic spices tailored to meet the needs of every business, from restaurants to caterers and ships.\n"
+                aboutUs:{},
             }
         },
+      methods: {
+        async loadAboutUs() {
+          try {
+            const response = await this.$axios.$get("ui-sections/about_us");
+            const attributes = response[0].attributes.reduce((acc, attr) => {
+              acc[attr.key] = attr.value;
+              return acc;
+            }, {});
+            this.aboutUs = {
+              title: response[0]?.title || "Default Title",
+              desc: attributes['content']|| "Default Description",
+            };
+          } catch (error) {
+            console.error("Error loading about us data:", error);
+          }
+        },
+      },
+      mounted() {
+        this.loadAboutUs();
+      },
     };
 </script>

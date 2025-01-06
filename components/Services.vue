@@ -1,46 +1,58 @@
 <template>
   <div class="container pt-70">
-    <SectionTitleWithSubTitle classes="section-title-2 mb-60" title="Our Services"  />
+    <SectionTitleWithSubTitle classes="section-title-2 mb-60" title="Our Services" />
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-center align-items-center p-3">
-        <img src="/img/services/wholesaler.png"  alt="Wholesale Supply">
+      <div
+          v-for="(service, index) in serviceData"
+          :key="index"
+          class="col-lg-6 col-md-6 col-12 d-flex justify-content-center align-items-center p-3"
+      >
+        <img :src="`${path}${service.image}`" :alt="service.title" />
         <div class="service-info">
-          <h2>Food Services</h2>
-          <p>Your top choice for catering supplies in Western Australia, with fast response times and competitive prices, all focused on ensuring customer satisfaction.
-          </p>
-
+          <h2>{{ service.title }}</h2>
+          <p>{{ service.content }}</p>
           <div class="service-btn btn-hover">
-            <n-link to="/services?type=wholesale" class="default-btn">Learn More</n-link>
+            <n-link :to="service.link" class="default-btn">Learn More</n-link>
           </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-center align-items-center p-3">
-       <img src="/img/services/ship-icon.png" alt="Ship Supply">
-        <div class="service-info">
-          <h2>Ship Supply</h2>
-          <p>Your comprehensive source for crew provisions, supplying fresh local produce, meats, and specialized ethnic spices for transnational crew needs.
-          </p>
-        <div class="service-btn btn-hover">
-          <n-link to="/services?type=ship_supply" class="default-btn">Learn More</n-link>
-        </div>
-        </div>
-      </div>
-<!--      <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center align-items-center p-3">-->
-<!--        <img src="/img/services/shop.png" alt="Retail Supply">-->
-<!--        <div class="service-info">-->
-<!--          <h2>Retail Supply</h2>-->
-<!--          <p>The whole spectrum of marine supply, including provisions and dutyfree goods, deck, engine and electrical equipment.</p>-->
-<!--         <div class="service-btn btn-hover">-->
-<!--           <n-link to="/services?type=retail" class="default-btn">Learn More</n-link>-->
-<!--         </div>-->
-<!--        </div>-->
-<!--      </div>-->
     </div>
   </div>
 </template>
 
 <script>
-
+export default {
+  data() {
+    return {
+      serviceData: [],
+      path : process.env.dev? process.env.WEB_DEV_URL: process.env.WEB_BUILD_URL
+    };
+  },
+  methods: {
+    async loadServiceData() {
+      try {
+        const response = await this.$axios.$get("ui-sections/service");
+        this.serviceData = response.map((service) => {
+          const attributes = service.attributes.reduce((acc, attr) => {
+            acc[attr.key] = attr.value;
+            return acc;
+          }, {});
+          return {
+            title: service.title,
+            content: attributes.content || "",
+            link: attributes.link || "#",
+            image: attributes.image || "",
+          };
+        });
+      } catch (error) {
+        console.error("Error loading service data:", error);
+      }
+    }
+  },
+  mounted() {
+    this.loadServiceData()
+  },
+};
 </script>
 
 <style scoped>
