@@ -134,7 +134,7 @@
         },
 
         mounted () {
-            this.blog = blog.find(blog => this.slugify(blog.title) === this.slug);
+            this.category = blog.find(blog => this.slugify(blog.title) === this.slug);
         },
 
         methods: {

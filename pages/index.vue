@@ -8,6 +8,7 @@
         <Categories class="pt-70" :blogData="blogData" :title="'Retail'"></Categories>
         <OthersAppsLink class="pt-70"></OthersAppsLink>
     </div>
+
 </template>
 
 <script>
@@ -17,6 +18,7 @@ import ServicePolicyTwo from "@/components/policy/ServicePolicyTwo.vue";
         components: {
           Services:()=>import('@/components/Services.vue'),
           OthersAppsLink:()=>import('@/components/OthersAppsLink.vue'),
+          WelcomeMessage: () => import('@/components/WelcomeMessage'),
           ServicePolicyTwo,
             TheHeader: () => import('@/components/TheHeader'),
             HeroSliderFour: () => import('@/components/hero/HeroSliderFour.vue'),
