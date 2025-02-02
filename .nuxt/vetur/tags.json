@@ -104,6 +104,9 @@
   "Spinner": {
     "description": "Auto imported from components/Spinner.vue"
   },
+  "SustainabilityDistribution": {
+    "description": "Auto imported from components/SustainabilityDistribution.vue"
+  },
   "TeamMembers": {
     "description": "Auto imported from components/TeamMembers.vue"
   },

@@ -234,6 +234,12 @@
     "chunkName": "pages/blog/_slug"
   },
   {
+    "name": "category-id",
+    "path": "/category/:id?",
+    "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\category\\\\_id.vue",
+    "chunkName": "pages/category/_id"
+  },
+  {
     "name": "product-id",
     "path": "/product/:id?",
     "component": "H:\\\\InnovaTECH\\\\3afood-webapp\\\\pages\\\\product\\\\_id.vue",

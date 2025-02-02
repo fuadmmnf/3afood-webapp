@@ -33,6 +33,7 @@ export { default as SectionTitleWithSubTitle } from '../..\\components\\SectionT
 export { default as Services } from '../..\\components\\Services.vue'
 export { default as ShopSidebar } from '../..\\components\\ShopSidebar.vue'
 export { default as Spinner } from '../..\\components\\Spinner.vue'
+export { default as SustainabilityDistribution } from '../..\\components\\SustainabilityDistribution.vue'
 export { default as TeamMembers } from '../..\\components\\TeamMembers.vue'
 export { default as TestimonialOne } from '../..\\components\\TestimonialOne.vue'
 export { default as TheFooter } from '../..\\components\\TheFooter.vue'

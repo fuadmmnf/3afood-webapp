@@ -2,9 +2,9 @@
     <div class="about-page-wrapper">
         <Breadcrumb pageTitle="about us" />
         <WelcomeMessage class="pt-100 pb-95" />
-        <BannerStyleOne class="pb-70" />
         <AboutMission />
-      <OthersAppsLink class="pt-70"></OthersAppsLink>
+        <SustainabilityDistribution />
+        <OthersAppsLink class="pt-70"></OthersAppsLink>
 
     </div>
 </template>
@@ -21,6 +21,7 @@
             BrandLogoCarousel: () => import('@/components/BrandLogoCarousel'), 
             TheFooter: () => import('@/components/TheFooter'),
             OthersAppsLink:()=>import('@/components/OthersAppsLink.vue'),
+            SustainabilityDistribution:()=>import('@/components/SustainabilityDistribution.vue'),
         },
         head() {
             return {
