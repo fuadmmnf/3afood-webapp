@@ -13,13 +13,17 @@
         <n-link to="/about">About Us </n-link>
       </li>
 
-<!--      <li>-->
-<!--        <n-link to="/faqs">FAQs </n-link>-->
-<!--      </li>-->
-
-<!--      <li>-->
-<!--        <n-link to="/services">Services</n-link>-->
-<!--      </li>-->
+      <li>
+        <a href="#"> Services<li class="fa fa-angle-down"></li></a>
+        <ul class="submenu">
+          <li>
+            <n-link to="/services?type=wholesale">Wholesale</n-link>
+          </li>
+          <li>
+            <n-link to="/services?type=ship_supply">Ship Supply</n-link>
+          </li>
+        </ul>
+      </li>
       <li>
         <n-link to="/contact">Contact Us</n-link>
       </li>

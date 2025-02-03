@@ -74,7 +74,12 @@ export default {
   },
   data(){
     return{
-      type:this.$route.query.type
+
+    }
+  },
+  computed : {
+    type(){
+      return this.$route.query.type
     }
   }
 }
