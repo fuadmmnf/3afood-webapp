@@ -41,6 +41,7 @@ You can directly use them in pages and other components without the need to impo
 - `<Services>` | `<services>` (components/Services.vue)
 - `<ShopSidebar>` | `<shop-sidebar>` (components/ShopSidebar.vue)
 - `<Spinner>` | `<spinner>` (components/Spinner.vue)
+- `<SustainabilityDistribution>` | `<sustainability-distribution>` (components/SustainabilityDistribution.vue)
 - `<TeamMembers>` | `<team-members>` (components/TeamMembers.vue)
 - `<TestimonialOne>` | `<testimonial-one>` (components/TestimonialOne.vue)
 - `<TheFooter>` | `<the-footer>` (components/TheFooter.vue)

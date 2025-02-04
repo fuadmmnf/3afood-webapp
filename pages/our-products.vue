@@ -43,7 +43,7 @@
             <!-- end shop product -->
 
             <div v-if="getPaginateCount > 1">
-              <pagination class="pro-pagination-style shop-pagination mt-30" v-model="currentPage" :per-page="perPage" :records="filteredItems.length" @paginate="paginateClickCallback" :page-count="getPaginateCount" />
+              <pagination class="pro-pagination-style shop-pagination mt-30" v-model="currentPage" :per-page="perPage" :records="getItems?.length" @paginate="paginateClickCallback" :page-count="getPaginateCount" />
             </div>
           </div>
           <div class="col-12" v-else>

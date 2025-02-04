@@ -11,9 +11,9 @@
           <div class="row">
             <div class="col-12">
               <div class="slider-content-4 slider-animation-1 text-center">
-                <h3>{{ slider.subTitle }}</h3>
-                <h1>{{ slider.title }}</h1>
-                <p>{{ slider.desc }}</p>
+                <h3 :style="{ color: slider.text_color }">{{ slider.subTitle }}</h3>
+                <h1 :style="{ color: slider.text_color }" >{{ slider.title }}</h1>
+                <p :style="{ color: slider.text_color }" >{{ slider.desc }}</p>
                 <div class="slider-btn btn-hover">
                   <n-link :to="slider.link">{{ slider.btn_label }}</n-link>
                 </div>
@@ -108,6 +108,7 @@ export default {
             title: attributes.title || "",
             desc: attributes.caption || "",
             link: attributes.btn_link || "#",
+            text_color:attributes.text_color||"#fff",
             btn_label: attributes.btn_label || "Learn More",
             backgroundImage: this.path+attributes.image || "",
           };

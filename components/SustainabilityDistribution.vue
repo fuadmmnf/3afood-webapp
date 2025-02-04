@@ -29,6 +29,7 @@
 export default {
   data() {
     return {
+      items: [],
       banners: [
         {
           id: 1,
@@ -41,35 +42,34 @@ export default {
           imgSrc: "/img/mission/mike-bergmann-tHjXXy1kk_Q-unsplash.jpg"
         },
       ],
-      items: [],
     };
   },
   methods: {
-    async loadMissionData() {
+    async loadSustainabilityDistributionData() {
       try {
-        const response = await this.$axios.$get("ui-sections/mission_vision");
+        const response = await this.$axios.$get("ui-sections/sustainability_distribution");
         const attributes = response[0].attributes.reduce((acc, attr) => {
           acc[attr.key] = attr.value;
           return acc;
         }, {});
         this.items=[{
           id:1,
-          title:'Our Mission',
-          desc:attributes?.mission_content
+          title:'Sustainability',
+          desc:attributes?.sustainability_content
         },
           {
             id:2,
-            title:'Our Vision',
-            desc:attributes?.vision_content
+            title:'Distribution',
+            desc:attributes?.distribution_content
           }
         ]
       } catch (error) {
-        console.error("Error loading mission data:", error);
+        console.error("Error loading  data:", error);
       }
     },
   },
   mounted() {
-    this.loadMissionData();
+    this.loadSustainabilityDistributionData();
   },
 };
 </script>

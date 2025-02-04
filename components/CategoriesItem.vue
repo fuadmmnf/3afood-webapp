@@ -1,7 +1,7 @@
 <template>
   <div class="blog-wrap-2 mb-30">
     <div class="blog-img-2">
-      <n-link :to="`/blog/${(category.category_name)}`">
+      <n-link :to="`/category/${(category.id)}`">
         <img :src="path+category.img" :alt="category.title">
       </n-link>
     </div>
