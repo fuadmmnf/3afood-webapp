@@ -34,7 +34,7 @@ export default {
         {
           id: 1,
           title: "Watches",
-          imgSrc: "/img/mission/tamanna-rumee-dqVPEGkuR_U-unsplash.jpg"
+          imgSrc: "/img/mission/sustainability.png"
         },
         {
           id: 2,
