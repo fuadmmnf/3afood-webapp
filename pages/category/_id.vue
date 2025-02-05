@@ -9,7 +9,10 @@
             {{ detail.description }}
           </p>
           <div class="service-btn btn-hover">
-            <!--            <n-link  to="/ship-supply" v-if="$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>-->
+            <n-link  to="/our-products" v-if="$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
+          </div>
+          <div class="service-btn btn-hover">
+            <n-link to="/login" v-if="!$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
           </div>
         </div>
         <div class="col-lg-5 col-md-8 col-10 mx-auto">
