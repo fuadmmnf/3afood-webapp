@@ -15,7 +15,7 @@
           <div class="col-md-6" v-for="(item, index) in items" :key="index">
             <div class="single-mission mb-30">
               <h3>{{ item.title }}</h3>
-              <p>{{ item.desc }}</p>
+              <p style="text-align: justify">{{ item.desc }}</p>
             </div>
           </div>
         </div>
@@ -36,11 +36,11 @@ export default {
           title: "Watches",
           imgSrc: "/img/mission/sustainability.png"
         },
-        {
-          id: 2,
-          title: "Plo Bag",
-          imgSrc: "/img/mission/mike-bergmann-tHjXXy1kk_Q-unsplash.jpg"
-        },
+        // {
+        //   id: 2,
+        //   title: "Plo Bag",
+        //   imgSrc: "/img/mission/mike-bergmann-tHjXXy1kk_Q-unsplash.jpg"
+        // },
       ],
     };
   },
@@ -57,11 +57,11 @@ export default {
           title:'Sustainability',
           desc:attributes?.sustainability_content
         },
-          {
-            id:2,
-            title:'Distribution',
-            desc:attributes?.distribution_content
-          }
+          // {
+          //   id:2,
+          //   title:'Distribution',
+          //   desc:attributes?.distribution_content
+          // }
         ]
       } catch (error) {
         console.error("Error loading  data:", error);

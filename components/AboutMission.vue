@@ -15,7 +15,7 @@
           <div class="col-md-6" v-for="(item, index) in items" :key="index">
             <div class="single-mission mb-30">
               <h3>{{ item.title }}</h3>
-              <p>{{ item.desc }}</p>
+              <p style="text-align: justify">{{ item.desc }}</p>
             </div>
           </div>
         </div>
