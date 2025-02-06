@@ -2,7 +2,7 @@
     <div class="welcome-area">
         <div class="container">
             <div class="welcome-content text-center" v-if="aboutUs">
-                <h5>Who Are We</h5>
+
               <h1>{{ aboutUs.title }}</h1>
               <p>{{ aboutUs.desc }}</p>
             </div>

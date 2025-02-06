@@ -2,19 +2,22 @@
   <div class="shop-page-wrapper">
     <Breadcrumb :pageTitle="title" />
     <div class="container pt-100 pb-50">
-      <div class="row service-item">
+      <div class="row service-item" v-for="(detail, index) in categories.details" :key="index">
         <div class="col-lg-5 col-md-8 col-10 mx-auto">
-          <h4 class="service-title">{{ category.category_name }}</h4>
+          <h4 class="service-title">{{ categories.category_name }}</h4>
           <p class="service-des">
-            {{ category.description }}
+            {{ detail.description }}
           </p>
           <div class="service-btn btn-hover">
-            <!--            <n-link  to="/ship-supply" v-if="$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>-->
+            <n-link  to="/our-products" v-if="$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
+          </div>
+          <div class="service-btn btn-hover">
+            <n-link to="/login" v-if="!$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
           </div>
         </div>
         <div class="col-lg-5 col-md-8 col-10 mx-auto">
           <div class="service-img">
-            <img :src="path + category?.img" :alt="category?.category_name" />
+            <img :src="path + detail?.image" :alt="categories?.category_name" />
           </div>
         </div>
       </div>
@@ -28,7 +31,7 @@ export default {
     return {
       title: "Category Details",
       category_id: this.$route.params.id,
-      category: {},
+      categories: {},
       path: process.env.dev
         ? process.env.WEB_DEV_URL
         : process.env.WEB_BUILD_URL,
@@ -40,8 +43,8 @@ export default {
         const response = await this.$axios.$get(
           `categories/${this.category_id}`
         );
-        this.category = response.data;
-        console.log("category data", this.category);
+        this.categories = response.data;
+        console.log("category data", this.categories);
       } catch (error) {
         console.error("Error loading category data:", error);
       }
