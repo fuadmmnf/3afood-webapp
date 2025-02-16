@@ -1,19 +1,21 @@
 <template>
   <div class="shop-page-wrapper">
-    <Breadcrumb :pageTitle="title" />
-    <div class="container pt-100 pb-50">
+    <Breadcrumb :pageTitle="title+' / '+categories?.category_name " />
+    <div class="welcome-area pt-75">
+      <div class="container">
+        <div class="welcome-content text-center">
+          <h1>{{ categories?.category_name }}</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container pb-50">
       <div class="row service-item" v-for="(detail, index) in categories.details" :key="index">
         <div class="col-lg-5 col-md-8 col-10 mx-auto">
-          <h4 class="service-title">{{ categories.category_name }}</h4>
+<!--          <h4 class="service-title">{{ categories.category_name }}</h4>-->
           <p class="service-des">
             {{ detail.description }}
           </p>
-          <div class="service-btn btn-hover">
-            <n-link  to="/our-products" v-if="$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
-          </div>
-          <div class="service-btn btn-hover">
-            <n-link to="/login" v-if="!$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
-          </div>
+
         </div>
         <div class="col-lg-5 col-md-8 col-10 mx-auto">
           <div class="service-img">
@@ -22,6 +24,18 @@
         </div>
       </div>
     </div>
+
+    <div class="container pb-60">
+      <div class="text-center">
+        <div class="service-btn btn-hover">
+          <n-link  to="/our-products" v-if="$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
+        </div>
+        <div class="service-btn btn-hover">
+          <n-link to="/login" v-if="!$store.getters.isAuthenticated" class="default-btn">See Product List</n-link>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -32,6 +46,7 @@ export default {
       title: "Category Details",
       category_id: this.$route.params.id,
       categories: {},
+      category_name:'',
       path: process.env.dev
         ? process.env.WEB_DEV_URL
         : process.env.WEB_BUILD_URL,
@@ -44,7 +59,8 @@ export default {
           `categories/${this.category_id}`
         );
         this.categories = response.data;
-        console.log("category data", this.categories);
+
+
       } catch (error) {
         console.error("Error loading category data:", error);
       }
