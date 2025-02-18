@@ -11,7 +11,7 @@
     <div class="container pb-50">
       <div class="row service-item" v-for="(detail, index) in categories.details" :key="index">
         <div class="col-lg-5 col-md-8 col-10 mx-auto">
-<!--          <h4 class="service-title">{{ categories.category_name }}</h4>-->
+          <h4 class="service-title">{{ detail.subtitle ?? '' }}</h4>
           <p class="service-des">
             {{ detail.description }}
           </p>
