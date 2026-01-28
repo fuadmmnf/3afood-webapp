@@ -15,7 +15,7 @@
             </div>
             <div class="header-offer">
               <i class="pe-7s-map-marker"></i>
-              <span>3/39 Tulloch Way Canning Vale WA 6155 </span>
+              <span>47 Tulloch Way, Canningvale, WA-6155 </span>
             </div>
           </div>
         </div>

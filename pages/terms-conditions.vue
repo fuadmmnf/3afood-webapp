@@ -108,8 +108,14 @@
                           </div>
 
                           <div class="policy-list">
-                            <h3 class="policy-title">Return Policy / Change of Mind:</h3>
-                            <p>Please contact your sales agent for our Return Policy Delivery policy.</p>
+                            <h3 class="policy-title">Return Policy</h3>
+                            <ul>
+                              <li>No change of mind for all fresh and frozen products after the product is processed and the delivery is completed.</li>
+                              <li>If the product is wrong or faulty, please inform us within 48 hours of the delivery. No return request will be accepted after 48 hours.</li>
+                              <li>Dry goods can be returned within 7 days provided proper storage conditions are met.</li>
+                              <li>Please contact with your account manager for more details about our return policy.</li>
+                            </ul>
+                            
                           </div>
 
                           <div class="policy-list">
