@@ -26,8 +26,8 @@
                                 <i class="fa fa-map-marker"></i>
                             </div>
                             <div class="contact-info-dec">
-                                <p> 3/39 Tulloch Way </p>
-                              <p>Canning Vale WA 6155</p>
+                                <p>47 Tulloch Way, </p>
+                              <p>Canningvale, WA-6155</p>
 
                             </div>
                         </div>
